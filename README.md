@@ -1,5 +1,3 @@
-# OOPs
-
 # Nama 
 deskripsi 
 
