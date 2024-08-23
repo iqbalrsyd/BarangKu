@@ -8,4 +8,5 @@ Iqbal Hidayat Rasyad
 ### Anggota 1
 Adinda Putri Romadhon
 
-Anggota 3: Fatimah Nadia Eka Putri - 22/497876/TK/54588
+### Anggota 2
+Fatimah Nadia Eka Putri - 22/497876/TK/54588
