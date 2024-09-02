@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace Chapter2
+namespace BarangKu
 {
     // Class UserAddress
     public class UserAddress

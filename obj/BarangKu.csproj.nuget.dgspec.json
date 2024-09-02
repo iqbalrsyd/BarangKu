@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\College_Project\\BarangKu\\BarangKu.csproj": {}
+    "C:\\Users\\Nadia\\source\\repos\\BarangKu\\BarangKu.csproj": {}
   },
   "projects": {
-    "C:\\College_Project\\BarangKu\\BarangKu.csproj": {
+    "C:\\Users\\Nadia\\source\\repos\\BarangKu\\BarangKu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\College_Project\\BarangKu\\BarangKu.csproj",
+        "projectUniqueName": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\BarangKu.csproj",
         "projectName": "BarangKu",
-        "projectPath": "C:\\College_Project\\BarangKu\\BarangKu.csproj",
-        "packagesPath": "C:\\Users\\Iqbal Hidayat Rasyad\\.nuget\\packages\\",
-        "outputPath": "C:\\College_Project\\BarangKu\\obj\\",
+        "projectPath": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\BarangKu.csproj",
+        "packagesPath": "C:\\Users\\Nadia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Iqbal Hidayat Rasyad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Nadia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -62,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
