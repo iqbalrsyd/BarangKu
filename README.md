@@ -10,3 +10,6 @@ Adinda Putri Romadhon - 22/505508/TK/55321
 
 ### Anggota 2
 Fatimah Nadia Eka Putri - 22/497876/TK/54588
+
+
+![JUNPRO MODUL 2-Class Diagram drawio (1)](https://github.com/user-attachments/assets/8fa4d6e9-99f1-4c70-8a44-337c2925cf49)
