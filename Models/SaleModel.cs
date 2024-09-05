@@ -1,6 +1,6 @@
 using System;
 
-namespace BarangKu
+namespace BarangKu.Models
 {
     public class Sale
     {
@@ -11,12 +11,10 @@ namespace BarangKu
         public DateTime SaleDate { get; private set; }
         public decimal TotalAmount { get; set; }
 
-
         public Sale()
         {
             SaleDate = DateTime.Now;
         }
-
 
         public void RecordSale(Product product, int quantity, decimal totalAmount)
         {
@@ -26,7 +24,6 @@ namespace BarangKu
             SaleDate = DateTime.Now;
             // Logic to record sale
         }
-
 
         public void TrackShipment(Sale sale)
         {

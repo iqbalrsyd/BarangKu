@@ -1,45 +1,31 @@
+using BarangKu.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
-
-namespace BarangKu
+namespace BarangKu.Services
 {
-    public class Product
+    public class ProductService
     {
-        public int ProductID { get; private set; }
-        public int SellerID { get; set; }
-        public int CategoryID { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public decimal Price { get; set; }
-        public int Stock { get; set; }
-        public string Condition { get; set; } // e.g., New, Used
-        public string ImageURL { get; set; }
-        public DateTime CreatedDate { get; private set; }
-
-
-        public Product()
+        public void AddProduct(Product product)
         {
-            CreatedDate = DateTime.Now;
+            // Logic to save product to the database
+            Console.WriteLine($"Product {product.Name} has been added.");
         }
 
-
-        public void AddProduct()
+        public void EditProduct(Product product)
         {
-            // Logic to add product
+            // Logic to update product details in the database
+            Console.WriteLine($"Product {product.ProductID} has been updated.");
         }
 
-
-        public void EditProduct()
+        public void DeleteProduct(Product product)
         {
-            // Logic to edit product
+            // Logic to delete product from the database
+            Console.WriteLine($"Product {product.ProductID} has been deleted.");
         }
 
-
-        public void DeleteProduct()
+        public double CalculateDistance(Product product, UserAddress buyerAddress)
         {
-            // Logic to delete product
+            return product.CalculateDistance(buyerAddress);
         }
 
 
@@ -52,10 +38,8 @@ namespace BarangKu
             double lat2 = buyer.Latitude;
             double lon2 = buyer.Longitude;
 
-
             double dLat = DegreesToRadians(lat2 - lat1);
             double dLon = DegreesToRadians(lon2 - lon1);
-
 
             double a = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +
                        Math.Cos(DegreesToRadians(lat1)) * Math.Cos(DegreesToRadians(lat2)) *
@@ -63,10 +47,8 @@ namespace BarangKu
             double c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
             double distance = R * c;
 
-
             return distance;
         }
-
 
         private double DegreesToRadians(double degrees)
         {
