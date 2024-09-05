@@ -1,6 +1,6 @@
 using System;
 
-namespace BarangKu
+namespace BarangKu.Models
 {
     public class Transaction
     {
@@ -12,18 +12,16 @@ namespace BarangKu
         public string Status { get; set; }
         public decimal TotalAmount { get; set; }
 
-
         public Transaction()
         {
             TransactionDate = DateTime.Now;
         }
 
-
         public void CreateTransaction()
         {
+            Status = "Created";
             // Logic to create a new transaction
         }
-
 
         public void CancelTransaction()
         {
@@ -31,12 +29,10 @@ namespace BarangKu
             // Logic to cancel the transaction
         }
 
-
         public void UpdateTransaction()
         {
             // Logic to update the transaction details
         }
-
 
         public void RequestReturn()
         {
