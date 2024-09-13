@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\College_Project\\BarangKu\\BarangKu.csproj": {}
+    "C:\\college-project\\BarangKu\\BarangKu.csproj": {}
   },
   "projects": {
-    "C:\\College_Project\\BarangKu\\BarangKu.csproj": {
+    "C:\\college-project\\BarangKu\\BarangKu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\College_Project\\BarangKu\\BarangKu.csproj",
+        "projectUniqueName": "C:\\college-project\\BarangKu\\BarangKu.csproj",
         "projectName": "BarangKu",
-        "projectPath": "C:\\College_Project\\BarangKu\\BarangKu.csproj",
+        "projectPath": "C:\\college-project\\BarangKu\\BarangKu.csproj",
         "packagesPath": "C:\\Users\\Iqbal Hidayat Rasyad\\.nuget\\packages\\",
-        "outputPath": "C:\\College_Project\\BarangKu\\obj\\",
+        "outputPath": "C:\\college-project\\BarangKu\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Npgsql": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

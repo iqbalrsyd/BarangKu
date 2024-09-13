@@ -1,10 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Models",
+    "\\bin\\Debug",
+    "\\obj",
+    "\\obj\\Debug",
     "\\Services",
     "\\ViewModels"
   ],
-  "SelectedNode": "\\Services\\Validator.cs",
+  "SelectedNode": "\\Services\\MessageService.cs",
   "PreviewInSolutionExplorer": false
 }

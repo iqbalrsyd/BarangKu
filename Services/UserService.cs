@@ -1,6 +1,7 @@
-using Npgsql;
 using System;
 using BarangKu.Models;
+using BarangKu.ViewModels;
+using Npgsql;
 
 namespace BarangKu.Services
 {
@@ -13,9 +14,9 @@ namespace BarangKu.Services
             _dbService = new DatabaseService();
         }
 
-        public User GetUserById(int id)
+        public UserModel GetUserById(int id)
         {
-            User user = null;
+            UserModel user = null;
             var conn = _dbService.GetConnection();
 
             try
@@ -28,7 +29,7 @@ namespace BarangKu.Services
                     {
                         if (reader.Read())
                         {
-                            user = new User
+                            user = new UserModel
                             {
                                 UserId = reader.GetInt32(0),
                                 Username = reader.GetString(1),
@@ -44,36 +45,10 @@ namespace BarangKu.Services
             }
             finally
             {
-                _dbService.CloseConnection();
+                _dbService.CloseConnection(conn);
             }
 
             return user;
-        }
-
-        public void UpdateUser(int userId, string name, string alamat, string noHandphone)
-        {
-            var conn = _dbService.GetConnection();
-
-            try
-            {
-                string sql = @"select * from st_update(:_id,:_name,:_alamat,:_no_handphone)";
-                using (var cmd = new NpgsqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("_id", userId);
-                    cmd.Parameters.AddWithValue("_name", name);
-                    cmd.Parameters.AddWithValue("_alamat", alamat);
-                    cmd.Parameters.AddWithValue("_no_handphone", noHandphone);
-
-                    if ((int)cmd.ExecuteScalar() == 1)
-                    {
-                        // Berhasil memperbarui
-                    }
-                }
-            }
-            finally
-            {
-                _dbService.CloseConnection();
-            }
         }
     }
 }

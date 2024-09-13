@@ -6,16 +6,16 @@ namespace BarangKu.ViewModels
 {
     public class UserViewModel : INotifyPropertyChanged
     {
-        private User _user;
+        private UserModel _user;
         private readonly Authenticator _authenticator;
 
         public UserViewModel()
         {
-            _user = new User();
+            _user = new UserModel();
             _authenticator = new Authenticator();
         }
 
-        public User User
+        public UserModel User
         {
             get { return _user; }
             set

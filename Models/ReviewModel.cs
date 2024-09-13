@@ -10,7 +10,7 @@ namespace BarangKu.Models
         public int OrderID { get; set; }
         public int Rating { get; set; } // Rating between 1 and 5
         public string ReviewText { get; set; }
-        public DateTime ReviewDate { get; private set; }
+        public DateTime ReviewDate { get; set; }
 
         public Review()
         {

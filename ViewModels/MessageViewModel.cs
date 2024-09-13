@@ -1,6 +1,5 @@
 using BarangKu.Models;
 using BarangKu.Services;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -19,32 +18,35 @@ namespace BarangKu.ViewModels
         {
             _messageService = new MessageService();
             Messages = new ObservableCollection<Message>();
+
             SendMessageCommand = new RelayCommand(SendMessage);
             LoadMessagesCommand = new RelayCommand(LoadMessages);
             MarkAsReadCommand = new RelayCommand<int>(MarkAsRead);
         }
 
+        // Method untuk mengirim pesan
         private void SendMessage()
         {
-            // Example sending a message
             _messageService.SendMessage(1, 2, "Hello, how are you?");
-            LoadMessages(); // Refresh list
+            LoadMessages(); // Refresh daftar pesan
         }
 
+        // Method untuk memuat semua pesan
         private void LoadMessages()
         {
             Messages.Clear();
-            var messages = _messageService.GetMessagesByUser(1); // Example user ID
+            var messages = _messageService.GetMessagesForUser(1); // Panggil GetMessagesForUser dari MessageService
             foreach (var message in messages)
             {
-                Messages.Add(message);
+                Messages.Add(message); // Tambahkan ke ObservableCollection untuk binding di UI
             }
         }
 
+        // Method untuk menandai pesan sebagai dibaca
         private void MarkAsRead(int messageId)
         {
             _messageService.MarkMessageAsRead(messageId);
-            LoadMessages(); // Refresh list
+            LoadMessages(); // Refresh daftar pesan setelah pesan ditandai
         }
     }
 }
