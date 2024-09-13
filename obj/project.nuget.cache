@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "NusttgK6PM2bLB1a2HnK5Y1GAmB0DXKspK9ok8sCLnTTaEGk+zGx7ofII1l/FYqKpblgncoi7AN/2P+IvOitHQ==",
+  "dgSpecHash": "mpVduW9liQQZKZCIhbusnV7Jm49LBm/vg/GWjOydpPK50Nfil90U0PNGLwuuoICzoiZF5w8qOYtExPZO+olCaQ==",
   "success": true,
-  "projectFilePath": "C:\\College_Project\\BarangKu\\BarangKu.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\college-project\\BarangKu\\BarangKu.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Iqbal Hidayat Rasyad\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Iqbal Hidayat Rasyad\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Iqbal Hidayat Rasyad\\.nuget\\packages\\npgsql\\8.0.4\\npgsql.8.0.4.nupkg.sha512",
+    "C:\\Users\\Iqbal Hidayat Rasyad\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
+    "C:\\Users\\Iqbal Hidayat Rasyad\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Iqbal Hidayat Rasyad\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\Iqbal Hidayat Rasyad\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512"
+  ],
   "logs": []
 }

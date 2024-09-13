@@ -11,5 +11,6 @@ namespace BarangKu.Models
         public string Telephone { get; set; }
         public DateTime Created { get; set; }
         public DateTime Modified { get; set; }
+        public string HashedPassword { get; set; }
     }
 }

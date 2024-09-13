@@ -1,6 +1,6 @@
 using System;
 
-using namespace BarangKu
+namespace BarangKu
 {
     public class UserAddressModel
     {

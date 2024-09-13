@@ -1,6 +1,7 @@
 using BarangKu.Models;
 using BarangKu.Services;
 using System.ComponentModel;
+using BarangKu.ViewModels;
 
 namespace BarangKu.ViewModels
 {
@@ -41,11 +42,6 @@ namespace BarangKu.ViewModels
         {
             _productService.DeleteProduct(_product);
             OnPropertyChanged("Product");
-        }
-
-        public double CalculateDistance(UserAddress buyerAddress)
-        {
-            return _productService.CalculateDistance(_product, buyerAddress);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
