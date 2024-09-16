@@ -16,3 +16,6 @@ Fatimah Nadia Eka Putri - 22/497876/TK/54588
 ## Class Diagram
 
 ![JUNPRO MODUL 2-Class Diagram drawio (1)](https://github.com/user-attachments/assets/8fa4d6e9-99f1-4c70-8a44-337c2925cf49)
+
+## ERD (Entity Relationship Diagram)
+![JUNPRO MODUL 2-ERD  drawio](https://github.com/user-attachments/assets/eafe4148-6cc1-4f4a-bf26-d2f3348d604b)
