@@ -1,3 +1,13 @@
-﻿bin/
-obj/
+/﻿bin/
+/obj/
 .vs/
+bin/
+obj/
+**/bin/
+**/obj/
+
+
+
+
+	
+

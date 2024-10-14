@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\college-project\BarangKu\App.xaml
-11407045341
+22056800351
 
-431761360384
+44-930384217
 1971049063400
-MainWindow.xaml;
+MainWindow.xaml;Views\SignupView.xaml;
 
 True
 

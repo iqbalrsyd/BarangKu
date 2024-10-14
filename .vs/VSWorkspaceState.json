@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\bin\\Debug",
-    "\\obj",
-    "\\obj\\Debug",
-    "\\Services",
-    "\\ViewModels"
+    ""
   ],
-  "SelectedNode": "\\Services\\MessageService.cs",
+  "SelectedNode": "\\BarangKu.sln",
   "PreviewInSolutionExplorer": false
 }
