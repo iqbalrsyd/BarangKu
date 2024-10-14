@@ -1,0 +1,39 @@
+﻿<Window x:Class="BarangKu.Views.UserEnterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BarangKu.Views"
+        mc:Ignorable="d"
+        Title="UserEnterWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Column="0" Fill="#4158A6"></Rectangle>
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+            <TextBlock FontWeight="Bold" Margin="30" FontSize="20" Foreground="White" HorizontalAlignment="Center">
+                WELCOME!
+            </TextBlock>
+            <Image Source="/Assets/logo_barangku.png" Width="200" Height="200"></Image>
+            <TextBlock FontWeight="Light" FontSize="12" Foreground="White" TextAlignment="Center" LineHeight="25">
+                <Run Text="Berikan kesempatan kedua untuk barang Anda"></Run> 
+                <LineBreak>
+                </LineBreak>
+                <Run Text="Dari tangan ke tangan, kurangi pembuangan"></Run>
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+            <TextBlock Text="Log In" Margin="40" FontSize="30" Foreground="#4158A6"></TextBlock>
+            <TextBlock Text="Username"></TextBlock>
+            <TextBox x:Name="tbUsername"></TextBox>
+            <TextBlock Text="Password" Margin="0 20 0 0"></TextBlock>
+            <PasswordBox x:Name="tbPassword"></PasswordBox>
+            <Button Content="Log In" Background="#4158A6" Foreground="White" FontWeight="Bold" Width="100" Height="30" Margin="30"></Button>
+            <TextBlock Text="Doesn't have an account?" FontSize="10" Foreground="#4158A6" HorizontalAlignment="Center">
+            </TextBlock>
+            <Button Content="Create account" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Foreground="#4158A6"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
