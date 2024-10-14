@@ -1,0 +1,62 @@
+﻿<Window x:Class="BarangKu.Views.SignupView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BarangKu.Views"
+        mc:Ignorable="d"
+        Title="SignupView" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*" />
+            <!-- Panel kiri -->
+            <ColumnDefinition Width="5*" />
+            <!-- Panel kanan -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Panel Kiri -->
+        <StackPanel Background="#3B5998" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                    Height="486" Width="400">
+            <TextBlock Text="JOIN WITH US!" FontSize="30" FontWeight="Bold" Foreground="White" 
+                       Height="40" Width="208" Margin="0,50,0,0"/>
+
+            <TextBlock Text="Berikan kesempatan kedua untuk barang Anda" Foreground="White" 
+                       FontSize="14" TextAlignment="Center" Margin="10,200" />
+            <TextBlock Text="Dari tangan ke tangan, kurangi pembuangan" Foreground="White" 
+                       FontSize="14" TextAlignment="Center" Margin="5" />
+        </StackPanel>
+
+        <!-- Panel Kanan (Form Sign-Up) -->
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="95,30,110,0" Height="534">
+            <TextBlock Text="Create Account" FontSize="26" FontWeight="Bold" Margin="0,30,0,5" />
+
+            <!-- Input First Name -->
+            <TextBlock Text="First Name" FontWeight="SemiBold" Margin="0,5" />
+            <TextBox Name="FirstNameTextBox" Height="30" Margin="0,5" Padding="5" />
+
+            <!-- Input Last Name -->
+            <TextBlock Text="Last Name" FontWeight="SemiBold" Margin="0,5" />
+            <TextBox Name="LastNameTextBox" Height="30" Margin="0,5" Padding="5" />
+
+            <!-- Input Email -->
+            <TextBlock Text="Email" FontWeight="SemiBold" Margin="0,5" />
+            <TextBox Name="EmailTextBox" Height="30" Margin="0,5" Padding="5" />
+
+            <!-- Input Password -->
+            <TextBlock Text="Password" FontWeight="SemiBold" Margin="0,5" />
+            <PasswordBox Name="PasswordBox" Height="30" Margin="0,5" Padding="5" />
+
+            <!-- Confirm Password -->
+            <TextBlock Text="Confirm Password" FontWeight="SemiBold" Margin="0,0" />
+            <PasswordBox Name="ConfirmPasswordBox" Height="30" Margin="0,5" Padding="5" />
+
+            <!-- Tombol Create -->
+            <Button Name="CreateButton" Content="Create" Background="#3B5998" Foreground="White" 
+                    FontWeight="Bold" Height="40" Margin="0,20,0,10" Click="CreateButton_Click" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Already have one?" Margin="0,0,5,0" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
