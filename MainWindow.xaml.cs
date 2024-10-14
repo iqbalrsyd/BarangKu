@@ -20,20 +20,5 @@ namespace BarangKu
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            User user = new User();
-            user.LoginName = tbUsername.Text;
-            user.Password = tbPassword.Password;
-            if (user.Login(user.LoginName, user.Password))
-            {
-                MessageBox.Show("Login Berhasil, ID anda adalah " + user.EmployeeID.ToString());
-            }
-            else
-            {
-                MessageBox.Show("Login Gagal");
-            }
-        }
     }
 }
