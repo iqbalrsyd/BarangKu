@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -41,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\views\\signupview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:views\\signupview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\models\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -154,23 +154,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IconRightView.xaml",
-              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\IconRightView.xaml",
-              "RelativeDocumentMoniker": "Views\\IconRightView.xaml",
-              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\IconRightView.xaml",
-              "RelativeToolTip": "Views\\IconRightView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-20T12:07:23.837Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "BerandaView.xaml",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\BerandaView.xaml",
               "RelativeDocumentMoniker": "Views\\BerandaView.xaml",
@@ -182,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "BerandaView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\BerandaView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\BerandaView.xaml.cs",
@@ -195,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "LoginView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\LoginView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\LoginView.xaml.cs",
@@ -207,19 +195,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Views\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\MainWindow.xaml*",
-              "RelativeToolTip": "Views\\MainWindow.xaml*",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "Views\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-14T04:28:51.853Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Views\\MainWindow.xaml.cs",
@@ -232,7 +220,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T04:39:02.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IconRightView.xaml",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\IconRightView.xaml",
+              "RelativeDocumentMoniker": "Views\\IconRightView.xaml",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\IconRightView.xaml",
+              "RelativeToolTip": "Views\\IconRightView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-20T12:07:23.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Products.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\Products.cs",
               "RelativeDocumentMoniker": "Models\\Products.cs",
@@ -244,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "UserEnterWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\UserEnterWindow.xaml",
               "RelativeDocumentMoniker": "Views\\UserEnterWindow.xaml",
@@ -255,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "UserEnterWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\UserEnterWindow.xaml.cs",
               "RelativeDocumentMoniker": "Views\\UserEnterWindow.xaml.cs",
@@ -267,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "SignUpView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\SignUpView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\SignUpView.xaml.cs",
@@ -300,18 +313,6 @@
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAQAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-20T08:05:37.316Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\User.cs",
-              "RelativeDocumentMoniker": "User.cs",
-              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\User.cs",
-              "RelativeToolTip": "User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T04:39:02.033Z"
             },
             {
               "$type": "Document",
