@@ -10,25 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BarangKu.Views
 {
     /// <summary>
-    /// Interaction logic for UserEnterWindow.xaml
+    /// Interaction logic for IconRightView.xaml
     /// </summary>
-    public partial class UserEnterWindow : Window
+    public partial class IconRightView : Page
     {
-        public UserEnterWindow()
+        public IconRightView()
         {
             InitializeComponent();
-            Loaded += UserEnterWindow_Loaded;
-        }
-
-        public void UserEnterWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            Uri loginUri = new Uri("/Views/LoginView.xaml", UriKind.Relative);
-            mainFrame.NavigationService.Navigate(loginUri);
         }
     }
 }

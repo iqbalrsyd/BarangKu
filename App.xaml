@@ -2,8 +2,12 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:BarangKu"
-             StartupUri="Views/LoginView.xaml">
+             StartupUri="Views/UserEnterWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <Color x:Key="MainBlue">#4158A6</Color>
+
+            <SolidColorBrush x:Key="MainBlueBrush" Color="{StaticResource MainBlue}"></SolidColorBrush>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

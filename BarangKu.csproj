@@ -9,7 +9,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\artikel.png" />
+    <None Remove="Assets\cart.png" />
+    <None Remove="Assets\chat.png" />
+    <None Remove="Assets\durasi.png" />
+    <None Remove="Assets\harga.png" />
+    <None Remove="Assets\home.png" />
+    <None Remove="Assets\jennie.jpg" />
     <None Remove="Assets\logo_barangku.png" />
+    <None Remove="Assets\lokasi.png" />
+    <None Remove="Assets\notifikasi.png" />
+    <None Remove="Assets\pengiriman.png" />
+    <None Remove="Assets\search.png" />
+    <None Remove="Assets\sepatu.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\notifikasi.png" />
+    <Resource Include="Assets\cart.png" />
+    <Resource Include="Assets\chat.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +35,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\artikel.png" />
+    <Resource Include="Assets\durasi.png" />
+    <Resource Include="Assets\harga.png" />
+    <Resource Include="Assets\home.png" />
+    <Resource Include="Assets\jennie.jpg" />
     <Resource Include="Assets\logo_barangku.png" />
+    <Resource Include="Assets\lokasi.png" />
+    <Resource Include="Assets\pengiriman.png" />
+    <Resource Include="Assets\search.png" />
+    <Resource Include="Assets\sepatu.png" />
   </ItemGroup>
 </Project>

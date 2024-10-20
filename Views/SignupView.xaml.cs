@@ -10,21 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BarangKu.Views
 {
     /// <summary>
-    /// Interaction logic for SignupView.xaml
+    /// Interaction logic for SignUpView.xaml
     /// </summary>
-    public partial class SignupView : Window
+    public partial class SignUpView : Page
     {
-        public SignupView()
+        public SignUpView()
         {
             InitializeComponent();
         }
 
-        // Event handler untuk tombol "Create"
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
             string firstName = FirstNameTextBox.Text;
@@ -51,10 +51,10 @@ namespace BarangKu.Views
             MessageBox.Show("Akun berhasil dibuat!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
-        // Event handler untuk hyperlink "Log In"
-        private void LogIn_Click(object sender, RoutedEventArgs e)
+        private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Navigasi ke halaman Log In", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            LoginView loginView = new LoginView();
+            NavigationService?.Navigate(loginView);
         }
     }
 }

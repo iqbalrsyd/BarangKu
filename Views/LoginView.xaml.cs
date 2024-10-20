@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BarangKu.Views
@@ -17,13 +18,20 @@ namespace BarangKu.Views
     /// <summary>
     /// Interaction logic for LoginView.xaml
     /// </summary>
-    public partial class LoginView : Window
+    public partial class LoginView : Page
     {
         public LoginView()
         {
             InitializeComponent();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            SignUpView signUpView = new SignUpView();
+            NavigationService?.Navigate(signUpView);
+        }
+
+        private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
             User user = new User();
             user.LoginName = tbUsername.Text;
@@ -31,17 +39,16 @@ namespace BarangKu.Views
             if (user.Login(user.LoginName, user.Password))
             {
                 MessageBox.Show("Login Berhasil, ID anda adalah " + user.EmployeeID.ToString());
+
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                Window currentUserEnter = Window.GetWindow(this);
+                currentUserEnter.Close();
             }
             else
             {
                 MessageBox.Show("Login Gagal");
             }
-        }
-
-        private void btnSignUp_Click(object sender, RoutedEventArgs e)
-        {
-            SignupView view = new SignupView();
-            view.Show();
         }
     }
 }

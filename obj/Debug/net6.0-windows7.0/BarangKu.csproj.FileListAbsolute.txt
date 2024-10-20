@@ -1,4 +1,3 @@
-C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\MainWindow.g.cs
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\App.g.cs
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\BarangKu_MarkupCompile.cache
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\BarangKu_MarkupCompile.lref
@@ -15,7 +14,6 @@ C:\Users\Nadia\source\repos\BarangKu\bin\Debug\net6.0-windows7.0\System.Text.Enc
 C:\Users\Nadia\source\repos\BarangKu\bin\Debug\net6.0-windows7.0\System.Text.Json.dll
 C:\Users\Nadia\source\repos\BarangKu\bin\Debug\net6.0-windows7.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\BarangKu.csproj.AssemblyReference.cache
-C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\MainWindow.baml
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\BarangKu.g.resources
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\BarangKu.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\BarangKu.AssemblyInfoInputs.cache
@@ -30,3 +28,14 @@ C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\BarangKu.genrun
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\ref\BarangKu.dll
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\UserEnterWindow.g.cs
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\UserEnterWindow.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\LoginView.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\SignupView.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\LoginView.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\SignupView.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\MainWindow.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\MainWindow.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\App.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\BerandaView.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\BerandaView.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\IconRightView.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\IconRightView.baml

@@ -19,6 +19,16 @@ namespace BarangKu
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += MainWindow_Loaded;
+        }
+
+        public void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            Uri berandaView = new Uri("/Views/BerandaView.xaml", UriKind.Relative);
+            mainFrame.NavigationService.Navigate(berandaView);
+
+            Uri iconRighView = new Uri("/Views/IconRightView.xaml", UriKind.Relative);
+            iconRightFrame.NavigationService.Navigate(iconRighView);
         }
     }
 }

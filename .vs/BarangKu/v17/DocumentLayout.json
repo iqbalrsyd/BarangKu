@@ -3,12 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\MainWindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MainWindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\views\\berandaview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:views\\berandaview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\views\\iconrightview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:views\\iconrightview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\views\\berandaview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:views\\berandaview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\views\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:views\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\views\\userenterwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:views\\userenterwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\views\\userenterwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:views\\userenterwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\views\\signupview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:views\\signupview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\models\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:models\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\views\\signupview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:views\\signupview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\obj\\Debug\\net6.0-windows7.0\\Views\\LoginViews.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Debug\\net6.0-windows7.0\\Views\\LoginViews.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\obj\\Debug\\net6.0-windows\\App.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,64 +103,48 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Debug\\net6.0-windows\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\viewmodels\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:viewmodels\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\barangku.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:barangku.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\ViewModels\\UserViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ViewModels\\UserViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\UserEnterWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\UserEnterWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\BarangKu.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BarangKu.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\services\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:services\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\UserModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\UserModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\Services\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\barangku.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:barangku.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\UserEnterWindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\UserEnterWindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\models\\transactionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:models\\transactionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\Services\\RelayCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\RelayCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\models\\articlemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:models\\articlemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\Services\\MessageService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\MessageService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\models\\reviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:models\\reviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\BarangKu.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BarangKu.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\TransactionModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\TransactionModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\ArticleModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\ArticleModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\ReviewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\ReviewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\UserAddressModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\UserAddressModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|c:\\users\\nadia\\source\\repos\\barangku\\models\\useraddressmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEDA8F1E-EA05-4470-B9AF-322751341A10}|BarangKu.csproj|solutionrelative:models\\useraddressmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -110,8 +154,153 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IconRightView.xaml",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\IconRightView.xaml",
+              "RelativeDocumentMoniker": "Views\\IconRightView.xaml",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\IconRightView.xaml",
+              "RelativeToolTip": "Views\\IconRightView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-20T12:07:23.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BerandaView.xaml",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\BerandaView.xaml",
+              "RelativeDocumentMoniker": "Views\\BerandaView.xaml",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\BerandaView.xaml",
+              "RelativeToolTip": "Views\\BerandaView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-20T07:41:13.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BerandaView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\BerandaView.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\BerandaView.xaml.cs",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\BerandaView.xaml.cs",
+              "RelativeToolTip": "Views\\BerandaView.xaml.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAcwB0AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T08:10:39.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\LoginView.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\LoginView.xaml.cs",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\LoginView.xaml.cs",
+              "RelativeToolTip": "Views\\LoginView.xaml.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T14:19:43.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Views\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\MainWindow.xaml*",
+              "RelativeToolTip": "Views\\MainWindow.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-14T04:28:51.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Views\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAgwCEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T04:36:22.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\Products.cs",
+              "RelativeDocumentMoniker": "Models\\Products.cs",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\Products.cs",
+              "RelativeToolTip": "Models\\Products.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T08:07:13.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserEnterWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\UserEnterWindow.xaml",
+              "RelativeDocumentMoniker": "Views\\UserEnterWindow.xaml",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\UserEnterWindow.xaml",
+              "RelativeToolTip": "Views\\UserEnterWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-14T03:49:37.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserEnterWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\UserEnterWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\UserEnterWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\UserEnterWindow.xaml.cs",
+              "RelativeToolTip": "Views\\UserEnterWindow.xaml.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T04:29:03.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SignUpView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\SignUpView.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\SignUpView.xaml.cs",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\SignUpView.xaml.cs",
+              "RelativeToolTip": "Views\\SignUpView.xaml.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAlwBAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T14:44:17.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-19T14:22:21.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProductModel.cs",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\ProductModel.cs",
+              "RelativeDocumentMoniker": "Models\\ProductModel.cs",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\ProductModel.cs",
+              "RelativeToolTip": "Models\\ProductModel.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAQAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T08:05:37.316Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 10,
@@ -120,13 +309,13 @@
               "RelativeDocumentMoniker": "User.cs",
               "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\User.cs",
               "RelativeToolTip": "User.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAADwv0MAAAAnAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T04:39:02.033Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "AssemblyInfo.cs",
@@ -138,20 +327,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAEwCAAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T04:36:22.126Z",
-              "EditorCaption": ""
+              "DocumentIndex": 13,
+              "Title": "LoginView.xaml",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\LoginView.xaml",
+              "RelativeDocumentMoniker": "Views\\LoginView.xaml",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\LoginView.xaml",
+              "RelativeToolTip": "Views\\LoginView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-19T14:19:17.887Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
+              "Title": "SignUpView.xaml",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\SignUpView.xaml",
+              "RelativeDocumentMoniker": "Views\\SignUpView.xaml",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\SignUpView.xaml",
+              "RelativeToolTip": "Views\\SignUpView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-19T14:41:35.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LoginViews.g.cs",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\obj\\Debug\\net6.0-windows7.0\\Views\\LoginViews.g.cs",
+              "RelativeDocumentMoniker": "obj\\Debug\\net6.0-windows7.0\\Views\\LoginViews.g.cs",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\obj\\Debug\\net6.0-windows7.0\\Views\\LoginViews.g.cs",
+              "RelativeToolTip": "obj\\Debug\\net6.0-windows7.0\\Views\\LoginViews.g.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAmwEsAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T14:19:33.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "UserViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\ViewModels\\UserViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\UserViewModel.cs",
@@ -163,32 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UserEnterWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\UserEnterWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\UserEnterWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\UserEnterWindow.xaml.cs",
-              "RelativeToolTip": "Views\\UserEnterWindow.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T04:29:03.967Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-14T04:28:51.853Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 26,
               "Title": "BarangKu.csproj",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\BarangKu.csproj",
               "RelativeDocumentMoniker": "BarangKu.csproj",
@@ -200,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 27,
               "Title": "UserModel.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\UserModel.cs",
               "RelativeDocumentMoniker": "Models\\UserModel.cs",
@@ -212,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 28,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\UserService.cs",
@@ -224,18 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UserEnterWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\UserEnterWindow.xaml",
-              "RelativeDocumentMoniker": "Views\\UserEnterWindow.xaml",
-              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\UserEnterWindow.xaml",
-              "RelativeToolTip": "Views\\UserEnterWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-14T03:49:37.362Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 29,
               "Title": "RelayCommand.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Services\\RelayCommand.cs",
               "RelativeDocumentMoniker": "Services\\RelayCommand.cs",
@@ -247,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 30,
               "Title": "MessageService.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Services\\MessageService.cs",
               "RelativeDocumentMoniker": "Services\\MessageService.cs",
@@ -259,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 20,
               "Title": "BarangKu.GeneratedMSBuildEditorConfig.editorconfig",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\obj\\Debug\\net6.0-windows\\BarangKu.GeneratedMSBuildEditorConfig.editorconfig",
               "RelativeDocumentMoniker": "obj\\Debug\\net6.0-windows\\BarangKu.GeneratedMSBuildEditorConfig.editorconfig",
@@ -271,7 +445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 18,
               "Title": "MainWindow.g.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\obj\\Debug\\net6.0-windows\\MainWindow.g.cs",
               "RelativeDocumentMoniker": "obj\\Debug\\net6.0-windows\\MainWindow.g.cs",
@@ -283,7 +457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 21,
               "Title": "BarangKu.AssemblyInfoInputs.cache",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\obj\\Debug\\net6.0-windows\\BarangKu.AssemblyInfoInputs.cache",
               "RelativeDocumentMoniker": "obj\\Debug\\net6.0-windows\\BarangKu.AssemblyInfoInputs.cache",
@@ -295,7 +469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 17,
               "Title": "App.g.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\obj\\Debug\\net6.0-windows\\App.g.cs",
               "RelativeDocumentMoniker": "obj\\Debug\\net6.0-windows\\App.g.cs",
@@ -307,7 +481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 19,
               "Title": "BarangKu_MarkupCompile.cache",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\obj\\Debug\\net6.0-windows\\BarangKu_MarkupCompile.cache",
               "RelativeDocumentMoniker": "obj\\Debug\\net6.0-windows\\BarangKu_MarkupCompile.cache",
@@ -319,7 +493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 22,
               "Title": "MainWindow.g.i.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\obj\\Debug\\net6.0-windows\\MainWindow.g.i.cs",
               "RelativeDocumentMoniker": "obj\\Debug\\net6.0-windows\\MainWindow.g.i.cs",
@@ -331,7 +505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 23,
               "Title": "BarangKu.AssemblyInfo.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\obj\\Debug\\net6.0-windows\\BarangKu.AssemblyInfo.cs",
               "RelativeDocumentMoniker": "obj\\Debug\\net6.0-windows\\BarangKu.AssemblyInfo.cs",
@@ -343,7 +517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 24,
               "Title": "App.g.i.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\obj\\Debug\\net6.0-windows\\App.g.i.cs",
               "RelativeDocumentMoniker": "obj\\Debug\\net6.0-windows\\App.g.i.cs",
@@ -355,8 +529,8 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "BarangKu.csproj",
+              "DocumentIndex": 31,
+              "Title": "BarangKu",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\BarangKu.csproj",
               "RelativeDocumentMoniker": "BarangKu.csproj",
               "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\BarangKu.csproj",
@@ -366,7 +540,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 32,
               "Title": "TransactionModel.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\TransactionModel.cs",
               "RelativeDocumentMoniker": "Models\\TransactionModel.cs",
@@ -378,7 +552,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 33,
               "Title": "ArticleModel.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\ArticleModel.cs",
               "RelativeDocumentMoniker": "Models\\ArticleModel.cs",
@@ -390,7 +564,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 34,
               "Title": "ReviewModel.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\ReviewModel.cs",
               "RelativeDocumentMoniker": "Models\\ReviewModel.cs",
@@ -402,7 +576,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 35,
               "Title": "UserAddressModel.cs",
               "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Models\\UserAddressModel.cs",
               "RelativeDocumentMoniker": "Models\\UserAddressModel.cs",
