@@ -16,20 +16,19 @@ using System.Windows.Shapes;
 namespace BarangKu.Views
 {
     /// <summary>
-    /// Interaction logic for IconRightView.xaml
+    /// Interaction logic for CartView.xaml
     /// </summary>
-    public partial class IconRightView : Page
+    public partial class CartView : Page
     {
-        public IconRightView()
+        public CartView()
         {
             InitializeComponent();
         }
 
-        private void btnCart_Click(object sender, RoutedEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            CartView cartView = new CartView();
-            MainWindow.MainFrameInstance?.Navigate(cartView);
+            BerandaView berandaView = new BerandaView();
+            NavigationService?.Navigate(berandaView);
         }
-
     }
 }

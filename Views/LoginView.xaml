@@ -14,16 +14,16 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1" HorizontalAlignment="Center">
-            <TextBlock Text="Log In" Margin="40" FontSize="30" Foreground="#4158A6" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock Text="Log In" Margin="40" FontSize="60" Foreground="#4158A6" HorizontalAlignment="Center"></TextBlock>
             <TextBlock Text="Username"></TextBlock>
-            <TextBox x:Name="tbUsername"></TextBox>
+            <TextBox x:Name="tbUsername" Height="35"></TextBox>
             <TextBlock Text="Password" Margin="0 20 0 0"></TextBlock>
-            <PasswordBox x:Name="tbPassword"></PasswordBox>
+            <PasswordBox x:Name="tbPassword" Height="35"></PasswordBox>
             <Button x:Name="btnLogIn" Content="Log In" Background="#4158A6" Foreground="White" FontWeight="Bold" Width="100" Height="30" Margin="30" Click="btnLogIn_Click"></Button>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Doesn't have an account?" FontSize="10" VerticalAlignment="Center">
+                <TextBlock Text="Doesn't have an account?" FontSize="18" VerticalAlignment="Center">
                 </TextBlock>
-                <Button x:Name="btnSignUp" Content="Create account" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Foreground="#4158A6" Click="btnSignUp_Click"></Button>
+                <Button x:Name="btnSignUp" Content="Create account" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Foreground="#4158A6" Click="btnSignUp_Click" FontSize="18"></Button>
             </StackPanel>
         </StackPanel>
     </Grid>

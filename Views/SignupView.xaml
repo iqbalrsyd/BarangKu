@@ -14,7 +14,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="Create Account" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#3B5998"/>
+            <TextBlock Text="Create Account" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#3B5998"/>
 
             <!-- Input First Name -->
             <TextBlock Text="First Name" FontWeight="SemiBold" Margin="0,5" />
@@ -38,10 +38,10 @@
 
             <!-- Tombol Create -->
             <Button Name="CreateButton" Content="Create" Background="#3B5998" Foreground="White" 
-                    FontWeight="Bold" Height="40" Margin="0,20,0,10" Click="CreateButton_Click" />
+                    FontWeight="Bold" Height="40" Margin="0,20,0,10" Click="CreateButton_Click" FontSize="20" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Already have one?" Margin="0,0,5,0" VerticalAlignment="Center"/>
-                <Button Content="Log In" Foreground="#3B5998" FontWeight="Bold" Background="Transparent" BorderBrush="Transparent" Click="btnLogIn_Click"></Button>
+                <TextBlock Text="Already have one?" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="18"/>
+                <Button Content="Log In" Foreground="#3B5998" FontWeight="Bold" Background="Transparent" BorderBrush="Transparent" Click="btnLogIn_Click" FontSize="18"></Button>
             </StackPanel>
         </StackPanel>
     </Grid>

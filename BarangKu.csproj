@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="Assets\artikel.png" />
+    <None Remove="Assets\back.png" />
     <None Remove="Assets\cart.png" />
     <None Remove="Assets\chat.png" />
     <None Remove="Assets\durasi.png" />
@@ -18,13 +19,20 @@
     <None Remove="Assets\jennie.jpg" />
     <None Remove="Assets\logo_barangku.png" />
     <None Remove="Assets\lokasi.png" />
+    <None Remove="Assets\minus_icon.png" />
     <None Remove="Assets\notifikasi.png" />
     <None Remove="Assets\pengiriman.png" />
+    <None Remove="Assets\plus_icon.png" />
+    <None Remove="Assets\rice_cooker.jpg" />
     <None Remove="Assets\search.png" />
     <None Remove="Assets\sepatu.png" />
+    <None Remove="Assets\tas.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\back.png" />
+    <Resource Include="Assets\plus_icon.png" />
+    <Resource Include="Assets\minus_icon.png" />
     <Resource Include="Assets\notifikasi.png" />
     <Resource Include="Assets\cart.png" />
     <Resource Include="Assets\chat.png" />
@@ -43,7 +51,9 @@
     <Resource Include="Assets\logo_barangku.png" />
     <Resource Include="Assets\lokasi.png" />
     <Resource Include="Assets\pengiriman.png" />
+    <Resource Include="Assets\rice_cooker.jpg" />
     <Resource Include="Assets\search.png" />
     <Resource Include="Assets\sepatu.png" />
+    <Resource Include="Assets\tas.jpg" />
   </ItemGroup>
 </Project>

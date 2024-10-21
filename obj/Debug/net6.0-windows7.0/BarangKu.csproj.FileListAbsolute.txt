@@ -39,3 +39,7 @@ C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\BerandaVi
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\BerandaView.baml
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\IconRightView.g.cs
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\IconRightView.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\DetailProductView.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\DetailProductView.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\CartView.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\CartView.baml

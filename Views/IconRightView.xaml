@@ -13,7 +13,7 @@
             <Button Background="Transparent" BorderBrush="Transparent">
                 <Image Source="/Assets/chat.png" Width="25" Height="25"></Image>
             </Button>
-            <Button Background="Transparent" BorderBrush="Transparent">
+            <Button Background="Transparent" BorderBrush="Transparent" Click="btnCart_Click">
                 <Image Source="/Assets/cart.png" Width="25" Height="25" Margin="5"></Image>
             </Button>
             <Button Background="Transparent" BorderBrush="Transparent">

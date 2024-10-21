@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Nadia\source\repos\BarangKu\App.xaml
-61576607387
+8-1627696046
 
-50-1649231082
+52-1918457176
 197559649507
-Views\BerandaView.xaml;Views\IconRightView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\SignUpView.xaml;Views\UserEnterWindow.xaml;
+Views\BerandaView.xaml;Views\CartView.xaml;Views\DetailProductView.xaml;Views\IconRightView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\SignUpView.xaml;Views\UserEnterWindow.xaml;
 
 False
 

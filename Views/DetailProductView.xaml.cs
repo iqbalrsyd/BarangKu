@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarangKu.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,20 +17,23 @@ using System.Windows.Shapes;
 namespace BarangKu.Views
 {
     /// <summary>
-    /// Interaction logic for IconRightView.xaml
+    /// Interaction logic for DetailProductView.xaml
     /// </summary>
-    public partial class IconRightView : Page
+    public partial class DetailProductView : Page
     {
-        public IconRightView()
+        public Products product { get; set; }
+        public DetailProductView(Products product)
         {
             InitializeComponent();
+
+            this.product = product;
+            DataContext = product;
         }
 
-        private void btnCart_Click(object sender, RoutedEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            CartView cartView = new CartView();
-            MainWindow.MainFrameInstance?.Navigate(cartView);
+            BerandaView berandaView = new BerandaView();
+            NavigationService?.Navigate(berandaView);
         }
-
     }
 }

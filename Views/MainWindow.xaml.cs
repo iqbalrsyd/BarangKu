@@ -14,12 +14,15 @@ namespace BarangKu
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
+        public static Frame MainFrameInstance { get; private set; }
         public MainWindow()
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
+            MainFrameInstance = mainFrame;
         }
 
         public void MainWindow_Loaded(object sender, RoutedEventArgs e)
