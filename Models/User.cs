@@ -74,6 +74,12 @@ namespace BarangKu
                     _securityLevel = 4;
                     return true;
                 }
+                else if (loginName == "Dinda" && password == "angang")
+                {
+                    _empID = 3;
+                    _securityLevel = 6;
+                    return true;
+                }
                 else
                 {
                     return false;
