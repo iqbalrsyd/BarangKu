@@ -1,90 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BarangKu.Services;
+using Npgsql;
+using System;
 
-namespace BarangKu
+namespace BarangKu.Models
 {
     public class User
     {
-        private Employee _employee;
+        public int userid { get; set; }
+        public string username { get; set; }
+        public string hashedpassword { get; set; }
 
-        public string LoginName
+
+        public bool Login(string username, string hashedpassword)
         {
-            get { return _employee?.LoginName; }
-            set { if (_employee != null) _employee.LoginName = value; }
-        }
+            DatabaseService dbService = new DatabaseService();
+            bool isAuthenticated = false;
 
-        public string Password
-        {
-            get { return _employee?.Password; }
-            set { if (_employee != null) _employee.Password = value; }
-        }
-
-        public int EmployeeID
-        {
-            get { return _employee?.EmployeeID ?? 0; }
-        }
-
-        public User()
-        {
-            _employee = new Employee();
-        }
-
-        public bool Login(string loginName, string password)
-        {
-            return _employee.Login(loginName, password);
-        }
-
-        private class Employee
-        {
-            private int _empID;
-            private string _loginName;
-            private string _password;
-            private int _securityLevel;
-
-            public int EmployeeID => _empID;
-
-            public string LoginName
+            using (var conn = dbService.GetConnection())
             {
-                get { return _loginName; }
-                set { _loginName = value; }
-            }
+                string query = "SELECT * FROM Users WHERE username = @username AND hashedpassword = @hashedpassword";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("username", username);
+                    cmd.Parameters.AddWithValue("hashedpassword", hashedpassword);
 
-            public string Password
-            {
-                get { return _password; }
-                set { _password = value; }
-            }
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Set properties from database results
+                            userid = Convert.ToInt32(reader["userid"]);
+                            username = reader["username"].ToString();
+                            hashedpassword = reader["hashedpassword"].ToString();
 
-            public int SecurityLevel => _securityLevel;
-
-            public bool Login(string loginName, string password)
-            {
-                if (loginName == "Nadia" && password == "wkwk")
-                {
-                    _empID = 1;
-                    _securityLevel = 2;
-                    return true;
-                }
-                else if (loginName == "Iqbal" && password == "haha")
-                {
-                    _empID = 2;
-                    _securityLevel = 4;
-                    return true;
-                }
-                else if (loginName == "Dinda" && password == "angang")
-                {
-                    _empID = 3;
-                    _securityLevel = 6;
-                    return true;
-                }
-                else
-                {
-                    return false;
+                            isAuthenticated = true; // Login berhasil
+                        }
+                    }
                 }
             }
+            return isAuthenticated;
         }
     }
 }

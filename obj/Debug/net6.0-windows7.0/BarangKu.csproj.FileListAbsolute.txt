@@ -43,3 +43,5 @@ C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\DetailPro
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\DetailProductView.baml
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\CartView.g.cs
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\CartView.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\RincianProductView.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\RincianProductView.g.cs

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarangKu.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,11 +35,12 @@ namespace BarangKu.Views
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
             User user = new User();
-            user.LoginName = tbUsername.Text;
-            user.Password = tbPassword.Password;
-            if (user.Login(user.LoginName, user.Password))
+            user.username = tbUsername.Text;
+            user.hashedpassword = tbPassword.Password;
+
+            if (user.Login(user.username, user.hashedpassword))
             {
-                MessageBox.Show("Login Berhasil, ID anda adalah " + user.EmployeeID.ToString());
+                MessageBox.Show("Login Berhasil, ID anda adalah " + user.userid.ToString());
 
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
