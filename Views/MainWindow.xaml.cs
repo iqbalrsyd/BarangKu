@@ -14,7 +14,7 @@ namespace BarangKu
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    
+
     public partial class MainWindow : Window
     {
         public static Frame MainFrameInstance { get; private set; }
@@ -33,5 +33,25 @@ namespace BarangKu
             Uri iconRighView = new Uri("/Views/IconRightView.xaml", UriKind.Relative);
             iconRightFrame.NavigationService.Navigate(iconRighView);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Uri articleView = new Uri("/Views/ArticleView.xaml", UriKind.Relative);
+            mainFrame.NavigationService.Navigate(articleView);
+
+
+            Uri iconRighView = new Uri("/Views/IconRightView.xaml", UriKind.Relative);
+            iconRightFrame.NavigationService.Navigate(iconRighView);
+        }
+
+
+        private void BerandaButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Navigate to BerandaView
+            Uri berandaView = new Uri("/Views/BerandaView.xaml", UriKind.Relative);
+            mainFrame.NavigationService.Navigate(berandaView);
+        }
+
+
     }
 }

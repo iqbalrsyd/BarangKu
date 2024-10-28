@@ -26,10 +26,10 @@
             <Image Source="/Assets/logo_barangku.png" Width="70" Height="70"></Image>
         </Border>
         <Border Grid.Row="1" Grid.RowSpan="5" Grid.Column="0" Background="#4158A6"></Border>
-        <Button Grid.Row="2" Grid.Column="0" Background="Transparent" BorderBrush="Transparent">
+        <Button Grid.Row="2" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Click="BerandaButton_Click">
             <Image Source="/Assets/home.png" Width="35" Height="35"></Image>
         </Button>
-        <Button Grid.Row="3" Grid.Column="0" Background="Transparent" BorderBrush="Transparent">
+        <Button Grid.Row="3" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Click="Button_Click">
             <Image Source="/Assets/artikel.png" Width="35" Height="35"></Image>
         </Button>
         <Button Grid.Row="4" Grid.Column="0" Background="Transparent" BorderBrush="Transparent">
