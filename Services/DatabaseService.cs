@@ -4,7 +4,7 @@ namespace BarangKu.Services
 {
     public class DatabaseService
     {
-        private readonly string _connectionString = "connection-string";
+        private readonly string _connectionString = "Host=barangku.postgres.database.azure.com;Database=barangku;Username=postgres;Password=admin123!;SSL Mode=Require;";
 
         public NpgsqlConnection GetConnection()
         {

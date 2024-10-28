@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BarangKu.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="700" d:DesignWidth="1200"
       Title="SignUpView">
 
     <Grid>
@@ -15,6 +15,9 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock Text="Create Account" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#3B5998"/>
+
+            <TextBlock Text="Username" FontWeight="SemiBold" Margin="0,5" />
+            <TextBox Name="UsernameTextBox" Height="30" Margin="0,5" Padding="5" />
 
             <!-- Input First Name -->
             <TextBlock Text="First Name" FontWeight="SemiBold" Margin="0,5" />
@@ -27,6 +30,9 @@
             <!-- Input Email -->
             <TextBlock Text="Email" FontWeight="SemiBold" Margin="0,5" />
             <TextBox Name="EmailTextBox" Height="30" Margin="0,5" Padding="5" />
+
+            <TextBlock Text="Telephone" FontWeight="SemiBold" Margin="0,5" />
+            <TextBox Name="TelephoneTextBox" Height="30" Margin="0,5" Padding="5" />
 
             <!-- Input Password -->
             <TextBlock Text="Password" FontWeight="SemiBold" Margin="0,5" />

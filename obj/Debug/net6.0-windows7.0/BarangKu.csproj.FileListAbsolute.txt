@@ -46,3 +46,4 @@ C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\CartView.
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\RincianProductView.baml
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\RincianProductView.g.cs
 C:\Users\Nadia\source\repos\BarangKu\bin\Debug\net6.0-windows7.0\dotenv.net.dll
+C:\Users\Nadia\source\repos\BarangKu\bin\Debug\net6.0-windows7.0\BCrypt.Net-Next.dll

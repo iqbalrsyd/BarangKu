@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BarangKu.Models;
+using BarangKu.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,34 +29,34 @@ namespace BarangKu.Views
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
+            UserService userService = new UserService();
+            string username = UsernameTextBox.Text;
+            string password = PasswordBox.Password;
             string firstName = FirstNameTextBox.Text;
             string lastName = LastNameTextBox.Text;
             string email = EmailTextBox.Text;
-            string password = PasswordBox.Password;
+            string telephone = TelephoneTextBox.Text;
             string confirmPassword = ConfirmPasswordBox.Password;
+            S
+            UserModel newUser = userService.CreateUser(username, password, firstName, lastName, email, telephone);
 
-            // Validasi sederhana
-            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) ||
-                string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            if (newUser != null)
             {
-                MessageBox.Show("Semua kolom harus diisi!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
+                MessageBox.Show("User berhasil dibuat");
+                LoginView loginView = new LoginView();
+                NavigationService?.Navigate(loginView);
 
-            if (password != confirmPassword)
+            }
+            else
             {
-                MessageBox.Show("Password tidak cocok!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
+                MessageBox.Show("Gagal Membuat Akun");
             }
-
-            // Jika valid, tampilkan pesan sukses
-            MessageBox.Show("Akun berhasil dibuat!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            LoginView loginView = new LoginView();
-            NavigationService?.Navigate(loginView);
+            
+           
         }
     }
 }
