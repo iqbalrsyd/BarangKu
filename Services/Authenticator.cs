@@ -1,3 +1,6 @@
+using System;
+using BCrypt.Net;
+
 namespace BarangKu.Services
 {
     public class Authenticator
@@ -11,12 +14,12 @@ namespace BarangKu.Services
 
         public string HashPassword(string password)
         {
-            return _validator.HashPassword(password);
+            return BCrypt.Net.BCrypt.HashPassword(password);
         }
 
         public bool VerifyPassword(string inputPassword, string storedHash)
         {
-            return _validator.VerifyPassword(inputPassword, storedHash);
+            return BCrypt.Net.BCrypt.Verify(inputPassword, storedHash);
         }
     }
 }

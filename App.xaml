@@ -5,9 +5,11 @@
              StartupUri="Views/UserEnterWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="MainBlue">#4158A6</Color>
 
-            <SolidColorBrush x:Key="MainBlueBrush" Color="{StaticResource MainBlue}"></SolidColorBrush>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/ColorStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

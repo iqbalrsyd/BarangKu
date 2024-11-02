@@ -20,7 +20,7 @@ using System.Windows.Shapes;
 
 namespace BarangKu.Views
 {
-    public partial class ArticleView : Page
+    public partial class ArticleView : UserControl
     {
         // Koleksi untuk artikel terbaru dan artikel rekomendasi
         public ObservableCollection<Article> RecentArticles { get; set; }

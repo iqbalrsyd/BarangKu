@@ -1,4 +1,5 @@
 ﻿using BarangKu.Models;
+using BarangKu.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace BarangKu.Views
     /// <summary>
     /// Interaction logic for DetailProductView.xaml
     /// </summary>
-    public partial class DetailProductView : Page
+    public partial class DetailProductView : UserControl
     {
         public Products product { get; set; }
         public DetailProductView(Products product)
@@ -32,8 +33,9 @@ namespace BarangKu.Views
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            BerandaView berandaView = new BerandaView();
-            NavigationService?.Navigate(berandaView);
+            var mainWindow = Window.GetWindow(this) as MainWindow;
+            var navigationService = mainWindow.DataContext as NavigationServices;
+            navigationService?.ShowHome();
         }
     }
 }

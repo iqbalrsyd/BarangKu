@@ -18,17 +18,11 @@ namespace BarangKu.Views
     /// <summary>
     /// Interaction logic for CartView.xaml
     /// </summary>
-    public partial class CartView : Page
+    public partial class CartView : UserControl
     {
         public CartView()
         {
             InitializeComponent();
-        }
-
-        private void btnBack_Click(object sender, RoutedEventArgs e)
-        {
-            BerandaView berandaView = new BerandaView();
-            NavigationService?.Navigate(berandaView);
         }
     }
 }

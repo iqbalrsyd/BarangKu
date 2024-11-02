@@ -18,18 +18,18 @@ namespace BarangKu.Views
     /// <summary>
     /// Interaction logic for IconRightView.xaml
     /// </summary>
-    public partial class IconRightView : Page
+    public partial class IconRightView : UserControl
     {
         public IconRightView()
         {
             InitializeComponent();
         }
 
-        private void btnCart_Click(object sender, RoutedEventArgs e)
-        {
-            CartView cartView = new CartView();
-            MainWindow.MainFrameInstance?.Navigate(cartView);
-        }
+        //private void btnCart_Click(object sender, RoutedEventArgs e)
+        //{
+        //    CartView cartView = new CartView();
+        //    MainWindow.MainFrameInstance?.Navigate(cartView);
+        //}
 
     }
 }

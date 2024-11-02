@@ -1,19 +1,18 @@
-﻿<Page x:Class="BarangKu.Views.IconRightView"
+﻿<UserControl x:Class="BarangKu.Views.IconRightView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BarangKu.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="50" d:DesignWidth="700"
-      Title="IconRightView">
+      d:DesignHeight="50" d:DesignWidth="700">
 
     <Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Background="Transparent" BorderBrush="Transparent">
                 <Image Source="/Assets/chat.png" Width="25" Height="25"></Image>
             </Button>
-            <Button Background="Transparent" BorderBrush="Transparent" Click="btnCart_Click">
+            <Button Background="Transparent" BorderBrush="Transparent">
                 <Image Source="/Assets/cart.png" Width="25" Height="25" Margin="5"></Image>
             </Button>
             <Button Background="Transparent" BorderBrush="Transparent">
@@ -21,4 +20,4 @@
             </Button>
         </StackPanel>
     </Grid>
-</Page>
+</UserControl>

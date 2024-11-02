@@ -1,4 +1,5 @@
 ﻿using BarangKu.Models;
+using BarangKu.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,17 +20,19 @@ namespace BarangKu.Views
     /// <summary>
     /// Interaction logic for BerandaView.xaml
     /// </summary>
-    public partial class BerandaView : Page
+    public partial class HomeView : UserControl
     {
-        public BerandaView()
+        public HomeView()
         {
             InitializeComponent();
+            DataContext = this;
             var products = GetProducts();
             if (products.Count > 0)
             {
                 ListProducts.ItemsSource = products;
             }
         }
+
         private List<Products> GetProducts()
         {
             return new List<Products>()
@@ -53,16 +56,18 @@ namespace BarangKu.Views
         {
 
             var button = sender as Button;
-            int productId = Convert.ToInt32(button.Tag);  // Mengambil ProductId dari Tag
+            int productId = Convert.ToInt32(button.Tag);  
 
-            // Cari produk berdasarkan ProductId
             var selectedProduct = GetProducts().FirstOrDefault(p => p.ProductId == productId);
 
             if (selectedProduct != null)
             {
-                // Buka DetailProductView dengan produk yang dipilih
-                DetailProductView detailProductView = new DetailProductView(selectedProduct);
-                NavigationService?.Navigate(detailProductView);
+                var mainWindow = Window.GetWindow(this) as MainWindow;
+                if (mainWindow != null)
+                {
+                    var navigationService = mainWindow.DataContext as NavigationServices;
+                    navigationService?.ShowDetailProduct(selectedProduct);
+                }
             }
         }
 

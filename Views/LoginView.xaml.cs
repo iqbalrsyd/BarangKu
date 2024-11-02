@@ -1,5 +1,6 @@
 ﻿using BarangKu.Models;
 using BarangKu.Services;
+using BarangKu.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,11 +36,11 @@ namespace BarangKu.Views
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            UserService userService = new UserService();
+            UserViewModel userLogin = new UserViewModel();
             string username = tbUsername.Text;
             string password = tbPassword.Password;
 
-            if (userService.Login(username, password))
+            if (userLogin.Login(username, password))
             {
                 MessageBox.Show("Login Berhasil");
 

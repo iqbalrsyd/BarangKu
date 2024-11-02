@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\BerandaView.xaml.cs">
+    <Compile Update="Views\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\CartView.xaml.cs">
@@ -27,7 +27,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\BerandaView.xaml">
+    <Page Update="Styles\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\ColorStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HomeView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\CartView.xaml">

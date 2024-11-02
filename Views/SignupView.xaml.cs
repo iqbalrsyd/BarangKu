@@ -1,5 +1,6 @@
 ﻿using BarangKu.Models;
 using BarangKu.Services;
+using BarangKu.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace BarangKu.Views
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            UserService userService = new UserService();
+            UserViewModel userRegister = new UserViewModel();
             string username = UsernameTextBox.Text;
             string password = PasswordBox.Password;
             string firstName = FirstNameTextBox.Text;
@@ -37,8 +38,8 @@ namespace BarangKu.Views
             string email = EmailTextBox.Text;
             string telephone = TelephoneTextBox.Text;
             string confirmPassword = ConfirmPasswordBox.Password;
-            S
-            UserModel newUser = userService.CreateUser(username, password, firstName, lastName, email, telephone);
+            
+            UserModel newUser = userRegister.Register(username, password, firstName, lastName, email, telephone);
 
             if (newUser != null)
             {
@@ -55,7 +56,8 @@ namespace BarangKu.Views
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            
+            LoginView loginView = new LoginView();
+            NavigationService?.Navigate(loginView);  
            
         }
     }
