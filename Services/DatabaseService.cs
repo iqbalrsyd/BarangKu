@@ -4,7 +4,7 @@ namespace BarangKu.Services
 {
     public class DatabaseService
     {
-        private readonly string _connectionString = "Host=localhost;Database=BarangKu;Username=postgres;Password=admin123;SSL Mode=Disable";
+        private readonly string _connectionString = "Host=localhost;Database=BarangKu;Username=postgres;Password=xxx;SSL Mode=Disable";
 
         public NpgsqlConnection GetConnection()
         {
