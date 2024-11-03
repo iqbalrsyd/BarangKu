@@ -14,18 +14,58 @@
             <RowDefinition Height="100*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <!-- Search bar -->
-        <Border CornerRadius="10" BorderBrush="{StaticResource MainBlueBrush}" Width="300" Height="30" BorderThickness="2" Background="White">
-            <StackPanel Orientation="Horizontal">
-                <TextBox Text="Cari produk di sini" FontWeight="Light" Foreground="{StaticResource MainBlueBrush}" Margin="5 0" TextAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Transparent" Background="Transparent">
-                </TextBox>
-                <Image Source="/Assets/search.png" Width="15" Height="15" Margin="160 0">
-                </Image>
-            </StackPanel>
-        </Border>
+        <DockPanel>
+            <!-- Kontainer utama untuk search bar dan tombol -->
+            <Grid DockPanel.Dock="Top" Margin="30,25,30,25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <!-- Untuk Search Bar -->
+                    <ColumnDefinition Width="Auto" />
+                    <!-- Untuk Tombol Chat -->
+                    <ColumnDefinition Width="Auto" />
+                    <!-- Untuk Tombol Notifikasi -->
+                    <ColumnDefinition Width="Auto" />
+                    <!-- Untuk Tombol Keranjang -->
+                </Grid.ColumnDefinitions>
+
+                <!-- Search bar dengan Grid di dalamnya -->
+                <Border Grid.Column="0" CornerRadius="10" BorderBrush="{StaticResource MainBlueBrush}" Height="30" BorderThickness="2" Background="White">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <!-- Kolom untuk TextBox -->
+                            <ColumnDefinition Width="Auto" />
+                            <!-- Kolom untuk ikon pencarian -->
+                        </Grid.ColumnDefinitions>
+
+                        <!-- TextBox untuk input pencarian -->
+                        <TextBox Grid.Column="0" Text="Cari produk di sini" FontWeight="Light" Foreground="{StaticResource MainBlueBrush}"
+                         Margin="10,0" VerticalContentAlignment="Center" BorderBrush="Transparent" Background="Transparent"/>
+
+                        <!-- Ikon pencarian -->
+                        <Image Grid.Column="1" Source="/Assets/search.png" Width="20" Height="20" Margin="5,0,10,0" VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+
+                <!-- Tombol Chat -->
+                <Button Grid.Column="1" Width="30" Height="30" Background="Transparent" BorderBrush="Transparent" Margin="10,0,0,0">
+                    <Image Source="/Assets/chat.png" Width="20" Height="20"/>
+                </Button>
+
+                <!-- Tombol Notifikasi -->
+                <Button Grid.Column="2" Width="30" Height="30" Background="Transparent" BorderBrush="Transparent" Margin="10,0,0,0">
+                    <Image Source="/Assets/notifikasi.png" Width="20" Height="20"/>
+                </Button>
+
+                <!-- Tombol Keranjang -->
+               <Button Grid.Column="3" Width="30" Height="30" Background="Transparent" BorderBrush="Transparent" Margin="10,0,0,0">
+                    <Image Source="/Assets/Cart.png" Width="20" Height="20"/>
+                </Button>
+            </Grid>
+        </DockPanel>
 
         <!-- Artikel Terbaru section -->
-        <TextBlock Grid.Row="1" Text="Artikel Terbaru" FontWeight="SemiBold" FontSize="25" Foreground="{StaticResource MainBlueBrush}" Padding="20 0"></TextBlock>
+        <TextBlock Grid.Row="1" Text="Artikel Terbaru" FontWeight="SemiBold" FontSize="25" Foreground="{StaticResource MainBlueBrush}" Padding="30 0"></TextBlock>
 
         <!-- Article list with horizontal scrolling -->
         <!-- Article list with horizontal scrolling -->

@@ -55,6 +55,11 @@ namespace BarangKu.Views
                 // Ganti MessageBox ini dengan navigasi ke halaman detail atau tindakan lainnya
             }
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 
     // Model untuk data artikel
