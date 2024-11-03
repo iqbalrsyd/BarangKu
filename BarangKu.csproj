@@ -10,6 +10,9 @@
 
   <ItemGroup>
     <None Remove="Assets\artikel.png" />
+    <None Remove="Assets\artikel1.jpg" />
+    <None Remove="Assets\artikel2.jpg" />
+    <None Remove="Assets\artikel3.jpg" />
     <None Remove="Assets\back.png" />
     <None Remove="Assets\cart.png" />
     <None Remove="Assets\chat.png" />
@@ -30,6 +33,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\artikel1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\artikel2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\artikel3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\back.png" />
     <Resource Include="Assets\plus_icon.png" />
     <Resource Include="Assets\minus_icon.png" />
