@@ -64,16 +64,16 @@
             </Grid>
         </DockPanel>
 
-        <!-- Artikel Terbaru section -->
-        <TextBlock Grid.Row="1" Text="Artikel Terbaru" FontWeight="SemiBold" FontSize="25" Foreground="{StaticResource MainBlueBrush}" Padding="30 0"></TextBlock>
+		<!-- Artikel Terbaru section -->
+		<TextBlock Grid.Row="1" Text="Artikel Terbaru" FontWeight="Bold" FontSize="35" Foreground="{StaticResource MainBlueBrush}" Padding="30 0"></TextBlock>
 
-        <!-- Article list with horizontal scrolling -->
-        <ScrollViewer Grid.Row="2"
+		<!-- Article list with horizontal scrolling -->
+		<ScrollViewer Grid.Row="1"
               HorizontalScrollBarVisibility="Auto"
               VerticalScrollBarVisibility="Disabled"
-              Margin="10,10,10,0">
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <!-- Artikel 1 -->
+              Margin="10,28,10,32" Grid.RowSpan="2">
+			<StackPanel Orientation="Horizontal" Margin="10">
+				<!-- Artikel 1 -->
                 <Border Width="250"
                 Height="300"
                 Margin="10"
@@ -155,12 +155,7 @@
                            FontSize="12"
                            Margin="10,5,10,0"
                            TextWrapping="Wrap"/>
-                        <TextBlock Text="Selengkapnya"
-                           FontSize="12"
-                           Foreground="Gray"
-                           Margin="10,5,10,5"
-                           TextWrapping="Wrap"/>
-                    </StackPanel>
+					</StackPanel>
                 </Border>
                 <!-- Artikel 1 -->
                 <Border Width="250"
