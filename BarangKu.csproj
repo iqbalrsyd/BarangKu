@@ -26,7 +26,12 @@
     <None Remove="Assets\rice_cooker.jpg" />
     <None Remove="Assets\search.png" />
     <None Remove="Assets\sepatu.png" />
+    <None Remove="Assets\store.png" />
     <None Remove="Assets\tas.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\store.png" />
   </ItemGroup>
 
   <ItemGroup>

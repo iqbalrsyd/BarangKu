@@ -50,3 +50,7 @@ C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\HomeView.
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Styles\ButtonStyle.baml
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Styles\ColorStyle.baml
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\HomeView.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\MyProductView.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\StoreView.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\MyProductView.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\StoreView.baml

@@ -26,7 +26,8 @@ namespace BarangKu.Services
             {
                 new MenuItemsModel { MenuName = "Beranda", MenuIcon = "/Assets/home.png", IsSelected=true},
                 new MenuItemsModel { MenuName = "Artikel", MenuIcon = "/Assets/artikel.png"},
-                new MenuItemsModel { MenuName = "Transaksi", MenuIcon = "/Assets/pengiriman.png"}
+                new MenuItemsModel { MenuName = "Transaksi", MenuIcon = "/Assets/pengiriman.png"},
+                new MenuItemsModel { MenuName = "Toko", MenuIcon = "/Assets/store.png"}
             };
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
@@ -68,6 +69,9 @@ namespace BarangKu.Services
                 case "Transaksi":
                     SelectedViewModel = new TransactionViewModel();
                     break;
+                case "Toko":
+                    SelectedViewModel = new StoreView();
+                    break;
                 default:
                     SelectedViewModel = new HomeView();
                     break;
@@ -97,6 +101,12 @@ namespace BarangKu.Services
         public void ShowHome()
         {
             SelectedViewModel = new HomeView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
+        public void AddProduct()
+        {
+            SelectedViewModel = new MyProductView();
             OnPropertyChanged(nameof(SelectedViewModel));
         }
 

@@ -1,6 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ColorStyle.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
     <!-- MenuButton Template -->
     <ControlTemplate x:Key="MenuButtonTemplate" TargetType="RadioButton">
         <Border x:Name="border"
@@ -49,5 +53,26 @@
                      IsChecked="{Binding IsSelected, Mode=TwoWay}"
                      Template="{StaticResource MenuButtonTemplate}"/>
     </DataTemplate>
+
+    <Style x:Key="AddButton" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{StaticResource MainBlueBrush}"
+                            BorderBrush="{StaticResource MainBlueBrush}"
+                            BorderThickness="1"
+                            CornerRadius="15">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>

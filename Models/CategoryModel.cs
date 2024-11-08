@@ -1,16 +1,31 @@
 using System;
+using System.ComponentModel;
 
 namespace BarangKu.Models
 {
-    public class Category
+    public class Category : INotifyPropertyChanged
     {
-        public int CategoryID { get; private set; }
+        private int categoryId; 
+
+        public int CategoryID
+        {
+            get { return categoryId; }
+            set
+            {
+                if (categoryId != value)
+                {
+                    categoryId = value;
+                    OnPropertyChanged(nameof(CategoryID));
+                }
+            }
+        }
+
         public string Name { get; set; }
         public string Description { get; set; }
 
         public Category()
         {
-            // Default constructor
+            
         }
 
         public Category(int categoryId, string name, string description)
@@ -18,6 +33,13 @@ namespace BarangKu.Models
             CategoryID = categoryId;
             Name = name;
             Description = description;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
