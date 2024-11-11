@@ -91,7 +91,8 @@ namespace BarangKu.ViewModels
                         Stock = stock,
                         Duration = duration,
                         ImageURL = imageUrl != null ? ByteArrayToImage(imageUrl) : null,
-                        CreatedDate = DateTime.Now
+                        CreatedDate = DateTime.Now,
+                        IsSelected = false
                     };
                 }
             }
@@ -106,6 +107,57 @@ namespace BarangKu.ViewModels
             return product;
         }
 
+        public List<Product> GetProducts()
+        {
+            int sellerid = UserSessionService.Instance.Seller.SellerId;
+            List<Product> products = new List<Product>();
+            var conn = _dbService.GetConnection();
+
+            try
+            {
+                // Modifikasi query untuk memfilter berdasarkan sellerId
+                string query = @"SELECT productid, sellerid, categoryid, name, description, price, stock, duration, imageurl, createdate 
+                         FROM product
+                         WHERE sellerid = @sellerid"; // Menambahkan kondisi untuk sellerId
+
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("sellerid", sellerid);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Product product = new Product
+                            {
+                                ProductID = reader.GetInt32(0),
+                                SellerID = reader.GetInt32(1),
+                                CategoryID = reader.GetInt32(2),
+                                Name = reader.GetString(3),
+                                Description = reader.GetString(4),
+                                Price = reader.GetDecimal(5),
+                                Stock = reader.GetInt32(6),
+                                Duration = reader.GetInt32(7),
+                                ImageURL = reader.IsDBNull(8) ? null : ByteArrayToImage((byte[])reader[8]),
+                                CreatedDate = reader.GetDateTime(9)
+                            };
+
+                            products.Add(product);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saat mengambil produk: {ex.Message}");
+            }
+            finally
+            {
+                _dbService.CloseConnection(conn);
+            }
+            return products;
+        }
+
         private BitmapImage ByteArrayToImage(byte[] byteArray)
         {
             using (MemoryStream memoryStream = new MemoryStream(byteArray))
@@ -118,6 +170,8 @@ namespace BarangKu.ViewModels
                 return image;
             }
         }
+
+
 
         public void EditProduct()
         {

@@ -4,7 +4,7 @@ namespace BarangKu.Services
 {
     public class DatabaseService
     {
-        private readonly string _connectionString = "Host=localhost;Database=barangku;Username=postgres;Password=nadia;SSL Mode=Disable";
+        private readonly string _connectionString = "Host=aws-0-ap-southeast-1.pooler.supabase.com;Database=postgres;Username=postgres.adhyvkmkwhnlmysjtogs;Password=8dJXdmikvR#ntWN;SSL Mode=Disable";
 
         public NpgsqlConnection GetConnection()
         {

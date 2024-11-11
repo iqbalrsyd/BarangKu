@@ -18,5 +18,41 @@
         <Border Grid.Column="1" Grid.Row="0" Height="50" Width="140" VerticalAlignment="Top" Margin="0 20">
             <Button Content="Tambah Barang" Style="{StaticResource AddButton}" Click="AddProduct_Click"/>
         </Border>
+        <StackPanel Grid.Column="0" Grid.Row="0" Margin="20 20">
+            <TextBlock x:Name="StoreNameTextBox" Foreground="Black" FontWeight="SemiBold" FontSize="18" Text="{Binding StoreName, StringFormat='Nama Toko: {0}'}"></TextBlock>
+            <TextBlock x:Name="DescriptionStoreTextBox" Foreground="Black" FontWeight="SemiBold" FontSize="18" Text="{Binding StoreDescription, StringFormat='Deskripsi Toko: {0}'}" Margin="0 5"></TextBlock>
+            <TextBlock x:Name="RatingStoreTextBox" Foreground="Black" FontWeight="SemiBold" FontSize="18" Text="{Binding Rating, StringFormat='Rating Toko: {0:F1}'}" Margin="0 5"></TextBlock>
+        </StackPanel>
+        <ItemsControl ItemsSource="{Binding Products}" Grid.Column="0" Grid.Row="1">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border Width="162" Height="220" Background="White" CornerRadius="10" Margin="15">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="2" ShadowDepth="2"></DropShadowEffect>
+                        </Border.Effect>
+                        <StackPanel>
+                            <!-- Misalnya menggunakan CheckBox untuk IsSelected -->
+                            <CheckBox IsChecked="{Binding IsSelected}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5">
+                                <CheckBox.ToolTip>
+                                    <ToolTip Content="Pilih Produk"></ToolTip>
+                                </CheckBox.ToolTip>
+                            </CheckBox>
+
+                            <Border Background="{StaticResource MainBlueBrush}" Width="40" Height="20" CornerRadius="5" HorizontalAlignment="Right" Margin="5">
+                                <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                            </Border>
+                            <Border Width="140" Height="80" CornerRadius="10">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding ImageURL}"></ImageBrush>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Text="{Binding Name}" Margin="10 0" FontWeight="SemiBold" FontSize="15"></TextBlock>
+                            <!-- Deskripsi, Harga, dll. -->
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
     </Grid>
 </UserControl>

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 using BarangKu.Models;
@@ -51,6 +52,29 @@ namespace BarangKu.Services
             }
         }
 
+        // pop  up untuk create store
+        private bool _isPopupOpen;
+        public bool IsPopupOpen
+        {
+            get => _isPopupOpen;
+            set
+            {
+                _isPopupOpen = value;
+                OnPropertyChanged(nameof(IsPopupOpen));
+            }
+        }
+
+        private object _popUpView;
+        public object PopUpView
+        {
+            get => _popUpView;
+            set
+            {
+                _popUpView = value;
+                OnPropertyChanged(nameof(PopUpView));
+            }
+        }
+
         public void SwitchViews(object parameter)
         {
             foreach (var item in MenuItemsCollection.Source as ObservableCollection<MenuItemsModel>)
@@ -70,12 +94,24 @@ namespace BarangKu.Services
                     SelectedViewModel = new TransactionViewModel();
                     break;
                 case "Toko":
+                    Authenticator authenticator = new Authenticator();
                     SelectedViewModel = new StoreView();
+                    if (!authenticator.AccessStorePage())
+                    {
+                        PopUpView = new CreateStoreView(); 
+                        IsPopupOpen = true;
+                    }
                     break;
                 default:
                     SelectedViewModel = new HomeView();
                     break;
             }
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
+        public void ClosePopup()
+        {
+            IsPopupOpen = false;
             OnPropertyChanged(nameof(SelectedViewModel));
         }
 
@@ -107,6 +143,12 @@ namespace BarangKu.Services
         public void AddProduct()
         {
             SelectedViewModel = new MyProductView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
+        public void NavigateToStoreView()
+        {
+            SelectedViewModel = new StoreView();
             OnPropertyChanged(nameof(SelectedViewModel));
         }
 

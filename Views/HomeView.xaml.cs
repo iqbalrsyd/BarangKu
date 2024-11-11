@@ -31,6 +31,7 @@ namespace BarangKu.Views
             {
                 ListProducts.ItemsSource = products;
             }
+            var userId = UserSessionService.Instance.User.UserId;
         }
 
         private List<Products> GetProducts()

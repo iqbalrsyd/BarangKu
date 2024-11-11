@@ -22,6 +22,10 @@ namespace BarangKu
         public MainWindow()
         {
             InitializeComponent();
+            var username = UserSessionService.Instance.User.Username;
+            var email = UserSessionService.Instance.User.Email;
+            usernameTextBlock.Text = $"Welcome, {email}!";
+
             //Loaded += MainWindow_Loaded;
             //MainFrameInstance = mainFrame;
         }

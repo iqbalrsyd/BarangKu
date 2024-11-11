@@ -36,7 +36,7 @@ namespace BarangKu.ViewModels
 
             try
             {
-                string login = "SELECT userid, hashedpassword FROM users WHERE username = @username";
+                string login = "SELECT userid, username, hashedpassword, firstname, lastname, email, telephone, created, modified FROM users WHERE username = @username";
                 using (var cmd = new NpgsqlCommand(login, conn))
                 {
                     cmd.Parameters.AddWithValue("username", username);
@@ -45,13 +45,30 @@ namespace BarangKu.ViewModels
                         if (reader.Read())
                         {
                             int userId = reader.GetInt32(0);
-                            string storedHash = reader.GetString(1);
+                            string storedHash = reader.GetString(2);
 
-                            // Use Authenticator to verify the password
                             if (_authenticator.VerifyPassword(password, storedHash))
                             {
                                 loginSuccessful = true;
-                                User = new UserModel { UserId = userId, Username = username };
+
+                                var firstName = reader.GetString(3);
+                                var lastName = reader.GetString(4);
+                                var email = reader.GetString(5);
+                                var telephone = reader.GetString(6);
+                                var created = reader.GetDateTime(7);
+                                var modified = reader.GetDateTime(8);
+
+                                UserSessionService.Instance.User = new UserModel
+                                {
+                                    UserId = userId,
+                                    Username = username,
+                                    FirstName = firstName,
+                                    LastName = lastName,
+                                    Email = email,
+                                    Telephone = telephone,
+                                    Created = created,
+                                    Modified = modified
+                                };
                             }
                         }
                     }
@@ -131,6 +148,67 @@ namespace BarangKu.ViewModels
                 _dbService.CloseConnection(conn);
             }
             return user;
+        }
+
+        public SellerModel JoinSeller(string storeName, string storeDescription)
+        {
+            SellerModel seller = null;
+            var conn =_dbService.GetConnection();
+
+            try
+            {
+                int sellerid;
+                bool isUnique = false;
+                double rating = 0;
+
+                do
+                {
+                    Random random = new Random();
+                    sellerid = random.Next(1000, 10000);
+
+                    string checkUserid = "SELECT COUNT(1) FROM seller WHERE sellerid = @sellerid";
+                    using (var checkCmd = new NpgsqlCommand(checkUserid, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("sellerid", sellerid);
+                        int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+                        isUnique = (count == 0);
+                    }
+                } while (!isUnique);
+
+                int userid = UserSessionService.Instance.User.UserId;
+
+                string join = @"INSERT INTO seller (sellerid, userid, storename, storedescription, rating, joindate) 
+                              VALUES (@sellerid, @userid, @storename, @storedescription, @rating, NOW())";
+
+                using (var cmd = new NpgsqlCommand(join, conn))
+                {
+                    cmd.Parameters.AddWithValue("sellerid", sellerid);
+                    cmd.Parameters.AddWithValue("userid", userid);
+                    cmd.Parameters.AddWithValue("storename", storeName);
+                    cmd.Parameters.AddWithValue("storedescription", storeDescription);
+                    cmd.Parameters.AddWithValue("rating", rating);
+
+                    cmd.ExecuteNonQuery();
+
+                    seller = new SellerModel
+                    {
+                        SellerId = sellerid,
+                        StoreName = storeName,
+                        StoreDescription = storeDescription,
+                        Rating = rating,
+                        JoinDate = DateTime.Now
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                _dbService.CloseConnection(conn);
+            }
+            return seller;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

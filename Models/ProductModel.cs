@@ -15,6 +15,7 @@ namespace BarangKu.Models
         public int Duration { get; set; } // e.g., New, Used
         public BitmapImage ImageURL { get; set; }
         public DateTime CreatedDate { get; set; }
+        public bool IsSelected { get; set; }
 
         public Product()
         {

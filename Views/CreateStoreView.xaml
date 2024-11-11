@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="BarangKu.Views.CreateStoreView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BarangKu.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="30"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="0" Foreground="Black" FontWeight="SemiBold" Text="Mari Bergabung Bersama Kami" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"></TextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <StackPanel>
+                <TextBlock Text="Nama Toko" Foreground="Black" FontWeight="Medium" FontSize="15"></TextBlock>
+                <Border Width="500" Height="40" Background="White" CornerRadius="15" BorderBrush="{StaticResource MainBlueBrush}" HorizontalAlignment="Left" Margin="0 10" BorderThickness="2">
+                    <TextBox x:Name="StoreNameTextBox" Width="500" Height="40" Background="Transparent" BorderBrush="Transparent" TextAlignment="Center" FontSize="14" TextWrapping="Wrap"></TextBox>
+                </Border>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Deskripsi Toko" Foreground="Black" FontWeight="Medium" FontSize="15"></TextBlock>
+                <Border Width="500" Height="120" Background="White" CornerRadius="15" BorderBrush="{StaticResource MainBlueBrush}" HorizontalAlignment="Left" Margin="0 10" BorderThickness="2">
+                    <TextBox x:Name="DescriptionStoreTextBox" Width="500" Height="120" Background="Transparent" BorderBrush="Transparent" TextAlignment="Center" FontSize="14" TextWrapping="Wrap"></TextBox>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+        <Border Grid.Column="1" Grid.Row="2" Height="40" Width="140" VerticalAlignment="Top" Margin="0 10" HorizontalAlignment="Right">
+            <Button Content="Gabung" Style="{StaticResource AddButton}" Click="JoinSeller_Click"/>
+        </Border>
+    </Grid>
+</UserControl>
