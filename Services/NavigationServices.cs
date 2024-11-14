@@ -28,7 +28,9 @@ namespace BarangKu.Services
                 new MenuItemsModel { MenuName = "Beranda", MenuIcon = "/Assets/home.png", IsSelected=true},
                 new MenuItemsModel { MenuName = "Artikel", MenuIcon = "/Assets/artikel.png"},
                 new MenuItemsModel { MenuName = "Transaksi", MenuIcon = "/Assets/pengiriman.png"},
-                new MenuItemsModel { MenuName = "Toko", MenuIcon = "/Assets/store.png"}
+                new MenuItemsModel { MenuName = "Toko", MenuIcon = "/Assets/store.png"},
+                new MenuItemsModel { MenuName = "Profil", MenuIcon = "/Assets/BsPerson.png"},
+                new MenuItemsModel { MenuName = "Keluar", MenuIcon = "/Assets/keluar.png" } 
             };
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
@@ -98,9 +100,18 @@ namespace BarangKu.Services
                     SelectedViewModel = new StoreView();
                     if (!authenticator.AccessStorePage())
                     {
-                        PopUpView = new CreateStoreView(); 
+                        PopUpView = new CreateStoreView();
                         IsPopupOpen = true;
                     }
+                    break;
+                case "Profil":
+                    SelectedViewModel = new ProfileView();
+                    break;
+                case "EditProfil":
+                    SelectedViewModel = new EditProfileView();
+                    break;
+                case "Keluar":
+                    NavigateToLoginView();
                     break;
                 default:
                     SelectedViewModel = new HomeView();
@@ -108,6 +119,8 @@ namespace BarangKu.Services
             }
             OnPropertyChanged(nameof(SelectedViewModel));
         }
+
+
 
         public void ClosePopup()
         {
@@ -151,6 +164,25 @@ namespace BarangKu.Services
             SelectedViewModel = new StoreView();
             OnPropertyChanged(nameof(SelectedViewModel));
         }
+
+        public void NavigateToEditProfileView()
+        {
+            SelectedViewModel = new EditProfileView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
+        public void NavigateToProfileView()
+        {
+            SelectedViewModel = new ProfileView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
+        public void NavigateToLoginView()
+        {
+            SelectedViewModel = new LoginView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
 
     }
 }

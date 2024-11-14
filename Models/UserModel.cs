@@ -14,5 +14,6 @@ namespace BarangKu.Models
         public DateTime Created { get; set; }
         public DateTime Modified { get; set; }
         public string HashedPassword { get; set; }
+        public string ProfileImagePath { get; set; }
     }
 }
