@@ -14,12 +14,15 @@
     <None Remove="Assets\artikel2.jpg" />
     <None Remove="Assets\artikel3.jpg" />
     <None Remove="Assets\back.png" />
+    <None Remove="Assets\BsPerson.png" />
     <None Remove="Assets\cart.png" />
     <None Remove="Assets\chat.png" />
     <None Remove="Assets\durasi.png" />
     <None Remove="Assets\harga.png" />
     <None Remove="Assets\home.png" />
     <None Remove="Assets\jennie.jpg" />
+    <None Remove="Assets\kamera.png" />
+    <None Remove="Assets\keluar.png" />
     <None Remove="Assets\logo_barangku.png" />
     <None Remove="Assets\lokasi.png" />
     <None Remove="Assets\minus_icon.png" />
@@ -42,6 +45,15 @@
     </Resource>
     <Resource Include="Assets\artikel3.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\BsPerson.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\kamera.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\keluar.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\store.png" />
   </ItemGroup>

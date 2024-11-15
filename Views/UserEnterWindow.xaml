@@ -9,11 +9,15 @@
         Loaded="UserEnterWindow_Loaded"
         WindowState="Maximized">
     <Grid>
+        <!-- Definisi Kolom untuk Grid -->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+
+        <!-- Kolom Kiri: Warna Latar Belakang dan Elemen Sambutan -->
         <Rectangle Grid.Column="0" Fill="#4158A6"></Rectangle>
+
         <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock FontWeight="Bold" Margin="30" FontSize="60" Foreground="White" HorizontalAlignment="Center">
                 WELCOME!
@@ -21,15 +25,14 @@
             <Image Source="/Assets/logo_barangku.png" Width="200" Height="200"></Image>
             <TextBlock FontWeight="Light" FontSize="18" Foreground="White" TextAlignment="Center" LineHeight="25" Margin="60">
                 <Run Text="Berikan kesempatan kedua untuk barang Anda"></Run> 
-                <LineBreak>
-                </LineBreak>
+                <LineBreak/>
                 <Run Text="Dari tangan ke tangan, kurangi pembuangan"></Run>
             </TextBlock>
-		<!-- Rectangle Putih -->
-        <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Rectangle Fill="White" Width="200" Height="10" RadiusX="5" RadiusY="5"/>
+            <!-- Rectangle Putih -->
+            <Rectangle Fill="White" Width="200" Height="10" RadiusX="5" RadiusY="5" Margin="20"/>
         </StackPanel>
-        </StackPanel>
-        <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Frame>
+
+        <!-- Kolom Kanan: Frame untuk Navigasi -->
+        <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
     </Grid>
 </Window>

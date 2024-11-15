@@ -54,6 +54,21 @@ namespace BarangKu.Services
             }
         }
 
+        // Navigasi ke tampilan login saat logout
+        public void Logout()
+        {
+            // Tutup MainWindow saat ini
+            if (Application.Current.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.Close();
+            }
+
+            // Buka kembali UserEnterWindow untuk login ulang
+            UserEnterWindow userEnterWindow = new UserEnterWindow();
+            Application.Current.MainWindow = userEnterWindow;
+            userEnterWindow.Show();
+        }
+
         // pop  up untuk create store
         private bool _isPopupOpen;
         public bool IsPopupOpen
@@ -111,7 +126,7 @@ namespace BarangKu.Services
                     SelectedViewModel = new EditProfileView();
                     break;
                 case "Keluar":
-                    NavigateToLoginView();
+                    Logout();  // Logout dan navigasi ke login
                     break;
                 default:
                     SelectedViewModel = new HomeView();
@@ -174,12 +189,6 @@ namespace BarangKu.Services
         public void NavigateToProfileView()
         {
             SelectedViewModel = new ProfileView();
-            OnPropertyChanged(nameof(SelectedViewModel));
-        }
-
-        public void NavigateToLoginView()
-        {
-            SelectedViewModel = new LoginView();
             OnPropertyChanged(nameof(SelectedViewModel));
         }
 

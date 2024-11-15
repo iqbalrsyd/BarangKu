@@ -99,7 +99,7 @@
 
                         <!-- Username Field -->
                         <TextBlock Text="Username" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                        <TextBox  x:Name="UsernameTextBox" Background="#FFC436"  Text="{Binding Username}" Grid.Row="0" Grid.Column="1" Height="30" Padding="5" />
+                        <TextBox  x:Name="txtUsername" Background="#FFC436"  Text="{Binding Username}" Grid.Row="0" Grid.Column="1" Height="30" Padding="5" />
 
                         <!-- Full Name Fields -->
                         <TextBlock Text="Nama Akun" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>

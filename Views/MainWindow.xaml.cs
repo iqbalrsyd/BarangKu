@@ -1,4 +1,5 @@
 ﻿using BarangKu.Services;
+using BarangKu.Views;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,16 +19,34 @@ namespace BarangKu
 
     public partial class MainWindow : Window
     {
-        //public static Frame MainFrameInstance { get; private set; }
+        private readonly NavigationServices _navigationServices;
         public MainWindow()
         {
             InitializeComponent();
-            var username = UserSessionService.Instance.User.Username;
-            var email = UserSessionService.Instance.User.Email;
-            usernameTextBlock.Text = $"Welcome, {email}!";
+            _navigationServices = new NavigationServices();
+            DataContext = _navigationServices;
 
-            //Loaded += MainWindow_Loaded;
-            //MainFrameInstance = mainFrame;
+            var username = UserSessionService.Instance.User?.Username ?? "Guest";
+            usernameTextBlock.Text = $"Welcome, {username}!";
+        }
+
+        private void Logout()
+        {
+            // Hapus data sesi pengguna
+            UserSessionService.Instance.User = null;
+
+            // Buka kembali UserEnterWindow untuk login ulang
+            UserEnterWindow userEnterWindow = new UserEnterWindow();
+            userEnterWindow.Show();
+
+            // Tutup MainWindow saat ini
+            this.Close();
+        }
+
+        // Event handler untuk tombol Logout
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            _navigationServices.Logout(); // Memanggil metode logout dari NavigationServices
         }
 
     }
