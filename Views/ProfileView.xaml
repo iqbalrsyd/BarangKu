@@ -50,7 +50,7 @@
                 <Button Content="Profil Saya" Background="Transparent" BorderBrush="Transparent" Foreground="#1450A3" FontSize="16" FontWeight="Bold" 
                         Cursor="Hand" Command="{Binding NavigationCommand}" CommandParameter="Profil"/>
                 <TextBlock Text=" > " FontSize="16" Foreground="#1450A3" Margin="5,0" />
-                <Button Content="Edit Profil" Background="Transparent" BorderBrush="Transparent" Foreground="#1450A3" FontSize="16" FontWeight="Bold" 
+                <Button Content="Edit Profil" Background="Transparent" BorderBrush="Transparent" Foreground="#1450A3" FontSize="16" FontWeight="SemiBold" 
                         Cursor="Hand" Command="{Binding NavigationCommand}" Click="NavigateToEditProfileView_Click"/>
             </StackPanel>
 

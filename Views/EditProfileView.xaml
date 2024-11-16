@@ -47,7 +47,7 @@
 
             <!-- Navigasi -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,20,0,0">
-                <Button Content="Profil Saya" Background="Transparent" BorderBrush="Transparent" Foreground="#1450A3" FontSize="16" FontWeight="Bold" 
+                <Button Content="Profil Saya" Background="Transparent" BorderBrush="Transparent" Foreground="#1450A3" FontSize="16" FontWeight="SemiBold" 
                         Cursor="Hand" Command="{Binding NavigationCommand}" Click="NavigateToProfileView_Click"/>
                 <TextBlock Text=" > " FontSize="16" Foreground="#1450A3" Margin="5,0" />
                 <Button Content="Edit Profil" Background="Transparent" BorderBrush="Transparent" Foreground="#1450A3" FontSize="16" FontWeight="Bold" 

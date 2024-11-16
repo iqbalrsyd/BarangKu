@@ -14,7 +14,7 @@ using BarangKu.Views;
 
 namespace BarangKu.Services
 {
-    public class NavigationServices: INotifyPropertyChanged
+    public class NavigationServices : INotifyPropertyChanged
     {
 
         public CollectionViewSource MenuItemsCollection;
@@ -30,7 +30,7 @@ namespace BarangKu.Services
                 new MenuItemsModel { MenuName = "Transaksi", MenuIcon = "/Assets/pengiriman.png"},
                 new MenuItemsModel { MenuName = "Toko", MenuIcon = "/Assets/store.png"},
                 new MenuItemsModel { MenuName = "Profil", MenuIcon = "/Assets/BsPerson.png"},
-                new MenuItemsModel { MenuName = "Keluar", MenuIcon = "/Assets/keluar.png" } 
+                new MenuItemsModel { MenuName = "Keluar", MenuIcon = "/Assets/keluar.png" }
             };
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
@@ -38,9 +38,10 @@ namespace BarangKu.Services
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propName)
+
+        protected virtual void OnPropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private object _selectedViewModel;
@@ -108,7 +109,7 @@ namespace BarangKu.Services
                     SelectedViewModel = new ArticleView();
                     break;
                 case "Transaksi":
-                    SelectedViewModel = new TransactionViewModel();
+                    SelectedViewModel = new TransactionView();
                     break;
                 case "Toko":
                     Authenticator authenticator = new Authenticator();
@@ -191,7 +192,93 @@ namespace BarangKu.Services
             SelectedViewModel = new ProfileView();
             OnPropertyChanged(nameof(SelectedViewModel));
         }
+        
+        public void NavigateToSentView()
+        {
+            SelectedViewModel = new SentView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
+        public void NavigateToTransactionView()
+        {
+            SelectedViewModel = new TransactionView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
+        public void NavigateToFinishedView()
+        {
+            SelectedViewModel = new FinishedView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
+        private string _activeButton;
+        public string ActiveButton
+        {
+            get => _activeButton;
+            set
+            {
+                _activeButton = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool _isOrderedVisible;
+        public bool IsOrderedVisible
+        {
+            get => _isOrderedVisible;
+            set
+            {
+                _isOrderedVisible = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool _isSentVisible;
+        public bool IsSentVisible
+        {
+            get => _isSentVisible;
+            set
+            {
+                _isSentVisible = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool _isFinishedVisible;
+        public bool IsFinishedVisible
+        {
+            get => _isFinishedVisible;
+            set
+            {
+                _isFinishedVisible = value;
+                OnPropertyChanged();
+            }
+        }
 
 
+        public void ShowOrdered()
+        {
+            ActiveButton = "Ordered";
+            IsOrderedVisible = true;
+            IsSentVisible = false;
+            IsFinishedVisible = false;
+        }
+
+        public void ShowShipped()
+        {
+            ActiveButton = "Shipped";
+            IsOrderedVisible = false;
+            IsSentVisible = true;
+            IsFinishedVisible = false;
+        }
+
+        public void ShowCompleted()
+        {
+            ActiveButton = "Completed";
+            IsOrderedVisible = false;
+            IsSentVisible = false;
+            IsFinishedVisible = true;
+        }
     }
+
 }
