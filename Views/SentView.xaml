@@ -77,7 +77,7 @@
                             <TextBlock Text="Quantity: 1" FontSize="14" Foreground="Gray" Margin="0,5,0,0"/>
                             <TextBlock Text="Harga: Rp500.000" FontSize="14" Foreground="Gray" Margin="0,5,0,0"/>
                         </StackPanel>
-                        <Button Content="Kirim" Width="80" Height="40" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#4158A6" Foreground="White" Margin="80" />
+                        
                     </StackPanel>
 
                     <!-- Another example of a transaction item -->
@@ -89,7 +89,7 @@
                             <TextBlock Text="Quantity: 1" FontSize="14" Foreground="Gray" Margin="0,5,0,0"/>
                             <TextBlock Text="Harga: Rp500.000" FontSize="14" Foreground="Gray" Margin="0,5,0,0"/>
                         </StackPanel>
-                        <Button Content="Kirim" Width="80" Height="40" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#4158A6" Foreground="White" Margin="80"/>
+                   
                     </StackPanel>
 
                     <!-- Another example of a transaction item -->
@@ -101,7 +101,7 @@
                             <TextBlock Text="Quantity: 1" FontSize="14" Foreground="Gray" Margin="0,5,0,0"/>
                             <TextBlock Text="Harga: Rp500.000" FontSize="14" Foreground="Gray" Margin="0,5,0,0"/>
                         </StackPanel>
-                        <Button Content="Kirim" Width="80" Height="40" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#4158A6" Foreground="White" Margin="80" />
+                        
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>

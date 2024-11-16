@@ -47,7 +47,7 @@ namespace BarangKu.Views
         private void KirimButton_Click(object sender, RoutedEventArgs e)
         {
             // Logic untuk tombol "Kirim"
-            MessageBox.Show("Tombol Kirim ditekan!");
+            MessageBox.Show("Pesanan berhasil dikirim");
         }
 
     }
