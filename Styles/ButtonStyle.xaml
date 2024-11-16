@@ -51,7 +51,8 @@
                      Command="{Binding DataContext.MenuCommand, RelativeSource={RelativeSource AncestorType=Window}}"
                      CommandParameter="{Binding MenuName}"
                      IsChecked="{Binding IsSelected, Mode=TwoWay}"
-                     Template="{StaticResource MenuButtonTemplate}"/>
+                     Template="{StaticResource MenuButtonTemplate}"
+                     Margin="0,5,0,5"/>
     </DataTemplate>
 
     <Style x:Key="AddButton" TargetType="Button">

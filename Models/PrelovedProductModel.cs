@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BarangKu.Models
 {
-    public class PrelovedProductModel : ProductViewModel
+    public class PrelovedProductModel : StoreViewModel
     {
-        public override Product AddProduct(int categoryId, string name, string description, decimal price, int stock, int duration, byte[] imageUrl)
+        public override Product AddProduct(int categoryId, string name, string description, decimal price, int stock, string condition, string duration, byte[] imageUrl)
         {
-            return base.AddProduct(categoryId, name, description, price, stock, duration, imageUrl);
+            return base.AddProduct(categoryId, name, description, price, stock, condition, duration, imageUrl);
         }
     }
 }

@@ -42,6 +42,9 @@
     <Page Update="Styles\ColorStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styles\TextBoxStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\CreateStoreView.xaml">
       <SubType>Designer</SubType>
     </Page>

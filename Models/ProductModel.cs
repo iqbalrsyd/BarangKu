@@ -12,10 +12,13 @@ namespace BarangKu.Models
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
-        public int Duration { get; set; } // e.g., New, Used
+
+        public string Condition {  get; set; }
+        public string Duration { get; set; } // e.g., New, Used
         public BitmapImage ImageURL { get; set; }
         public DateTime CreatedDate { get; set; }
         public bool IsSelected { get; set; }
+        public string Status { get; set; }
 
         public Product()
         {

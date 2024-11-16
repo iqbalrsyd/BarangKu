@@ -56,3 +56,4 @@ C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\refint\BarangKu
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\BarangKu.pdb
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\BarangKu.genruntimeconfig.cache
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\ref\BarangKu.dll
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Styles\TextBoxStyle.baml

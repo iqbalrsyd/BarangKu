@@ -1,4 +1,5 @@
 ﻿using BarangKu.Models;
+using BarangKu.Services;
 using BarangKu.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -24,62 +25,123 @@ namespace BarangKu.Views
     public partial class MyProductView : UserControl
     {
         private BitmapImage _selectedImage;
+        public int CategoryID { get; private set; }
         public MyProductView()
         {
             InitializeComponent();
-            DataContext = new Category();
+            var viewModel = new CategoryViewModel();
+            viewModel.LoadCategory();
+            DataContext = viewModel;
+        }
+
+        private void MinusButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Mendapatkan nilai saat ini dari StockTextBox
+            if (int.TryParse(StockTextBox.Text, out int currentStock))
+            {
+                // Mengurangi nilai, tetapi menjaga agar tidak kurang dari 1
+                currentStock = Math.Max(1, currentStock - 1);
+                StockTextBox.Text = currentStock.ToString();
+            }
+            else
+            {
+                // Jika parsing gagal, set nilai default ke 1
+                StockTextBox.Text = "1";
+            }
+        }
+
+        private void PlusButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Mendapatkan nilai saat ini dari StockTextBox
+            if (int.TryParse(StockTextBox.Text, out int currentStock))
+            {
+                // Menambah nilai
+                currentStock++;
+                StockTextBox.Text = currentStock.ToString();
+            }
+            else
+            {
+                // Jika parsing gagal, set nilai default ke 1
+                StockTextBox.Text = "1";
+            }
         }
 
         private void SaveProduct_Click(object sender, RoutedEventArgs e)
         {
-            
-
             string name = NameTextBox.Text;
             string description = DescriptionTextBox.Text;
+
+            // Mengambil nilai stok dari StockTextBox
             int stock = int.Parse(StockTextBox.Text);
-            int duration;
+
+            string duration = DurationTextBox.Text;
+
             decimal price = decimal.Parse(PriceTextBox.Text);
 
-            int categoryId = 0;
-            if (CategoryComboBox.SelectedValue != null)
-            {
-                categoryId = Convert.ToInt32(CategoryComboBox.SelectedValue);
-            }
+            string condition = string.Empty;
 
             byte[] imageBytes = _selectedImage != null ? ImageToByteArray(_selectedImage) : null;
 
-            ProductViewModel productViewModel;
+            StoreViewModel storeViewModel;
+            if (ConditionComboBox.SelectedValue != null)
+            {
+                // Konversi SelectedValue menjadi int
+                if (int.TryParse(ConditionComboBox.SelectedValue.ToString(), out int conditionId))
+                {
+                    if (conditionId == 1) // Barang Baru
+                    {
+                        condition = "Baru";
+                        storeViewModel = new NewProductModel();
+                    }
+                    else if (conditionId == 2) // Preloved
+                    {
+                        condition = "Preloved";
+                        duration = DurationTextBox.Text;
 
-            if (categoryId == 1) // Barang Baru
-            {
-                duration = 0;
-                productViewModel = new NewProductModel();
-            }
-            else if (categoryId == 2) // Preloved
-            {
-                duration = int.Parse(DurationTextBox.Text);
-                productViewModel = new PrelovedProductModel();
+                        if (string.IsNullOrWhiteSpace(duration))
+                        {
+                            MessageBox.Show("Silakan isi durasi untuk produk Preloved.");
+                            return;
+                        }
+
+                        storeViewModel = new PrelovedProductModel();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kondisi tidak valid.");
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Kondisi produk tidak valid.");
+                    return;
+                }
             }
             else
             {
-                MessageBox.Show("Kategori tidak valid.");
+                MessageBox.Show("Pilih kondisi produk terlebih dahulu.");
                 return;
             }
 
-            ProductViewModel product = new ProductViewModel();
+            StoreViewModel product = new StoreViewModel();
 
-            Product newProduct = product.AddProduct(categoryId, name, description, price, stock, duration, imageBytes);
+            Product newProduct = product.AddProduct(CategoryID, name, description, price, stock, condition, duration, imageBytes);
 
             if (newProduct != null)
             {
                 MessageBox.Show("Produk berhasil disimpan.");
+                var mainWindow = Window.GetWindow(this) as MainWindow;
+                var navigationService = mainWindow?.DataContext as NavigationServices;
+                navigationService?.NavigateToStoreView();
             }
             else
             {
                 MessageBox.Show("Gagal menyimpan produk.");
             }
-
         }
+
+
 
         private void AddImage_Click(object sender, RoutedEventArgs e)
         {
@@ -104,6 +166,20 @@ namespace BarangKu.Views
                 encoder.Frames.Add(BitmapFrame.Create(image));
                 encoder.Save(memoryStream);
                 return memoryStream.ToArray();
+            }
+        }
+
+        private void ConditionComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ConditionComboBox.SelectedValue.ToString() == "1") // Barang Baru
+            {
+                DurationTextBox.Text = "produk baru";
+                DurationTextBox.IsEnabled = false; // Disable input
+            }
+            else // Preloved
+            {
+                DurationTextBox.Text = "";
+                DurationTextBox.IsEnabled = true; // Enable input
             }
         }
     }

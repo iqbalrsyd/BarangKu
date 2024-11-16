@@ -5,21 +5,16 @@ namespace BarangKu.Models
 {
     public class Category : INotifyPropertyChanged
     {
-        private int categoryId; 
-
+        private int _categoryId;
         public int CategoryID
         {
-            get { return categoryId; }
+            get => _categoryId;
             set
             {
-                if (categoryId != value)
-                {
-                    categoryId = value;
-                    OnPropertyChanged(nameof(CategoryID));
-                }
+                _categoryId = value;
+                OnPropertyChanged(nameof(CategoryID));
             }
         }
-
         public string Name { get; set; }
         public string Description { get; set; }
 

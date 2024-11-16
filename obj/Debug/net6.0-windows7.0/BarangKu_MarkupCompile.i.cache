@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Nadia\source\repos\BarangKu\App.xaml
-141931300531
+15-634882512
 
-64-489890931
+66-1371615379
 199782058371
-Styles\ButtonStyle.xaml;Styles\ColorStyle.xaml;Views\ArticleView.xaml;Views\CartView.xaml;Views\CreateStoreView.xaml;Views\DetailProductView.xaml;Views\HomeView.xaml;Views\IconRightView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\MyProductView.xaml;Views\SignUpView.xaml;Views\StoreView.xaml;Views\UserEnterWindow.xaml;
+Styles\ButtonStyle.xaml;Styles\ColorStyle.xaml;Styles\TextBoxStyle.xaml;Views\ArticleView.xaml;Views\CartView.xaml;Views\CreateStoreView.xaml;Views\DetailProductView.xaml;Views\HomeView.xaml;Views\IconRightView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\MyProductView.xaml;Views\SignUpView.xaml;Views\StoreView.xaml;Views\UserEnterWindow.xaml;
 
 True
 
