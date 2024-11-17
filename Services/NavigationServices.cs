@@ -211,6 +211,12 @@ namespace BarangKu.Services
             OnPropertyChanged(nameof(SelectedViewModel));
         }
 
+        public void NavigateToSeeMoreView()
+        {
+            SelectedViewModel = new SeeMoreView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
         private string _activeButton;
         public string ActiveButton
         {
