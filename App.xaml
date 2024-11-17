@@ -5,7 +5,39 @@
              StartupUri="Views/UserEnterWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <Style x:Key="SubMenuButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Foreground" Value="#4158A6"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="Height" Value="40"/>
 
+                <Style.Triggers>
+                    <!-- Button Dipesan -->
+                    <DataTrigger Binding="{Binding ActiveButton}" Value="Ordered">
+                        <Setter Property="Background" Value="#1450A3"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                    </DataTrigger>
+
+                    <!-- Button Dikirim -->
+                    <DataTrigger Binding="{Binding ActiveButton}" Value="Shipped">
+                        <Setter Property="Background" Value="#1450A3"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                    </DataTrigger>
+
+                    <!-- Button Selesai -->
+                    <DataTrigger Binding="{Binding ActiveButton}" Value="Completed">
+                        <Setter Property="Background" Value="#1450A3"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/ButtonStyle.xaml"/>
                 <ResourceDictionary Source="Styles/ColorStyle.xaml"/>

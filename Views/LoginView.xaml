@@ -9,8 +9,10 @@
       Title="LoginView">
 
     <Grid>
+        <!-- Frame for displaying navigated Pages -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
+
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1" HorizontalAlignment="Center">
             <TextBlock Text="Log In" Margin="40" FontSize="70" FontWeight="Bold" Foreground="#4158A6" HorizontalAlignment="Center"></TextBlock>

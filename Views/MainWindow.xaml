@@ -9,7 +9,7 @@
         Title="MainWindow" Height="700" Width="1200"
         WindowState="Maximized">
     <Window.DataContext>
-        <Services:NavigationServices />
+        <Services:NavigationServices/>
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -63,6 +63,14 @@
                 <ContentControl Content="{Binding PopUpView}" />
             </Border>
         </Popup>
-        <!--<Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.RowSpan="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right"/>-->
+
+        <Button Content="Keluar" Grid.Column="0" Command="{Binding MenuCommand}" CommandParameter="Keluar" Click="LogoutButton_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <!-- Template untuk tombol -->
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
     </Grid>
 </Window>

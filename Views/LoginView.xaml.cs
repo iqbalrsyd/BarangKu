@@ -44,10 +44,13 @@ namespace BarangKu.Views
             {
                 MessageBox.Show("Login Berhasil");
 
+                // Buka MainWindow
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
+
+                // Tutup UserEnterWindow (Window yang menampung LoginView)
                 Window currentUserEnter = Window.GetWindow(this);
-                currentUserEnter.Close();
+                currentUserEnter?.Close();
             }
             else
             {

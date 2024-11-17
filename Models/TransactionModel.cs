@@ -1,3 +1,4 @@
+using BarangKu.Models;
 using System;
 
 namespace BarangKu.Models
@@ -39,5 +40,18 @@ namespace BarangKu.Models
             Status = "Return Requested";
             // Logic to request a return
         }
+
+        private string _activeButton = "Ordered"; // Default aktif "Dipesan"
+        public string ActiveButton
+        {
+            get => _activeButton;
+            set { _activeButton = value; OnPropertyChanged(); }
+        }
+
+        private void OnPropertyChanged()
+        {
+            throw new NotImplementedException();
+        }
     }
+
 }

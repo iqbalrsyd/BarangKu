@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace BarangKu.Views
 {
-    /// <summary>
-    /// Interaction logic for UserEnterWindow.xaml
-    /// </summary>
     public partial class UserEnterWindow : Window
     {
         public UserEnterWindow()
@@ -27,8 +24,22 @@ namespace BarangKu.Views
 
         public void UserEnterWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            // Navigasi ke halaman login (LoginView)
             Uri loginUri = new Uri("/Views/LoginView.xaml", UriKind.Relative);
             mainFrame.NavigationService.Navigate(loginUri);
+        }
+
+        public void Logout()
+        {
+            // Tutup MainWindow saat ini
+            if (Application.Current.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.Close();
+            }
+
+            // Buka kembali UserEnterWindow untuk login ulang
+            UserEnterWindow userEnterWindow = new UserEnterWindow();
+            userEnterWindow.Show();
         }
     }
 }
