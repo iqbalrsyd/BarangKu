@@ -155,7 +155,12 @@
                            FontSize="12"
                            Margin="10,5,10,0"
                            TextWrapping="Wrap"/>
-					</StackPanel>
+                        <TextBlock Text="Selengkapnya"
+                           FontSize="12"
+                           Foreground="Gray"
+                           Margin="10,5,10,5"
+                           TextWrapping="Wrap"/>    
+                    </StackPanel>
                 </Border>
                 <!-- Artikel 1 -->
                 <Border Width="250"

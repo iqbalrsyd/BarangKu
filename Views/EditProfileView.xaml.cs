@@ -44,5 +44,7 @@ namespace BarangKu.Views
         {
             MessageBox.Show("Data telah tersimpan");
         }
+
+
     }
 }
