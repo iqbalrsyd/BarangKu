@@ -2,9 +2,13 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:BarangKu"
+             xmlns:converters="clr-namespace:BarangKu.Converters"
              StartupUri="Views/UserEnterWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <!-- ByteArrayToImageConverter -->
+            <converters:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter" />
+
             <Style x:Key="SubMenuButtonStyle" TargetType="Button">
                 <Setter Property="Background" Value="White"/>
                 <Setter Property="Foreground" Value="#4158A6"/>
