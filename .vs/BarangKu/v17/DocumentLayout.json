@@ -272,8 +272,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 366,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 418,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -281,15 +281,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MyProductViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\ViewModels\\MyProductViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\MyProductViewModel.cs",
-              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\ViewModels\\MyProductViewModel.cs",
-              "RelativeToolTip": "ViewModels\\MyProductViewModel.cs",
-              "ViewState": "AQIAAJgAAAAAAAAAAAAuwGYAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T07:50:09.542Z"
+              "DocumentIndex": 0,
+              "Title": "StoreView.xaml",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\StoreView.xaml",
+              "RelativeDocumentMoniker": "Views\\StoreView.xaml",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\StoreView.xaml*",
+              "RelativeToolTip": "Views\\StoreView.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-11T01:24:27.26Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -316,15 +316,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StoreView.xaml",
-              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\StoreView.xaml",
-              "RelativeDocumentMoniker": "Views\\StoreView.xaml",
-              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\Views\\StoreView.xaml",
-              "RelativeToolTip": "Views\\StoreView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-11T01:24:27.26Z",
-              "EditorCaption": ""
+              "DocumentIndex": 3,
+              "Title": "MyProductViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\ViewModels\\MyProductViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MyProductViewModel.cs",
+              "ToolTip": "C:\\Users\\Nadia\\source\\repos\\BarangKu\\ViewModels\\MyProductViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MyProductViewModel.cs",
+              "ViewState": "AQIAAJgAAAAAAAAAAAAuwGYAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T07:50:09.542Z"
             },
             {
               "$type": "Document",
@@ -970,7 +970,7 @@
           ]
         },
         {
-          "DockedWidth": 74,
+          "DockedWidth": 22,
           "SelectedChildIndex": 0,
           "Children": [
             {
