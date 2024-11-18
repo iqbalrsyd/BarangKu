@@ -1,40 +1,86 @@
 using BarangKu.Models;
 using BarangKu.Services;
+using Npgsql;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows.Input;
 
 namespace BarangKu.ViewModels
 {
-    public class CategoryViewModel
+    public class CategoryViewModel : INotifyPropertyChanged
     {
         public Category Category { get; set; }
-        private readonly CategoryService _categoryService;
+        public ObservableCollection<Category> Categories { get; set; }
+        private readonly DatabaseService _dbService;
 
-        public ICommand AddCategoryCommand { get; }
-        public ICommand EditCategoryCommand { get; }
-        public ICommand DeleteCategoryCommand { get; }
-
-        public CategoryViewModel(Category category)
+        public CategoryViewModel()
         {
-            Category = category;
-            _categoryService = new CategoryService();
-            AddCategoryCommand = new RelayCommand(AddCategory);
-            EditCategoryCommand = new RelayCommand(EditCategory);
-            DeleteCategoryCommand = new RelayCommand(DeleteCategory);
+            _dbService = new DatabaseService();
         }
 
-        private void AddCategory()
+
+
+        public List<Category> GetCategory()
         {
-            _categoryService.AddCategory(Category);
+            List<Category> categories = new List<Category>();
+            var conn = _dbService.GetConnection();
+
+            try
+            {
+                string getCategory = "SELECT categoryid, name, description FROM category";
+                using (var cmd = new NpgsqlCommand(getCategory, conn))
+                {
+                    using(var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Category category = new Category
+                            {
+                                CategoryID = reader.GetInt32(0),
+                                Name = reader.GetString(1),
+                                Description = reader.GetString(2),
+                            };
+
+                            categories.Add(category);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                _dbService.CloseConnection(conn);
+            }
+
+            return categories;
+
+        }
+        public void LoadCategory()
+        {
+            var categories = GetCategory();
+            Categories = new ObservableCollection<Category>(categories);
         }
 
-        private void EditCategory()
+        private int _selectedCategoryId;
+        public int SelectedCategoryId
         {
-            _categoryService.EditCategory(Category);
+            get { return _selectedCategoryId; }
+            set
+            {
+                _selectedCategoryId = value;
+                OnPropertyChanged(nameof(SelectedCategoryId));
+            }
         }
 
-        private void DeleteCategory()
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName)
         {
-            _categoryService.DeleteCategory(Category.CategoryID);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
     }
 }

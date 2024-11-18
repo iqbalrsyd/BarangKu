@@ -26,7 +26,7 @@ namespace BarangKu.Services
             return BCrypt.Net.BCrypt.Verify(inputPassword, storedHash);
         }
 
-        private bool IsUserSeller(int userId)
+        public bool IsUserSeller(int userId)
         {
             bool isSeller = false;
             var conn = _dbService.GetConnection();

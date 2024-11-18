@@ -40,6 +40,13 @@ namespace BarangKu.Views
             string username = tbUsername.Text;
             string password = tbPassword.Password;
 
+            // Validasi input username dan password
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Username dan Password harus diisi.", "Validasi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return; // Menghentikan proses login jika ada yang kosong
+            }
+
             if (userLogin.Login(username, password))
             {
                 MessageBox.Show("Login Berhasil");

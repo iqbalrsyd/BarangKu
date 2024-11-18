@@ -42,7 +42,11 @@ namespace BarangKu.Views
 
         private void RoundedButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Data telah tersimpan");
+            MessageBox.Show("Data telah tersimpan!");
+            var mainWindow = Window.GetWindow(this) as MainWindow;
         }
+
+
+
     }
 }

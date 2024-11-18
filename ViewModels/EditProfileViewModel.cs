@@ -1,84 +1,131 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
-using System.Windows;
-using System.Windows.Input;
+﻿using BarangKu.Models;
 using BarangKu.Services;
-using System.IO;
-using System.Runtime.CompilerServices;
 using Microsoft.Win32;
-using System.Threading.Tasks;
-using BarangKu.Models;
+using System.ComponentModel;
+using System.IO;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace BarangKu.ViewModels
 {
     public class EditProfileViewModel : INotifyPropertyChanged
     {
-        public string ProfileImagePath
+        private readonly UserService _userService;
+        private byte[] _profilePicture;
+
+        public int UserId { get; set; } = 1; // ID pengguna aktif
+
+        public string Username { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+        public string Language { get; set; }
+
+        public byte[] ProfilePicture
         {
-            get => _profile.ProfileImagePath;
+            get => _profilePicture;
             set
             {
-                _profile.ProfileImagePath = value;
-                OnPropertyChanged();
+                _profilePicture = value;
+                OnPropertyChanged(nameof(ProfilePicture));
+                ProfilePictureImage = ConvertToImageSource(value);
             }
         }
 
-        private readonly EditProfileService _profileService;
-        private EditProfileModel _profile;
+        private ImageSource _profilePictureImage;
+        public ImageSource ProfilePictureImage
+        {
+            get => _profilePictureImage;
+            private set
+            {
+                _profilePictureImage = value;
+                OnPropertyChanged(nameof(ProfilePictureImage));
+            }
+        }
+
+        public ICommand ChangePhotoCommand { get; }
+        public ICommand SaveProfileCommand { get; }
 
         public EditProfileViewModel()
         {
-            _profileService = new EditProfileService();
-            LoadProfileCommand = new RelayCommand(async () => await LoadProfileAsync());
-            SaveProfileCommand = new RelayCommand(async () => await SaveProfileAsync());
+            _userService = new UserService();
+            LoadUserData();
+
             ChangePhotoCommand = new RelayCommand(ChangePhoto);
-            _profile = new EditProfileModel();
+            SaveProfileCommand = new RelayCommand(SaveProfile);
         }
 
-        public ICommand LoadProfileCommand { get; }
-        public ICommand SaveProfileCommand { get; }
-        public ICommand ChangePhotoCommand { get; }
-
-        public string Username
+        private void LoadUserData()
         {
-            get => _profile.Username;
-            set { _profile.Username = value; OnPropertyChanged(); }
+            var user = _userService.GetUserById(UserId);
+            if (user != null)
+            {
+                Username = user.Username;
+                FirstName = user.FirstName;
+                LastName = user.LastName;
+                PhoneNumber = user.Telephone;
+                Email = user.Email;
+                Address = user.Address;
+                Language = user.Language;
+                ProfilePicture = user.ProfilePicture;
+            }
         }
 
-        // Define other properties here...
-
-        private async Task LoadProfileAsync()
-        {
-            _profile = await _profileService.LoadProfileAsync();
-            OnPropertyChanged(null); // Refresh all bindings
-        }
-
-        private async Task SaveProfileAsync()
-        {
-            await _profileService.SaveProfileAsync(_profile);
-        }
 
         private void ChangePhoto()
         {
-            var openFileDialog = new OpenFileDialog
+            var dialog = new OpenFileDialog
             {
-                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp",
-                Title = "Select a Profile Image"
+                Filter = "Image Files (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png"
             };
 
-            if (openFileDialog.ShowDialog() == true)
+            if (dialog.ShowDialog() == true)
             {
-                _profile.ProfileImagePath = openFileDialog.FileName;
-                OnPropertyChanged(nameof(ProfileImagePath));
+                ProfilePicture = File.ReadAllBytes(dialog.FileName);
+            }
+        }
+
+        private void SaveProfile()
+        {
+            var user = new UserModel
+            {
+                UserId = UserId,
+                Username = Username,
+                FirstName = FirstName,
+                LastName = LastName,
+                Telephone = PhoneNumber,
+                Email = Email,
+                Address = Address,
+                Language = Language,
+                ProfilePicture = ProfilePicture
+            };
+
+            _userService.UpdateUser(user);
+        }
+
+        private ImageSource ConvertToImageSource(byte[] imageData)
+        {
+            if (imageData == null || imageData.Length == 0)
+                return null;
+
+            using (var ms = new MemoryStream(imageData))
+            {
+                var image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.StreamSource = ms;
+                image.EndInit();
+                image.Freeze();
+                return image;
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+
+        protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

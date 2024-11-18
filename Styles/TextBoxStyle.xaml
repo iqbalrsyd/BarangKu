@@ -1,0 +1,96 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:BarangKu.Styles">
+
+    <Style TargetType="{x:Type local:PlaceholderTextBox}">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Blue"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:PlaceholderTextBox}">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <!-- Placeholder Text -->
+                            <TextBlock x:Name="Placeholder"
+                                       Text="{TemplateBinding PlaceholderText}"
+                                       Foreground="{TemplateBinding PlaceholderColor}"
+                                       VerticalAlignment="Center"
+                                       Margin="10,0,0,0"
+                                       IsHitTestVisible="False"
+                                       Opacity="1"
+                                       TextWrapping="Wrap"/>
+
+                            <!-- TextBox Content -->
+                            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                                <TextBox x:Name="ContentTextBox"
+                                         Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                         Background="Transparent"
+                                         BorderThickness="0"
+                                         VerticalAlignment="Center"
+                                         Margin="0"/>
+                            </ScrollViewer>
+                        </Grid>
+
+                        <!-- Visual State Management -->
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <!-- Placeholder hilang saat fokus atau ada teks -->
+                                <VisualState x:Name="HasFocusOrText">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Placeholder"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </VisualState>
+
+                                <!-- Placeholder muncul saat tidak fokus dan teks kosong -->
+                                <VisualState x:Name="NoFocusAndNoText">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Placeholder"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+
+                    <!-- Triggers -->
+                    <ControlTemplate.Triggers>
+                        <!-- Placeholder menghilang saat fokus -->
+                        <Trigger SourceName="ContentTextBox" Property="IsFocused" Value="True">
+                            <Setter TargetName="Placeholder" Property="Opacity" Value="0"/>
+                        </Trigger>
+
+                        <!-- Placeholder muncul saat kehilangan fokus dan teks kosong -->
+                        <Trigger SourceName="ContentTextBox" Property="IsFocused" Value="False">
+                            <Setter TargetName="Placeholder" Property="Opacity" Value="1"/>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Placeholder"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>
+
+                        <!-- Placeholder menghilang saat teks tidak kosong -->
+                        <DataTrigger Binding="{Binding Text.Length, RelativeSource={RelativeSource TemplatedParent}}" Value="0">
+                            <Setter TargetName="Placeholder" Property="Opacity" Value="1"/>
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding Text.Length, RelativeSource={RelativeSource TemplatedParent}}" Value="1">
+                            <Setter TargetName="Placeholder" Property="Opacity" Value="0"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

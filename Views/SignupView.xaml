@@ -5,16 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BarangKu.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="700" d:DesignWidth="1200"
+      d:DesignHeight="700" d:DesignWidth="600"
       Title="SignUpView">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="Create Account" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#3B5998"/>
+            <TextBlock Text="Create Account" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#3B5998"/>
 
             <TextBlock Text="Username" FontWeight="SemiBold" Margin="0,5" />
             <TextBox Name="UsernameTextBox" Height="30" Margin="0,5" Padding="5" />
@@ -44,7 +43,7 @@
 
             <!-- Tombol Create -->
             <Button Name="CreateButton" Content="Create" Background="#3B5998" Foreground="White" 
-                    FontWeight="Bold" Height="40" Margin="0,20,0,10" Click="CreateButton_Click" FontSize="20" />
+                    FontWeight="Bold" Height="40" Margin="0,20,0,10" Click="CreateButton_Click" FontSize="20" Style="{StaticResource AddButton}"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="Already have one?" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="18"/>
                 <Button Content="Log In" Foreground="#3B5998" FontWeight="Bold" Background="Transparent" BorderBrush="Transparent" Click="btnLogIn_Click" FontSize="18"></Button>
