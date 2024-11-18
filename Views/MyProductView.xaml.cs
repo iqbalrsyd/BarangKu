@@ -69,6 +69,12 @@ namespace BarangKu.Views
         {
             string name = NameTextBox.Text;
             string description = DescriptionTextBox.Text;
+<<<<<<< HEAD
+            int stock = int.Parse(StockTextBox.Text);
+            string duration = string.Empty;
+            decimal price = decimal.Parse(PriceTextBox.Text);
+=======
+>>>>>>> 628ce9e24c95c52ab1179eedd65ed27b017524ee
 
             int selectedCategoryId = (int)CategoryComboBox.SelectedValue;
 
@@ -77,7 +83,21 @@ namespace BarangKu.Views
             // Validating that the name and description are not empty
             if (string.IsNullOrEmpty(name))
             {
+<<<<<<< HEAD
+                duration = "0";
+                productViewModel = new NewProductModel();
+            }
+            else if (categoryId == 2) // Preloved
+            {
+                duration = "Custom Duration"; // Sesuaikan nilai
+                productViewModel = new PrelovedProductModel();
+            }
+            else
+            {
+                MessageBox.Show("Kategori tidak valid.");
+=======
                 MessageBox.Show("Nama produk tidak boleh kosong.");
+>>>>>>> 628ce9e24c95c52ab1179eedd65ed27b017524ee
                 return;
             }
 

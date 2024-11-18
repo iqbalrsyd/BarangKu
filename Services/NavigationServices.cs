@@ -163,7 +163,7 @@ namespace BarangKu.Services
             }
         }
 
-        public void ShowDetailProduct(Products selectedProduct)
+        public void ShowDetailProduct(Product selectedProduct)
         {
             SelectedViewModel = new DetailProductView(selectedProduct);
             OnPropertyChanged(nameof(SelectedViewModel));
