@@ -57,13 +57,7 @@ namespace BarangKu.Views
             UserModel userModel = editProfile.EditInfoUser(userid, username, firstname, lastname, email, telephone, address, language);
             if (userModel != null)
             {
-                UserSessionService.Instance.User.Username = userModel.Username;
-                UserSessionService.Instance.User.FirstName = userModel.FirstName;
-                UserSessionService.Instance.User.LastName = userModel.LastName;
-                UserSessionService.Instance.User.Email = userModel.Email;
-                UserSessionService.Instance.User.Telephone = userModel.Telephone;
-                UserSessionService.Instance.User.Address = userModel.Address;
-                UserSessionService.Instance.User.Language = userModel.Language;
+               
                 MessageBox.Show("Data telah tersimpan!");
                 var mainWindow = Window.GetWindow(this) as MainWindow;
                 var navigationService = mainWindow?.DataContext as NavigationServices;

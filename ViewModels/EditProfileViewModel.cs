@@ -237,7 +237,7 @@ namespace BarangKu.ViewModels
         public UserModel EditInfoUser(int userid, string username, string firstname, string lastname, string email, string telephone, string address, string language)
         {
             var conn = _dbService.GetConnection();
-            UserModel updateUser = null;
+            UserModel updateUser = UserSessionService.Instance.User;
 
             try
             {
@@ -268,6 +268,7 @@ namespace BarangKu.ViewModels
                             Address = address,
                             Language = language
                         };
+                    UserSessionService.Instance.User = updateUser;
                 }
             }
             catch (Exception ex)

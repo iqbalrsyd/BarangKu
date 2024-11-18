@@ -211,18 +211,18 @@ namespace BarangKu.ViewModels
         }
 
 
-        public List<Product> GetProductsForUser(int userId)
+        public List<Product> GetProductsForUser()
         {
+            
             List<Product> products = new List<Product>();
             var conn = _dbService.GetConnection();
             try
             {
                 string query = @"SELECT productid, sellerid, categoryid, name, description, price, stock, duration, imageurl, createdate, condition
-                         FROM product
-                         WHERE sellerid != @userId";
+                         FROM product;";
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("userId", userId);
+                    
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())

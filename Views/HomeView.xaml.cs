@@ -17,19 +17,19 @@ namespace BarangKu.Views
         public HomeView()
         {
             InitializeComponent();
-            int userId = UserSessionService.Instance.User.UserId;
+            
 
             _productViewModel = new ProductViewModel();
             DataContext = _productViewModel;
 
-            LoadProducts(userId);
+            LoadProducts();
         }
 
-        private void LoadProducts(int userId)
+        private void LoadProducts()
         {
             try
             {
-                var products = _productViewModel.GetProductsForUser(userId);
+                var products = _productViewModel.GetProductsForUser();
 
                 // Set the product list for the ViewModel
                 _productViewModel.ProductList = new ObservableCollection<Product>(products);
