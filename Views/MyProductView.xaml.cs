@@ -37,7 +37,7 @@ namespace BarangKu.Views
             string name = NameTextBox.Text;
             string description = DescriptionTextBox.Text;
             int stock = int.Parse(StockTextBox.Text);
-            int duration;
+            string duration = string.Empty;
             decimal price = decimal.Parse(PriceTextBox.Text);
 
             int categoryId = 0;
@@ -52,12 +52,12 @@ namespace BarangKu.Views
 
             if (categoryId == 1) // Barang Baru
             {
-                duration = 0;
+                duration = "0";
                 productViewModel = new NewProductModel();
             }
             else if (categoryId == 2) // Preloved
             {
-                duration = int.Parse(DurationTextBox.Text);
+                duration = "Custom Duration"; // Sesuaikan nilai
                 productViewModel = new PrelovedProductModel();
             }
             else

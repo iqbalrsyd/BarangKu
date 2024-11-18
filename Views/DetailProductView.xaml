@@ -25,7 +25,7 @@
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
             <Border Width="300" Height="200" VerticalAlignment="Top" CornerRadius="10" Margin="20">
                 <Border.Background>
-                    <ImageBrush ImageSource="{Binding Image}"></ImageBrush>
+                    <ImageBrush ImageSource="{Binding ImageURL}"></ImageBrush>
                 </Border.Background>
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="2" ShadowDepth="2"></DropShadowEffect>
@@ -37,7 +37,7 @@
                     <!-- harga -->
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Assets/harga.png" Width="15" Margin="10 0"></Image>
-                        <TextBlock Text="{Binding Price, StringFormat='Rp {0:N}'}" FontSize="20"></TextBlock>
+                        <TextBlock Text="{Binding Price, StringFormat='Rp {0:N2}'}" FontSize="20"></TextBlock>
                     </StackPanel>
                     <!-- lokasi -->
                     <StackPanel Orientation="Horizontal">
@@ -47,7 +47,7 @@
                     <!-- durasi pemakaian -->
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Assets/durasi.png" Width="15" Margin="10 0"></Image>
-                        <TextBlock Text="{Binding Duration, StringFormat='{}{0} bulan'}" FontSize="20"></TextBlock>
+                        <TextBlock Text="{Binding Duration, StringFormat='{}{0}'}" FontSize="20"></TextBlock>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

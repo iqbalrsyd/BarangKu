@@ -66,10 +66,10 @@
         
         <!-- rekomendasi produk -->
         <TextBlock Grid.Row="1" Text="Rekomendasi" FontWeight="SemiBold" FontSize="25" Foreground="{StaticResource MainBlueBrush}" Padding="30 0"></TextBlock>
-        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <!-- kotak per produk -->
-                <ItemsControl x:Name="ListProducts" ItemsSource="{Binding Product}">
+                <ItemsControl x:Name="ListProducts" ItemsSource="{Binding ProductList}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Border Width="162" Height="220" Background="White" CornerRadius="10" Margin="15">
@@ -78,12 +78,12 @@
                                 </Border.Effect>
                                 <!-- isi kotak produk -->
                                 <StackPanel>
-                                    <Border Background="{StaticResource MainBlueBrush}" Width="40" Height="20" CornerRadius="5" HorizontalAlignment="Right" Margin="5">
-                                        <TextBlock Text="{Binding Label}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                                    <Border Background="{StaticResource MainBlueBrush}" Width="55" Height="20" CornerRadius="5" HorizontalAlignment="Right" Margin="5">
+                                        <TextBlock Text="{Binding Condition}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
                                     </Border>
                                     <Border Width="140" Height="80" CornerRadius="10">
                                         <Border.Background>
-                                            <ImageBrush ImageSource="{Binding Image}"></ImageBrush>
+                                            <ImageBrush ImageSource="{Binding ImageURL}"></ImageBrush>
                                         </Border.Background>
                                     </Border>
                                     <TextBlock Text="{Binding Name}" Margin="10 0" FontWeight="SemiBold" FontSize="15"></TextBlock>
@@ -92,7 +92,7 @@
                                         <!-- harga -->
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="/Assets/harga.png" Width="15" Margin="10 0"></Image>
-                                            <TextBlock Text="{Binding Price, StringFormat='Rp {0:N}'}"></TextBlock>
+                                            <TextBlock Text="{Binding Price, StringFormat='Rp {0:N2}'}"></TextBlock>
                                         </StackPanel>
                                         <!-- lokasi -->
                                         <StackPanel Orientation="Horizontal">
@@ -102,11 +102,11 @@
                                         <!-- durasi pemakaian -->
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="/Assets/durasi.png" Width="15" Margin="10 0"></Image>
-                                            <TextBlock Text="{Binding Duration, StringFormat='{}{0} bulan'}"></TextBlock>
+                                            <TextBlock Text="{Binding Duration, StringFormat='{}{0}'}"></TextBlock>
                                         </StackPanel>
                                     </StackPanel>
                                     <!-- link ke rincian produk -->
-                                    <Button Content="Lihat rincian produk" VerticalAlignment="Bottom" Margin="12" Background="{StaticResource MainBlueBrush}" Foreground="White" Tag="{Binding ProductId}" Click="btnDetailProduct_Click"></Button>
+                                    <Button Content="Lihat rincian produk" VerticalAlignment="Bottom" Margin="12" Background="{StaticResource MainBlueBrush}" Foreground="White" CommandParameter="{Binding }" Click="btnDetailProduct_Click"></Button>
                                 </StackPanel>
                             </Border>
                         </DataTemplate>
@@ -118,6 +118,5 @@
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
             </StackPanel>
-        </ScrollViewer>
-    </Grid>
+        </ScrollViewer>    </Grid>
 </UserControl>

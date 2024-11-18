@@ -6,6 +6,8 @@ using Npgsql;
 using System.Windows.Media.Imaging;
 using System.IO;
 using System.Windows;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace BarangKu.ViewModels
 {
@@ -14,12 +16,17 @@ namespace BarangKu.ViewModels
         private Product _product;
         private readonly ProductService _productService;
         private readonly DatabaseService _dbService;
+        private Product _selectedProduct;
+        private ObservableCollection<Product> _productList;
+        public ObservableCollection<Product> UserProductList { get; set; }
 
         public ProductViewModel()
         {
             _product = new Product();
             _productService = new ProductService();
             _dbService = new DatabaseService();
+            UserProductList = new ObservableCollection<Product>();
+
         }
 
         public Product Product
@@ -32,13 +39,34 @@ namespace BarangKu.ViewModels
             }
         }
 
+        public ObservableCollection<Product> ProductList
+        {
+            get { return _productList; }
+            set
+            {
+                _productList = value;
+                OnPropertyChanged(nameof(ProductList));
+            }
+        }
+
+        public Product SelectedProduct
+        {
+            get { return _selectedProduct; }
+            set
+            {
+                _selectedProduct = value;
+                OnPropertyChanged(nameof(SelectedProduct));
+            }
+        }
+
+
         //public void AddProduct()
         //{
         //    _productService.AddProduct(_product);
         //    OnPropertyChanged("Product");
         //}
 
-        public virtual Product AddProduct(int categoryId, string name, string description, decimal price, int stock, int duration, byte[] imageUrl)
+        public virtual Product AddProduct(int categoryId, string name, string description, decimal price, int stock, string duration, byte[] imageUrl)
         {
             Product product = null;
             int sellerid = 5446;
@@ -109,7 +137,7 @@ namespace BarangKu.ViewModels
 
         public List<Product> GetProducts()
         {
-            int sellerid = UserSessionService.Instance.Seller.SellerId;
+            int sellerId = UserSessionService.Instance.Seller.SellerId;
             List<Product> products = new List<Product>();
             var conn = _dbService.GetConnection();
 
@@ -118,11 +146,11 @@ namespace BarangKu.ViewModels
                 // Modifikasi query untuk memfilter berdasarkan sellerId
                 string query = @"SELECT productid, sellerid, categoryid, name, description, price, stock, duration, imageurl, createdate 
                          FROM product
-                         WHERE sellerid = @sellerid"; // Menambahkan kondisi untuk sellerId
+                         WHERE sellerid = @sellerId"; // Menambahkan kondisi untuk sellerId
 
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("sellerid", sellerid);
+                    cmd.Parameters.AddWithValue("sellerid", sellerId);
 
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -137,7 +165,7 @@ namespace BarangKu.ViewModels
                                 Description = reader.GetString(4),
                                 Price = reader.GetDecimal(5),
                                 Stock = reader.GetInt32(6),
-                                Duration = reader.GetInt32(7),
+                                Duration = reader.GetString(7),
                                 ImageURL = reader.IsDBNull(8) ? null : ByteArrayToImage((byte[])reader[8]),
                                 CreatedDate = reader.GetDateTime(9)
                             };
@@ -160,18 +188,74 @@ namespace BarangKu.ViewModels
 
         private BitmapImage ByteArrayToImage(byte[] byteArray)
         {
+            if (byteArray == null || byteArray.Length == 0)
+                return null;
+
+            BitmapImage image = new BitmapImage();
             using (MemoryStream memoryStream = new MemoryStream(byteArray))
             {
-                BitmapImage image = new BitmapImage();
-                image.BeginInit();
-                image.StreamSource = memoryStream;
-                image.CacheOption = BitmapCacheOption.OnLoad;
-                image.EndInit();
-                return image;
+                try
+                {
+                    image.BeginInit();
+                    image.StreamSource = memoryStream;
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.EndInit();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error converting image: {ex.Message}");
+                    return null;
+                }
             }
+            return image;
         }
 
 
+        public List<Product> GetProductsForUser(int userId)
+        {
+            List<Product> products = new List<Product>();
+            var conn = _dbService.GetConnection();
+            try
+            {
+                string query = @"SELECT productid, sellerid, categoryid, name, description, price, stock, duration, imageurl, createdate, condition
+                         FROM product
+                         WHERE sellerid != @userId";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("userId", userId);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Product product = new Product
+                            {
+                                ProductID = reader.GetInt32(0),
+                                SellerID = reader.GetInt32(1),
+                                CategoryID = reader.GetInt32(2),
+                                Name = reader.GetString(3),
+                                Description = reader.GetString(4),
+                                Price = reader.GetDecimal(5),
+                                Stock = reader.GetInt32(6),
+                                Duration = reader.GetString(7),
+                                ImageURL = reader.IsDBNull(8) ? null : ByteArrayToImage((byte[])reader[8]),
+                                CreatedDate = reader.GetDateTime(9),
+                                Condition = reader.GetString(10)
+                            };
+                            products.Add(product);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saat mengambil produk: {ex.Message}");
+            }
+            finally
+            {
+                _dbService.CloseConnection(conn);
+            }
+            return products;
+        }
 
         public void EditProduct()
         {

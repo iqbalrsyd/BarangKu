@@ -20,5 +20,6 @@ namespace BarangKu.Services
             // Logic to delete product from the database
             Console.WriteLine($"Product {product.ProductID} has been deleted.");
         }
+
     }
 }

@@ -1,76 +1,80 @@
 ﻿using BarangKu.Models;
 using BarangKu.Services;
+using BarangKu.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace BarangKu.Views
 {
-    /// <summary>
-    /// Interaction logic for BerandaView.xaml
-    /// </summary>
     public partial class HomeView : UserControl
     {
+        private ProductViewModel _productViewModel;
+
         public HomeView()
         {
             InitializeComponent();
-            DataContext = this;
-            var products = GetProducts();
-            if (products.Count > 0)
-            {
-                ListProducts.ItemsSource = products;
-            }
-            var userId = UserSessionService.Instance.User.UserId;
+            var userSession = UserSessionService.Instance.User;
+
+            _productViewModel = new ProductViewModel();
+            DataContext = _productViewModel;
+
+            // Load products
+            LoadProducts(userSession.UserId);
         }
 
-        private List<Products> GetProducts()
+        private void LoadProducts(int userId)
         {
-            return new List<Products>()
-                {
-                    new Products(1, "Jual", "Sepatu", 100, "/Assets/sepatu.png", "Pogung", 2),
-                    new Products(2, "Jual", "Tas", 50, "/Assets/tas.jpg", "Godean", 1),
-                    new Products(3, "Jual", "Rice Cooker", 200, "/Assets/rice_cooker.jpg", "Gejayan", 5),
-                    new Products(1, "Jual", "Sepatu", 100, "/Assets/sepatu.png", "Pogung", 2),
-                    new Products(2, "Jual", "Tas", 50, "/Assets/tas.jpg", "Godean", 1),
-                    new Products(3, "Jual", "Rice Cooker", 200, "/Assets/rice_cooker.jpg", "Gejayan", 5),
-                    new Products(1, "Jual", "Sepatu", 100, "/Assets/sepatu.png", "Pogung", 2),
-                    new Products(2, "Jual", "Tas", 50, "/Assets/tas.jpg", "Godean", 1),
-                    new Products(3, "Jual", "Rice Cooker", 200, "/Assets/rice_cooker.jpg", "Gejayan", 5),
-                    new Products(1, "Jual", "Sepatu", 100, "/Assets/sepatu.png", "Pogung", 2),
-                    new Products(2, "Jual", "Tas", 50, "/Assets/tas.jpg", "Godean", 1),
-                    new Products(3, "Jual", "Rice Cooker", 200, "/Assets/rice_cooker.jpg", "Gejayan", 5),
-                };
+            try
+            {
+                var products = _productViewModel.GetProductsForUser(userId);
+
+                // Set the product list for the ViewModel
+                _productViewModel.ProductList = new ObservableCollection<Product>(products);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saat memuat produk: {ex.Message}");
+            }
         }
+
 
         private void btnDetailProduct_Click(object sender, RoutedEventArgs e)
         {
-
-            var button = sender as Button;
-            int productId = Convert.ToInt32(button.Tag);  
-
-            var selectedProduct = GetProducts().FirstOrDefault(p => p.ProductId == productId);
-
-            if (selectedProduct != null)
+            try
             {
-                var mainWindow = Window.GetWindow(this) as MainWindow;
-                if (mainWindow != null)
+                if (sender is Button button && button.CommandParameter is Product selectedProduct)
                 {
-                    var navigationService = mainWindow.DataContext as NavigationServices;
-                    navigationService?.ShowDetailProduct(selectedProduct);
+                    _productViewModel.SelectedProduct = selectedProduct;
+                    ShowProductDetail(selectedProduct);
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saat membuka detail: {ex.Message}");
             }
         }
 
+        private void ShowProductDetail(Product product)
+        {
+            if (product == null)
+            {
+                MessageBox.Show("Produk tidak valid.");
+                return;
+            }
+
+            var mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow?.DataContext is NavigationServices navigationService)
+            {
+                navigationService.ShowDetailProduct(product);
+            }
+            else
+            {
+                MessageBox.Show("Gagal membuka detail produk.");
+            }
+        }
     }
 }

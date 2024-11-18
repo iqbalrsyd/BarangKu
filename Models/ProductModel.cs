@@ -12,10 +12,12 @@ namespace BarangKu.Models
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
-        public int Duration { get; set; } // e.g., New, Used
+        public string Duration { get; set; } // e.g., New, Used
         public BitmapImage ImageURL { get; set; }
         public DateTime CreatedDate { get; set; }
         public bool IsSelected { get; set; }
+        public string Condition { get; set; }
+        public string Label { get; set; }
 
         public Product()
         {
@@ -37,7 +39,7 @@ namespace BarangKu.Models
             // Logic to delete product
         }
 
-        internal Product AddProduct(int categoryId, string name, string description, decimal price, int stock, int duration, byte[]? imageBytes)
+        internal Product AddProduct(int categoryId, string name, string description, decimal price, int stock, string duration, byte[]? imageBytes)
         {
             throw new NotImplementedException();
         }

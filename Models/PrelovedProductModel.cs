@@ -9,7 +9,7 @@ namespace BarangKu.Models
 {
     public class PrelovedProductModel : ProductViewModel
     {
-        public override Product AddProduct(int categoryId, string name, string description, decimal price, int stock, int duration, byte[] imageUrl)
+        public override Product AddProduct(int categoryId, string name, string description, decimal price, int stock, string duration, byte[] imageUrl)
         {
             return base.AddProduct(categoryId, name, description, price, stock, duration, imageUrl);
         }
