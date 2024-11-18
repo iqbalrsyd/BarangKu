@@ -95,11 +95,15 @@
                            FontSize="12"
                            Margin="10,5,10,0"
                            TextWrapping="Wrap"/>
-                        <TextBlock Text="Selengkapnya"
-                           FontSize="12"
-                           Foreground="Gray"
-                           Margin="10,5,10,5"
-                           TextWrapping="Wrap"/>
+                        <Button Content="  ...Selengkapnya"
+                            FontSize="12"
+                            Foreground="Gray"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Cursor="Hand"
+                            HorizontalAlignment="Left"
+                            Click="NavigateToSeeMore_Click" />
+
                     </StackPanel>
                 </Border>
 
@@ -125,11 +129,15 @@
                            FontSize="12"
                            Margin="10,5,10,0"
                            TextWrapping="Wrap"/>
-                        <TextBlock Text="Selengkapnya"
-                           FontSize="12"
-                           Foreground="Gray"
-                           Margin="10,5,10,5"
-                           TextWrapping="Wrap"/>
+                        <Button Content="  ...Selengkapnya"
+                            FontSize="12"
+                            Foreground="Gray"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Cursor="Hand"
+                            HorizontalAlignment="Left"
+                            Click="NavigateToSeeMore_Click" />
+
                     </StackPanel>
                 </Border>
 
@@ -155,11 +163,15 @@
                            FontSize="12"
                            Margin="10,5,10,0"
                            TextWrapping="Wrap"/>
-                        <TextBlock Text="Selengkapnya"
-                           FontSize="12"
-                           Foreground="Gray"
-                           Margin="10,5,10,5"
-                           TextWrapping="Wrap"/>    
+                        <Button Content="  ...Selengkapnya"
+                            FontSize="12"
+                            Foreground="Gray"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Cursor="Hand"
+                            HorizontalAlignment="Left"
+                            Click="NavigateToSeeMore_Click" />
+
                     </StackPanel>
                 </Border>
                 <!-- Artikel 1 -->
@@ -184,11 +196,15 @@
                            FontSize="12"
                            Margin="10,5,10,0"
                            TextWrapping="Wrap"/>
-                        <TextBlock Text="Selengkapnya"
-                           FontSize="12"
-                           Foreground="Gray"
-                           Margin="10,5,10,5"
-                           TextWrapping="Wrap"/>
+                        <Button Content="  ...Selengkapnya"
+                            FontSize="12"
+                            Foreground="Gray"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Cursor="Hand"
+                            HorizontalAlignment="Left"
+                            Click="NavigateToSeeMore_Click" />
+
                     </StackPanel>
                 </Border>
 
@@ -214,11 +230,15 @@
                            FontSize="12"
                            Margin="10,5,10,0"
                            TextWrapping="Wrap"/>
-                        <TextBlock Text="Selengkapnya"
-                           FontSize="12"
-                           Foreground="Gray"
-                           Margin="10,5,10,5"
-                           TextWrapping="Wrap"/>
+                        <Button Content="  ...Selengkapnya"
+                            FontSize="12"
+                            Foreground="Gray"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Cursor="Hand"
+                            HorizontalAlignment="Left"
+                            Click="NavigateToSeeMore_Click" />
+
                     </StackPanel>
                 </Border>
 
@@ -244,11 +264,15 @@
                            FontSize="12"
                            Margin="10,5,10,0"
                            TextWrapping="Wrap"/>
-                        <TextBlock Text="Selengkapnya"
-                           FontSize="12"
-                           Foreground="Gray"
-                           Margin="10,5,10,5"
-                           TextWrapping="Wrap"/>
+                        <Button Content="  ...Selengkapnya"
+                            FontSize="12"
+                            Foreground="Gray"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Cursor="Hand"
+                            HorizontalAlignment="Left"
+                            Click="NavigateToSeeMore_Click" />
+
                     </StackPanel>
                 </Border>
             </StackPanel>

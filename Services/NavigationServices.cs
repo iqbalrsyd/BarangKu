@@ -217,6 +217,12 @@ namespace BarangKu.Services
             OnPropertyChanged(nameof(SelectedViewModel));
         }
 
+        public void NavigateToArticleView()
+        {
+            SelectedViewModel = new ArticleView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
         private string _activeButton;
         public string ActiveButton
         {

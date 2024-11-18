@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using BarangKu.Models; // Pastikan namespace model artikel
+using BarangKu.Models;
+using BarangKu.Services; // Pastikan namespace model artikel
 
 namespace BarangKu.Views
 {
@@ -11,6 +12,14 @@ namespace BarangKu.Views
             InitializeComponent();
         }
 
-        
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
+            {
+                var navigationService = mainWindow.DataContext as NavigationServices;
+                navigationService?.NavigateToArticleView();
+            }
+        }
     }
 }

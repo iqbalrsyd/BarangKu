@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BarangKu.Services;
 
 
 namespace BarangKu.Views
@@ -44,6 +45,16 @@ namespace BarangKu.Views
                 new Article { Title = "Trend Fashion Korea Terbaru", Description = "KoreanWave.com - Mode terkini dari Korea... Selengkapnya", ImageUrl = "/Assets/ootd2.png" },
                 new Article { Title = "OOTD Untuk Aktivitas Sehari-Hari", Description = "Fashionista.com - Tips untuk tampilan santai... Selengkapnya", ImageUrl = "/Assets/ootd3.png" }
             };
+        }
+
+        private void NavigateToSeeMore_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
+            {
+                var navigationService = mainWindow.DataContext as NavigationServices;
+                navigationService?.NavigateToSeeMoreView();
+            }
         }
 
         private void OpenArticleDetail(object sender, RoutedEventArgs e)
