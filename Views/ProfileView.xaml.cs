@@ -1,4 +1,5 @@
 ﻿using BarangKu.Services;
+using BarangKu.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,9 @@ namespace BarangKu.Views
         public ProfileView()
         {
             InitializeComponent();
+            EditProfileViewModel viewModel = new EditProfileViewModel();
+            DataContext = viewModel;
+            
         }
 
         private void NavigateToEditProfileView_Click(object sender, RoutedEventArgs e)

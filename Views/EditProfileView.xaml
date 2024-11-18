@@ -99,18 +99,18 @@
 
                         <!-- Username Field -->
                         <TextBlock Text="Username" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                        <TextBox  x:Name="txtUsername" Background="#FFC436"  Text="{Binding Username}" Grid.Row="0" Grid.Column="1" Height="30" Padding="5" />
+                        <TextBox  x:Name="UsernameTextBox" Background="#FFC436"  Text="{Binding Username}" Grid.Row="0" Grid.Column="1" Height="30" Padding="5" />
 
                         <!-- Full Name Fields -->
                         <TextBlock Text="Nama Akun" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
                         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-                            <TextBox Text="{Binding FirstName}" Background="#FFC436" Width="100" Height="30" Padding="5" Margin="0,0,5,0" />
-                            <TextBox Text="{Binding LastName}"  Background="#FFC436" Width="150" Height="30" Padding="5" />
+                            <TextBox Text="{Binding FirstName}" Background="#FFC436" Width="100" Height="30" Padding="5" Margin="0,0,5,0" x:Name="FirstNameTextBox" />
+                            <TextBox Text="{Binding LastName}"  Background="#FFC436" Width="150" Height="30" Padding="5" x:Name="LastNameTextBox" />
                         </StackPanel>
 
                         <!-- Phone Number Field -->
                         <TextBlock Text="No. Hp" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                        <TextBox  x:Name="PhoneNumberTextBox" Text="{Binding PhoneNumber}" Background="#FFC436"  Grid.Row="2" Grid.Column="1" Height="30" Padding="5" />
+                        <TextBox  x:Name="TelephoneTextBox" Text="{Binding Telephone}" Background="#FFC436"  Grid.Row="2" Grid.Column="1" Height="30" Padding="5"/>
 
                         <!-- Email Field -->
                         <TextBlock Text="Email" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
@@ -122,10 +122,17 @@
 
                         <!-- Language Field -->
                         <TextBlock Text="Bahasa" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                        <ComboBox Grid.Row="5" Grid.Column="1" Height="30" Padding="5" SelectedItem="{Binding Language}">
-                            <ComboBoxItem Content="Indonesia" />
-                            <ComboBoxItem Content="English" />
-                        </ComboBox>
+                        <ComboBox Grid.Row="5"
+          Grid.Column="1"
+          Height="30"
+          Padding="5"
+          x:Name="LanguageComboBox"
+          SelectedValuePath="Content"
+          SelectedValue="{Binding Language, Mode=TwoWay}">
+    <ComboBoxItem Content="Indonesia" />
+    <ComboBoxItem Content="English" />
+</ComboBox>
+
                     </Grid>
 
                     <!-- Rounded Button with Drop Shadow -->
