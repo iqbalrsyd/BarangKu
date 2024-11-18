@@ -17,13 +17,12 @@ namespace BarangKu.Views
         public HomeView()
         {
             InitializeComponent();
-            var userSession = UserSessionService.Instance.User;
+            int userId = UserSessionService.Instance.User.UserId;
 
             _productViewModel = new ProductViewModel();
             DataContext = _productViewModel;
 
-            // Load products
-            LoadProducts(userSession.UserId);
+            LoadProducts(userId);
         }
 
         private void LoadProducts(int userId)
@@ -69,7 +68,7 @@ namespace BarangKu.Views
             var mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow?.DataContext is NavigationServices navigationService)
             {
-                navigationService.ShowDetailProduct(product);
+                //navigationService.ShowDetailProduct(product);
             }
             else
             {

@@ -69,35 +69,43 @@ namespace BarangKu.Views
         {
             string name = NameTextBox.Text;
             string description = DescriptionTextBox.Text;
-<<<<<<< HEAD
-            int stock = int.Parse(StockTextBox.Text);
+            decimal price;
+            int stock;
             string duration = string.Empty;
-            decimal price = decimal.Parse(PriceTextBox.Text);
-=======
->>>>>>> 628ce9e24c95c52ab1179eedd65ed27b017524ee
 
-            int selectedCategoryId = (int)CategoryComboBox.SelectedValue;
+            // Ambil categoryId dari ComboBox
+            int categoryId = (int)CategoryComboBox.SelectedValue;
 
-            string duration = DurationTextBox.Text;
+            // Validasi harga
+            if (!decimal.TryParse(PriceTextBox.Text, out price) || price <= 0 || price.ToString("F0").Length > 10)
+            {
+                MessageBox.Show("Harga produk harus valid dan lebih besar dari 0.");
+                return;
+            }
 
-            // Validating that the name and description are not empty
+            // Validasi stok
+            if (!int.TryParse(StockTextBox.Text, out stock) || stock < 1)
+            {
+                MessageBox.Show("Stok harus angka valid dan lebih dari 0.");
+                return;
+            }
+
+            object productViewModel;
+
+
             if (string.IsNullOrEmpty(name))
             {
-<<<<<<< HEAD
                 duration = "0";
                 productViewModel = new NewProductModel();
             }
             else if (categoryId == 2) // Preloved
             {
-                duration = "Custom Duration"; // Sesuaikan nilai
+                duration = "Custom Duration";
                 productViewModel = new PrelovedProductModel();
             }
             else
             {
                 MessageBox.Show("Kategori tidak valid.");
-=======
-                MessageBox.Show("Nama produk tidak boleh kosong.");
->>>>>>> 628ce9e24c95c52ab1179eedd65ed27b017524ee
                 return;
             }
 
@@ -108,19 +116,18 @@ namespace BarangKu.Views
             }
 
             // Mengambil nilai stok dari StockTextBox
-            if (!int.TryParse(StockTextBox.Text, out int stock) || stock < 1)
+            if (!int.TryParse(StockTextBox.Text, out stock) || stock < 1)
             {
-                MessageBox.Show("Stok produk harus berupa angka yang valid dan lebih besar dari atau sama dengan 1.");
+                MessageBox.Show("Stok harus angka valid dan lebih dari 0.");
                 return;
             }
 
             // Validasi harga, pastikan harga adalah angka yang valid, lebih besar dari 0, dan tidak melebihi 8 digit sebelum desimal dan 2 digit setelah desimal
-            if (!decimal.TryParse(PriceTextBox.Text, out decimal price) || price <= 0 || price >= 100000000 || price.ToString("F0").Length > 10)
+            if (!decimal.TryParse(PriceTextBox.Text, out price) || price <= 0 || price.ToString("F0").Length > 10)
             {
-                MessageBox.Show("Harga produk harus berupa angka valid, lebih besar dari 0, dan tidak melebihi 8 digit sebelum desimal dan 2 digit setelah desimal.");
+                MessageBox.Show("Harga produk harus valid dan lebih besar dari 0.");
                 return;
             }
-
 
             string condition = string.Empty;
 
@@ -204,7 +211,7 @@ namespace BarangKu.Views
             {
                 // Add new product
                 StoreViewModel store = new StoreViewModel();
-                Product newProduct = store.AddProduct(selectedCategoryId, name, description, price, stock, condition, duration, imageBytes);
+                Product newProduct = store.AddProduct(categoryId, name, description, price, stock, condition, duration, imageBytes);
 
                 if (newProduct != null)
                 {
@@ -222,7 +229,7 @@ namespace BarangKu.Views
             {
                 // Update existing product
                 MyProductViewModel myProductViewModel = new MyProductViewModel(productid);
-                Product updatedProduct = myProductViewModel.EditProduk(productid, selectedCategoryId, name, description, price, stock, condition, duration, imageBytes);
+                Product updatedProduct = myProductViewModel.EditProduk(productid, categoryId, name, description, price, stock, condition, duration, imageBytes);
 
                 if (updatedProduct != null)
                 {

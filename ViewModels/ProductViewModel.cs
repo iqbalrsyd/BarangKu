@@ -66,7 +66,6 @@ namespace BarangKu.ViewModels
         //    OnPropertyChanged("Product");
         //}
 
-<<<<<<< HEAD
         public virtual Product AddProduct(int categoryId, string name, string description, decimal price, int stock, string duration, byte[] imageUrl)
         {
             Product product = null;
@@ -258,8 +257,6 @@ namespace BarangKu.ViewModels
             return products;
         }
 
-=======
->>>>>>> 628ce9e24c95c52ab1179eedd65ed27b017524ee
         public void EditProduct()
         {
             _productService.EditProduct(_product);
