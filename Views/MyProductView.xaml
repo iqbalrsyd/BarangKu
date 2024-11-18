@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BarangKu.Views"
              xmlns:styles="clr-namespace:BarangKu.Styles"
+             xmlns:viewModels="clr-namespace:BarangKu.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000">
     <Grid Background="White">
@@ -25,13 +26,14 @@
             <StackPanel Grid.Row="0">
                 <TextBlock Text="Harga" FontWeight="SemiBold" FontSize="25"></TextBlock>
                 <Border Width="280" Height="60" Background="White" CornerRadius="15" BorderBrush="{StaticResource MainBlueBrush}" HorizontalAlignment="Left" Margin="0 10" BorderThickness="2">
-                    <TextBox x:Name="PriceTextBox" Width="250" Height="40" Background="Transparent" BorderBrush="Transparent" TextAlignment="Center" FontSize="12" TextWrapping="Wrap"></TextBox>
+                    <TextBox x:Name="PriceTextBox" Width="250" Height="40" Background="Transparent" BorderBrush="Transparent" TextAlignment="Center" FontSize="12" TextWrapping="Wrap" Text="{Binding ProductPrice, StringFormat={}{0:F0}, Mode=TwoWay}"></TextBox>
                 </Border>
             </StackPanel>
             <StackPanel Grid.Row="1" VerticalAlignment="Top">
                 <TextBlock Text="Deskripsi Produk" FontWeight="SemiBold" FontSize="25"></TextBlock>
                 <Border Width="280" Height="320" Background="White" CornerRadius="15" BorderBrush="{StaticResource MainBlueBrush}" HorizontalAlignment="Left" Margin="0 10" BorderThickness="2">
-                    <TextBox x:Name="DescriptionTextBox" Width="250" Height="220" Background="Transparent" BorderBrush="Transparent" TextAlignment="Center" FontSize="12" TextWrapping="Wrap"></TextBox>
+                    <styles:PlaceholderTextBox  x:Name="DescriptionTextBox" Width="250" Height="220" Background="Transparent" BorderBrush="Transparent" TextAlignment="Center" FontSize="12" TextWrapping="Wrap" Text="{Binding ProductDescription, Mode=TwoWay}" PlaceholderText="Isi Deskripsi produk"
+PlaceholderColor="Gray"></styles:PlaceholderTextBox>
                 </Border>
             </StackPanel>
         </Grid>
@@ -46,7 +48,7 @@
                 <TextBlock Text="Kategori" FontWeight="SemiBold" FontSize="25"></TextBlock>
                 <ComboBox x:Name="CategoryComboBox" Width="280" Height="60" Background="Transparent"
                           BorderBrush="Transparent" FontSize="20" Margin="0 10" HorizontalAlignment="Left" VerticalAlignment="Center"
-                          DisplayMemberPath="Name" ItemsSource="{Binding Categories}" SelectedValuePath="CategoryID" SelectedValue="{Binding CategoryID, Mode=TwoWay}">
+                          DisplayMemberPath="Name" ItemsSource="{Binding Categories}" SelectedValuePath="CategoryID" SelectedValue="{Binding Product.CategoryID, Mode=TwoWay}">
                 </ComboBox>
 
             </StackPanel>
@@ -56,7 +58,7 @@
                     <Button Background="Transparent" BorderBrush="Transparent" Click="MinusButton_Click">
                         <Image Source="/Assets/minus_icon.png" Width="50" Height="50"></Image>
                     </Button>
-                    <TextBox x:Name="StockTextBox" Text="1"  FontWeight="DemiBold" Margin="10 " FontSize="20"></TextBox>
+                    <TextBox x:Name="StockTextBox" FontWeight="DemiBold" Margin="10 " FontSize="20" Text="{Binding ProductStock, Mode=TwoWay}" ></TextBox>
                     <Button Background="Transparent" BorderBrush="Transparent" Click="PlusButton_Click">
                         <Image Source="/Assets/plus_icon.png" Width="50" Height="50"></Image>
                     </Button>
@@ -65,7 +67,7 @@
             <StackPanel Grid.Row="2" VerticalAlignment="Top">
                 <TextBlock Text="Condition" FontWeight="SemiBold" FontSize="25"></TextBlock>
                 <ComboBox x:Name="ConditionComboBox" Width="280" Height="60" Background="Transparent" BorderBrush="Transparent" FontSize="12" Margin="0 10" HorizontalAlignment="Left"
-                                SelectedValuePath="Tag" SelectionChanged="ConditionComboBox_SelectionChanged">
+                                SelectedValuePath="Tag" SelectionChanged="ConditionComboBox_SelectionChanged" SelectedValue="{Binding ProductCondition, Mode=TwoWay}">
                     <ComboBoxItem Content="Baru" Tag="1"></ComboBoxItem>
                     <ComboBoxItem Content="Preloved" Tag="2"></ComboBoxItem>
                 </ComboBox>
@@ -79,7 +81,7 @@
                                   Background="Transparent" BorderBrush="Transparent" 
                                   TextAlignment="Center" FontSize="12" TextWrapping="Wrap"
                                   PlaceholderText="Khusus produk preloved (cth: 2 bulan, 3 tahun) kosongkan jika produk baru"
-                                  PlaceholderColor="Gray"  />
+                                  PlaceholderColor="Gray" Text="{Binding ProductDuration, Mode=TwoWay}"  />
                 </Border>
             </StackPanel>
         </Grid>
@@ -89,13 +91,14 @@
         </Border>
         <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">
             <Border Width="120" Height="160" BorderBrush="{StaticResource MainBlueBrush}" BorderThickness="2" CornerRadius="15" Margin="0 10">
-                <Image Width="120" Height="160" x:Name="ImagePreview"></Image>
+                <Image Width="120" Height="160" x:Name="ImagePreview" Source="{Binding ImageSource}" ></Image>
             </Border>
             <Button Content="Pilih Foto" Style="{StaticResource AddButton}" Height="40" Width="100" Margin="0 10" Click="AddImage_Click"></Button>
             <StackPanel Margin="0 60">
                 <TextBlock Text="Nama Produk" FontWeight="SemiBold" FontSize="16"></TextBlock>
                 <Border Width="280" Height="60" Background="White" CornerRadius="15" BorderBrush="{StaticResource MainBlueBrush}" HorizontalAlignment="Left" Margin="0 10" BorderThickness="2">
-                    <TextBox x:Name="NameTextBox" Width="250" Height="40" Background="Transparent" BorderBrush="Transparent" TextAlignment="Center" FontSize="12" TextWrapping="Wrap"></TextBox>
+                    <styles:PlaceholderTextBox x:Name="NameTextBox" Width="250" Height="40" Background="Transparent" BorderBrush="Transparent" TextAlignment="Center" FontSize="12" TextWrapping="Wrap" Text="{Binding ProductName, Mode=TwoWay, FallbackValue='0'}" PlaceholderText="Isi nama produk"
+PlaceholderColor="Gray"></styles:PlaceholderTextBox>
                 </Border>
             </StackPanel>
         </StackPanel>

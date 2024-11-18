@@ -58,16 +58,24 @@ namespace BarangKu.Services
         // Navigasi ke tampilan login saat logout
         public void Logout()
         {
-            // Tutup MainWindow saat ini
-            if (Application.Current.MainWindow is MainWindow mainWindow)
-            {
-                mainWindow.Close();
-            }
+            // Hapus data UserSession
+            UserSessionService.Instance.User = null;
+            UserSessionService.Instance.Seller = null;
 
             // Buka kembali UserEnterWindow untuk login ulang
             UserEnterWindow userEnterWindow = new UserEnterWindow();
             Application.Current.MainWindow = userEnterWindow;
             userEnterWindow.Show();
+
+            // Tutup semua window yang ada
+            foreach (var window in Application.Current.Windows)
+            {
+                if (window is Window currentWindow && currentWindow != userEnterWindow)
+                {
+                    currentWindow.Close();  // Menutup semua window selain UserEnterWindow
+                }
+            }
+
         }
 
         // pop  up untuk create store
@@ -136,8 +144,6 @@ namespace BarangKu.Services
             OnPropertyChanged(nameof(SelectedViewModel));
         }
 
-
-
         public void ClosePopup()
         {
             IsPopupOpen = false;
@@ -169,11 +175,24 @@ namespace BarangKu.Services
             OnPropertyChanged(nameof(SelectedViewModel));
         }
 
-        public void AddProduct()
+        public void AddProduct(MyProductView view = null)
         {
-            SelectedViewModel = new MyProductView();
+            int productid = 0;
+            if (view == null)
+            {
+                // Jika view tidak diberikan (misalnya untuk tambah produk), buat instance baru
+                var myProductViewModel = new MyProductViewModel(0); // 0 untuk produk baru
+                view = new MyProductView(productid)
+                {
+                    DataContext = myProductViewModel
+                };
+            }
+
+            // Atur SelectedViewModel ke MyProductView yang baru
+            SelectedViewModel = view;
             OnPropertyChanged(nameof(SelectedViewModel));
         }
+
 
         public void NavigateToStoreView()
         {
@@ -254,8 +273,6 @@ namespace BarangKu.Services
                 OnPropertyChanged();
             }
         }
-
-
         public void ShowOrdered()
         {
             ActiveButton = "Ordered";

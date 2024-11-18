@@ -25,13 +25,12 @@ namespace BarangKu.Views
     public partial class MyProductView : UserControl
     {
         private BitmapImage _selectedImage;
-        public int CategoryID { get; private set; }
-        public MyProductView()
+        int productid { get; set; }
+        public MyProductView(int productid)
         {
             InitializeComponent();
-            var viewModel = new CategoryViewModel();
-            viewModel.LoadCategory();
-            DataContext = viewModel;
+            DataContext = new MyProductViewModel(productid);
+            this.productid = productid;
         }
 
         private void MinusButton_Click(object sender, RoutedEventArgs e)
@@ -71,29 +70,86 @@ namespace BarangKu.Views
             string name = NameTextBox.Text;
             string description = DescriptionTextBox.Text;
 
-            // Mengambil nilai stok dari StockTextBox
-            int stock = int.Parse(StockTextBox.Text);
+            int selectedCategoryId = (int)CategoryComboBox.SelectedValue;
 
             string duration = DurationTextBox.Text;
 
-            decimal price = decimal.Parse(PriceTextBox.Text);
+            // Validating that the name and description are not empty
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Nama produk tidak boleh kosong.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(description))
+            {
+                MessageBox.Show("Deskripsi produk tidak boleh kosong.");
+                return;
+            }
+
+            // Mengambil nilai stok dari StockTextBox
+            if (!int.TryParse(StockTextBox.Text, out int stock) || stock < 1)
+            {
+                MessageBox.Show("Stok produk harus berupa angka yang valid dan lebih besar dari atau sama dengan 1.");
+                return;
+            }
+
+            // Validasi harga, pastikan harga adalah angka yang valid, lebih besar dari 0, dan tidak melebihi 8 digit sebelum desimal dan 2 digit setelah desimal
+            if (!decimal.TryParse(PriceTextBox.Text, out decimal price) || price <= 0 || price >= 100000000 || price.ToString("F0").Length > 10)
+            {
+                MessageBox.Show("Harga produk harus berupa angka valid, lebih besar dari 0, dan tidak melebihi 8 digit sebelum desimal dan 2 digit setelah desimal.");
+                return;
+            }
+
 
             string condition = string.Empty;
 
-            byte[] imageBytes = _selectedImage != null ? ImageToByteArray(_selectedImage) : null;
+            byte[] imageBytes = null;
 
+            // Validate image upload: Check if either _selectedImage or ImagePreview exists
+            if (_selectedImage == null && ImagePreview == null)
+            {
+                MessageBox.Show("Silakan pilih gambar untuk produk.");
+                return;
+            }
+
+            // If the image is selected by the user (_selectedImage), convert it to byte array
+            if (_selectedImage != null)
+            {
+                imageBytes = ImageToByteArray(_selectedImage);
+            }
+            // If ImagePreview is not null (image preview exists but not selected by the user), convert it to byte array
+            else if (ImagePreview != null)
+            {
+                // Extract BitmapImage from Image control (ImagePreview is of type System.Windows.Controls.Image)
+                var bitmapImage = ImagePreview.Source as BitmapImage;
+
+                // Check if the source is actually a BitmapImage
+                if (bitmapImage != null)
+                {
+                    imageBytes = ImageToByteArray(bitmapImage);
+                }
+                else
+                {
+                    MessageBox.Show("Gambar pratinjau tidak valid.");
+                    return;
+                }
+            }
+
+
+            // Determine product condition and select correct StoreViewModel
             StoreViewModel storeViewModel;
             if (ConditionComboBox.SelectedValue != null)
             {
-                // Konversi SelectedValue menjadi int
+                // Convert SelectedValue to int
                 if (int.TryParse(ConditionComboBox.SelectedValue.ToString(), out int conditionId))
                 {
-                    if (conditionId == 1) // Barang Baru
+                    if (conditionId == 1) // New Product
                     {
                         condition = "Baru";
                         storeViewModel = new NewProductModel();
                     }
-                    else if (conditionId == 2) // Preloved
+                    else if (conditionId == 2) // Preloved Product
                     {
                         condition = "Preloved";
                         duration = DurationTextBox.Text;
@@ -124,22 +180,44 @@ namespace BarangKu.Views
                 return;
             }
 
-            StoreViewModel product = new StoreViewModel();
-
-            Product newProduct = product.AddProduct(CategoryID, name, description, price, stock, condition, duration, imageBytes);
-
-            if (newProduct != null)
+            if (productid == 0)
             {
-                MessageBox.Show("Produk berhasil disimpan.");
-                var mainWindow = Window.GetWindow(this) as MainWindow;
-                var navigationService = mainWindow?.DataContext as NavigationServices;
-                navigationService?.NavigateToStoreView();
+                // Add new product
+                StoreViewModel store = new StoreViewModel();
+                Product newProduct = store.AddProduct(selectedCategoryId, name, description, price, stock, condition, duration, imageBytes);
+
+                if (newProduct != null)
+                {
+                    MessageBox.Show("Produk berhasil disimpan.");
+                    var mainWindow = Window.GetWindow(this) as MainWindow;
+                    var navigationService = mainWindow?.DataContext as NavigationServices;
+                    navigationService?.NavigateToStoreView();
+                }
+                else
+                {
+                    MessageBox.Show("Gagal menyimpan produk.");
+                }
             }
             else
             {
-                MessageBox.Show("Gagal menyimpan produk.");
+                // Update existing product
+                MyProductViewModel myProductViewModel = new MyProductViewModel(productid);
+                Product updatedProduct = myProductViewModel.EditProduk(productid, selectedCategoryId, name, description, price, stock, condition, duration, imageBytes);
+
+                if (updatedProduct != null)
+                {
+                    MessageBox.Show("Produk berhasil diperbarui.");
+                    var mainWindow = Window.GetWindow(this) as MainWindow;
+                    var navigationService = mainWindow?.DataContext as NavigationServices;
+                    navigationService?.NavigateToStoreView();
+                }
+                else
+                {
+                    MessageBox.Show("Gagal memperbarui produk.");
+                }
             }
         }
+
 
 
 
@@ -179,7 +257,7 @@ namespace BarangKu.Views
             else // Preloved
             {
                 DurationTextBox.Text = "";
-                DurationTextBox.IsEnabled = true; // Enable input
+                DurationTextBox.IsEnabled = true; 
             }
         }
     }

@@ -1,7 +1,9 @@
 ﻿using BarangKu.Models;
 using BarangKu.Services;
+using BarangKu.Views;
 using Npgsql;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -10,7 +12,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 
 namespace BarangKu.ViewModels
 {
@@ -18,14 +22,17 @@ namespace BarangKu.ViewModels
     {
         private Product _product;
         private readonly DatabaseService _dbService;
+        private readonly NavigationService _navigationService;
         public ObservableCollection<Product> Products { get; set; }
 
         public StoreViewModel()
         {
             _product = new Product();
             _dbService = new DatabaseService();
+
         }
 
+        // Data produk
         public Product Product
         {
             get { return _product; }
@@ -36,6 +43,7 @@ namespace BarangKu.ViewModels
             }
         }
 
+        // menambahkan produk
         public virtual Product AddProduct(int categoryId, string name, string description, decimal price, int stock, string condition, string duration, byte[] imageUrl)
         {
             Product product = null;
@@ -63,8 +71,11 @@ namespace BarangKu.ViewModels
                     }
                 } while (!isUnique);
 
+               
+
+                // Setelah mendapatkan CategoryName, masukkan ke tabel product
                 string createProduct = @"INSERT INTO product (productid, sellerid, categoryid, name, description, price, stock, condition, duration, status, imageurl, createdate) 
-                                   VALUES (@productid, @sellerid, @categoryId, @name, @description, @price, @stock, @condition, @duration, @status, @imageUrl, NOW())";
+                         VALUES (@productid, @sellerid, @categoryId, @name, @description, @price, @stock, @condition, @duration, @status, @imageUrl, NOW())";
 
                 using (var cmd = new NpgsqlCommand(createProduct, conn))
                 {
@@ -82,11 +93,27 @@ namespace BarangKu.ViewModels
 
                     cmd.ExecuteNonQuery();
 
+                    string getCategoryNameQuery = "SELECT name FROM category WHERE categoryid = @categoryId";
+
+                    string categoryName = string.Empty;
+                    using (var cmd2 = new NpgsqlCommand(getCategoryNameQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("categoryId", categoryId);
+                        using (var reader = cmd2.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                categoryName = reader.GetString(0); // Ambil nama kategori
+                            }
+                        }
+                    }
+
                     product = new Product
                     {
                         ProductID = productid,
                         SellerID = sellerid,
                         CategoryID = categoryId,
+                        CategoryName = categoryName,
                         Name = name,
                         Description = description,
                         Price = price,
@@ -111,6 +138,8 @@ namespace BarangKu.ViewModels
             return product;
         }
 
+        // menampilkan produk untuk semua seller
+
         private Authenticator authenticator = new Authenticator();
         public List<Product> GetProducts()
         {
@@ -124,9 +153,13 @@ namespace BarangKu.ViewModels
                 {
                     int sellerid = UserSessionService.Instance.Seller.SellerId;
                     // Modifikasi query untuk memfilter berdasarkan sellerId
-                    string query = @"SELECT productid, sellerid, categoryid, name, description, price, stock, condition, status, duration, imageurl, createdate 
-                         FROM product
-                         WHERE sellerid = @sellerid"; // Menambahkan kondisi untuk sellerId
+                    string query = @"SELECT 
+                                    p.productid, p.sellerid, p.categoryid, c.name, 
+                                    p.name, p.description, p.price, p.stock, p.condition, 
+                                    p.status, p.duration, p.imageurl, p.createdate
+                                    FROM product p
+                                    INNER JOIN category c ON p.categoryid = c.categoryid
+                                    WHERE p.sellerid = @sellerid";
 
                     using (var cmd = new NpgsqlCommand(query, conn))
                     {
@@ -141,15 +174,16 @@ namespace BarangKu.ViewModels
                                     ProductID = reader.GetInt32(0),
                                     SellerID = reader.GetInt32(1),
                                     CategoryID = reader.GetInt32(2),
-                                    Name = reader.GetString(3),
-                                    Description = reader.GetString(4),
-                                    Price = reader.GetDecimal(5),
-                                    Stock = reader.GetInt32(6),
-                                    Condition = reader.GetString(7),
-                                    Status = reader.GetString(8),
-                                    Duration = reader.GetString(9),
-                                    ImageURL = reader.IsDBNull(10) ? null : ByteArrayToImage((byte[])reader[10]),
-                                    CreatedDate = reader.GetDateTime(11)
+                                    CategoryName = reader.GetString(3), 
+                                    Name = reader.GetString(4),
+                                    Description = reader.GetString(5),
+                                    Price = reader.GetDecimal(6),
+                                    Stock = reader.GetInt32(7),
+                                    Condition = reader.GetString(8),
+                                    Status = reader.GetString(9),
+                                    Duration = reader.GetString(10),
+                                    ImageURL = reader.IsDBNull(11) ? null : ByteArrayToImage((byte[])reader[11]),
+                                    CreatedDate = reader.GetDateTime(12)
                                 };
 
                                 products.Add(product);
@@ -188,7 +222,9 @@ namespace BarangKu.ViewModels
             var productList = GetProducts();
             Products = new ObservableCollection<Product>(productList);
         }
+       
 
+        // Data Store
         private string _storeName;
         private string _storeDescription;
         private double _rating;
@@ -228,6 +264,7 @@ namespace BarangKu.ViewModels
             GetInfoStore();
             LoadStoreData();
             LoadProducts();
+
         }
 
         public void LoadStoreData()

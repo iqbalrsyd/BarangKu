@@ -12,78 +12,86 @@
             <ColumnDefinition Width="200*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="180"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Border Grid.Column="1" Grid.Row="0" Height="50" Width="140" VerticalAlignment="Top" Margin="0 20">
             <Button Content="Tambah Barang" Style="{StaticResource AddButton}" Click="AddProduct_Click"/>
         </Border>
-        <StackPanel Grid.Column="0" Grid.Row="0" Margin="20 20">
-            <TextBlock x:Name="StoreNameTextBox" Foreground="Black" FontWeight="SemiBold" FontSize="18" Text="{Binding StoreViewModel.StoreName, StringFormat='Nama Toko: {0}'}"></TextBlock>
-            <TextBlock x:Name="DescriptionStoreTextBox" Foreground="Black" FontWeight="SemiBold" FontSize="18" Text="{Binding StoreViewModel.StoreDescription, StringFormat='Deskripsi Toko: {0}'}" Margin="0 5"></TextBlock>
-            <TextBlock x:Name="RatingStoreTextBox" Foreground="Black" FontWeight="SemiBold" FontSize="18" Text="{Binding StoreViewModel.Rating, StringFormat='Rating Toko: {0:F1}'}" Margin="0 5"></TextBlock>
-        </StackPanel>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20,30" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
-            <ItemsControl ItemsSource="{Binding StoreViewModel.Products}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <UniformGrid Columns="2" />
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Border BorderBrush="{StaticResource MainBlueBrush}" BorderThickness="2" Background="White" Height="380" Width="500" CornerRadius="20" Margin="20">
-                            <StackPanel Margin="15">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" FontSize="30" Width="120" TextWrapping="WrapWithOverflow" Height="60"/>
-                                    <Border Background="{StaticResource MainBlueBrush}" Width="120" Height="35" Margin="175,0" CornerRadius="10">
-                                        <TextBlock Text="{Binding Status}" FontWeight="SemiBold" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                    </Border>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,10">
-                                    <Image Source="{Binding ImageURL}" Width="120" Height="70" />
-                                    <StackPanel Margin="20,0">
-                                        <TextBlock Text="Deskripsi Produk" FontWeight="Medium" FontSize="20" />
-                                        <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Width="225" Height="80" />
-                                    </StackPanel>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,10">
-                                    <StackPanel Orientation="Horizontal" Width="180">
-                                        <Image Source="/Assets/harga.png" />
-                                        <TextBlock Text="{Binding Price, StringFormat=Rp {0:N0}}" VerticalAlignment="Center" Margin="10,0" FontSize="18" />
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal" Width="180">
-                                        <Image Source="/Assets/durasi.png" />
-                                        <TextBlock Text="{Binding Duration}" VerticalAlignment="Center" Margin="10,0" FontSize="18" />
-                                    </StackPanel>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <StackPanel Orientation="Horizontal" Width="180">
-                                        <Image Source="/Assets/category.png" Width="35" Height="35" />
-                                        <TextBlock Text="Fashion" VerticalAlignment="Center" Margin="10,0" FontSize="18" />
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal" Width="180">
-                                        <Image Source="/Assets/stok.png" Width="35" Height="35" />
-                                        <TextBlock Text="{Binding Stock}" VerticalAlignment="Center" Margin="10,0" FontSize="18" />
-                                    </StackPanel>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Right">
-                                    <Border Width="50" Height="50" CornerRadius="5" Background="DarkRed">
-                                        <Button Background="Transparent" BorderBrush="Transparent">
-                                            <Image Source="/Assets/delete.png" Width="35" Height="35" />
-                                        </Button>
-                                    </Border>
-                                    <Border Width="50" Height="50" CornerRadius="5" Background="{StaticResource MainOrangeBrush}" Margin="10,0">
-                                        <Button Background="Transparent" BorderBrush="Transparent">
-                                            <Image Source="/Assets/edit.png" Width="35" Height="35" />
-                                        </Button>
-                                    </Border>
-                                </StackPanel>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" Grid.Column="0" Grid.Row="0">
+            <StackPanel Margin="20 20">
+                <TextBlock x:Name="StoreNameTextBox" Foreground="Black" FontWeight="SemiBold" FontSize="18" Text="{Binding StoreViewModel.StoreName, StringFormat='Nama Toko: {0}'}"></TextBlock>
+                <TextBlock x:Name="DescriptionStoreTextBox" Foreground="Black" FontWeight="SemiBold" FontSize="18" Text="{Binding StoreViewModel.StoreDescription, StringFormat='Deskripsi Toko: {0}'}" Margin="0 5" Width="500" HorizontalAlignment="Left" TextWrapping="Wrap"></TextBlock>
+                <TextBlock x:Name="RatingStoreTextBox" Foreground="Black" FontWeight="SemiBold" FontSize="18" Text="{Binding StoreViewModel.Rating, StringFormat='Rating Toko: {0:F1}'}" Margin="0 5"></TextBlock>
+                
+            </StackPanel>
         </ScrollViewer>
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
+            <TextBlock Text="Produk Saya" FontWeight="Bold" FontSize="25" Margin="20 15"></TextBlock>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20,30">
+                <ItemsControl ItemsSource="{Binding StoreViewModel.Products}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="2" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="{StaticResource MainBlueBrush}" BorderThickness="2" Background="White" Height="380" Width="500" CornerRadius="20" Margin="20">
+                                <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                                    <StackPanel Margin="15">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Name}" FontWeight="SemiBold" FontSize="30" Width="150" TextWrapping="Wrap"/>
+                                            <Border Background="{StaticResource MainBlueBrush}" Width="120" Height="35" Margin="175,0" CornerRadius="10">
+                                                <TextBlock Text="{Binding Status}" FontWeight="SemiBold" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                            </Border>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,10">
+                                            <Image Source="{Binding ImageURL}" Width="120" Height="70" />
+                                            <StackPanel Margin="20,0">
+                                                <TextBlock Text="Deskripsi Produk" FontWeight="Medium" FontSize="20" />
+                                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Width="225" Height="80" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,10">
+                                            <StackPanel Orientation="Horizontal" Width="180">
+                                                <Image Source="/Assets/harga.png" />
+                                                <TextBlock Text="{Binding Price, StringFormat=Rp {0:N0}}" VerticalAlignment="Center" Margin="10,0" FontSize="18" />
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Width="180">
+                                                <Image Source="/Assets/durasi.png" />
+                                                <TextBlock Text="{Binding Duration}" VerticalAlignment="Center" Margin="20,0" FontSize="18" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,5">
+                                            <StackPanel Orientation="Horizontal" Width="180">
+                                                <Image Source="/Assets/category.png" Width="35" Height="35" />
+                                                <TextBlock Text="{Binding CategoryName}" VerticalAlignment="Center" Margin="10,0" FontSize="18" TextWrapping="Wrap" Width="150"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Width="180">
+                                                <Image Source="/Assets/stok.png" Width="35" Height="35" />
+                                                <TextBlock Text="{Binding Stock}" VerticalAlignment="Center" Margin="20,0" FontSize="18" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Right">
+                                            <Border Width="50" Height="50" CornerRadius="5" Background="DarkRed">
+                                                <Button Background="Transparent" BorderBrush="Transparent" Command="{Binding DataContext.DeleteProductCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding ProductID}">
+                                                    <Image Source="/Assets/delete.png" Width="35" Height="35" />
+                                                </Button>
+                                            </Border>
+                                            <Border Width="50" Height="50" CornerRadius="5" Background="{StaticResource MainOrangeBrush}" Margin="10,0">
+                                                <Button Background="Transparent" BorderBrush="Transparent" Command="{Binding DataContext.EditProductCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding ProductID}">
+                                                    <Image Source="/Assets/edit.png" Width="35" Height="35" />
+                                                </Button>
+                                            </Border>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </StackPanel>
     </Grid>
 </UserControl>

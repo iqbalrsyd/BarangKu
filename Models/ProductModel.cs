@@ -19,6 +19,7 @@ namespace BarangKu.Models
         public DateTime CreatedDate { get; set; }
         public bool IsSelected { get; set; }
         public string Status { get; set; }
+        public string CategoryName { get; set; }
 
         public Product()
         {

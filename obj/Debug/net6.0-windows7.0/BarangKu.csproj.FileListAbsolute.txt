@@ -57,3 +57,13 @@ C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\BarangKu.pdb
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\BarangKu.genruntimeconfig.cache
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\ref\BarangKu.dll
 C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Styles\TextBoxStyle.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\EditProfileView.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\ProfileView.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\EditProfileView.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\FinishedView.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\ProfileView.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\SentView.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\TransactionView.g.cs
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\FinishedView.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\SentView.baml
+C:\Users\Nadia\source\repos\BarangKu\obj\Debug\net6.0-windows7.0\Views\TransactionView.baml
