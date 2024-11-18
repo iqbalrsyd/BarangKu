@@ -66,13 +66,13 @@
         
         <!-- rekomendasi produk -->
         <TextBlock Grid.Row="1" Text="Rekomendasi" FontWeight="SemiBold" FontSize="25" Foreground="{StaticResource MainBlueBrush}" Padding="30 0"></TextBlock>
-        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Visible">
             <StackPanel>
                 <!-- kotak per produk -->
                 <ItemsControl x:Name="ListProducts" ItemsSource="{Binding ProductList}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Border Width="162" Height="220" Background="White" CornerRadius="10" Margin="15">
+                            <Border Width="162" Height="220" Background="White" CornerRadius="10" Margin="15" HorizontalAlignment="Center">
                                 <Border.Effect>
                                     <DropShadowEffect BlurRadius="2" ShadowDepth="2"></DropShadowEffect>
                                 </Border.Effect>
@@ -96,8 +96,8 @@
                                         </StackPanel>
                                         <!-- lokasi -->
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="/Assets/lokasi.png" Width="15" Margin="10 0"></Image>
-                                            <TextBlock Text="{Binding Location}"></TextBlock>
+                                            <Image Source="/Assets/stok.png" Width="15" Margin="10 0"></Image>
+                                            <TextBlock Text="{Binding Stock}"></TextBlock>
                                         </StackPanel>
                                         <!-- durasi pemakaian -->
                                         <StackPanel Orientation="Horizontal">
@@ -113,7 +113,7 @@
                     </ItemsControl.ItemTemplate>
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <WrapPanel></WrapPanel>
+                            <UniformGrid Columns="4"></UniformGrid>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>

@@ -68,7 +68,7 @@ namespace BarangKu.Views
             var mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow?.DataContext is NavigationServices navigationService)
             {
-                //navigationService.ShowDetailProduct(product);
+                navigationService.ShowDetailProduct(product);
             }
             else
             {
