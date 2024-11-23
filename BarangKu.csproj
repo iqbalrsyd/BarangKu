@@ -13,6 +13,8 @@
     <None Remove="Assets\artikel1.jpg" />
     <None Remove="Assets\artikel2.jpg" />
     <None Remove="Assets\artikel3.jpg" />
+    <None Remove="Assets\artikel4.jpg" />
+    <None Remove="Assets\artikel5.jpg" />
     <None Remove="Assets\back.png" />
     <None Remove="Assets\BsPerson.png" />
     <None Remove="Assets\cart.png" />
@@ -50,6 +52,8 @@
     <Resource Include="Assets\artikel3.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\artikel4.jpg" />
+    <Resource Include="Assets\artikel5.jpg" />
     <Resource Include="Assets\BsPerson.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -78,6 +82,13 @@
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="dotenv.net" Version="3.2.1" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Npgsql" Version="8.0.5" />
   </ItemGroup>
 

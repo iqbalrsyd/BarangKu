@@ -18,7 +18,7 @@
             <ColumnDefinition Width="200*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" Margin="20 0">
-            <Button Background="Transparent" BorderBrush="Transparent" Width="50" Height="50">
+            <Button Background="Transparent" BorderBrush="Transparent" Width="50" Height="50" Click="NavigateToHomeView_Click">
                 <Image Source="/Assets/back.png"></Image>
             </Button>
             <TextBlock Text="Keranjangku" FontWeight="Bold" FontSize="30" Margin="10 0" VerticalAlignment="Center"></TextBlock>

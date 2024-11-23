@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
              xmlns:local="clr-namespace:BarangKu.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="600" d:DesignWidth="1255">
@@ -35,7 +36,7 @@
                     </Button>
 
                     <!-- Tombol Keranjang -->
-                    <Button Grid.Column="3" Width="30" Height="30" Background="Transparent" BorderBrush="Transparent" Margin="10,0,0,0">
+                    <Button Grid.Column="3" Width="30" Height="30" Background="Transparent" BorderBrush="Transparent" Click="NavigateToCartView_Click" Margin="10,0,0,0">
                         <Image Source="/Assets/Cart.png" Width="20" Height="20"/>
                     </Button>
                 </Grid>

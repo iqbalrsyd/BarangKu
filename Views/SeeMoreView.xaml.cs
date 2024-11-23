@@ -12,14 +12,11 @@ namespace BarangKu.Views
             InitializeComponent();
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void NavigateToArticleView_Click(object sender, RoutedEventArgs e)
         {
             var mainWindow = Window.GetWindow(this) as MainWindow;
-            if (mainWindow != null)
-            {
-                var navigationService = mainWindow.DataContext as NavigationServices;
-                navigationService?.NavigateToArticleView();
-            }
+            var navigationService = mainWindow.DataContext as NavigationServices;
+            navigationService?.NavigateToArticleView();
         }
     }
 }
