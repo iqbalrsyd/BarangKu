@@ -1,45 +1,61 @@
+
 using BarangKu.Models;
-using System;
+using Npgsql;
 using System.Collections.Generic;
 
 namespace BarangKu.Services
 {
     public class ArticleService
     {
-        private readonly List<Article> _articles; // Simulasi database
+        private readonly DatabaseService _databaseService;
 
         public ArticleService()
         {
-            _articles = new List<Article>();
-        }
-
-        public void AddArticle(Article article)
-        {
-            _articles.Add(article);
-            Console.WriteLine($"Article '{article.Title}' added.");
+            _databaseService = new DatabaseService();
         }
 
         public List<Article> GetAllArticles()
         {
-            return _articles;
-        }
+            var articles = new List<Article>();
 
-        public Article GetArticleByTitle(string title)
-        {
-            return _articles.Find(a => a.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
-        }
-
-        public void DeleteArticle(string title)
-        {
-            var article = GetArticleByTitle(title);
-            if (article != null)
+            using (var conn = _databaseService.GetConnection())
             {
-                _articles.Remove(article);
-                Console.WriteLine($"Article '{title}' removed.");
+                using (var cmd = new NpgsqlCommand("SELECT * FROM articles", conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        articles.Add(new Article
+                        {
+                            ArticleId = reader.GetInt32(0),
+                            UserId = reader.GetInt32(1),
+                            Title = reader.GetString(2),
+                            Content = reader.GetString(3),
+                            ImageUrl = reader.IsDBNull(4) ? null : reader.GetString(4),
+                            IsRead = reader.GetBoolean(5)
+                        });
+                    }
+                }
             }
-            else
+
+            return articles;
+        }
+
+        public void AddArticle(Article article)
+        {
+            using (var conn = _databaseService.GetConnection())
             {
-                Console.WriteLine("Article not found.");
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "INSERT INTO articles (userid, title, content, imageurl, isread) VALUES (@userid, @title, @content, @imageurl, @isread)";
+                    cmd.Parameters.AddWithValue("@userid", article.UserId);
+                    cmd.Parameters.AddWithValue("@title", article.Title);
+                    cmd.Parameters.AddWithValue("@content", article.Content);
+                    cmd.Parameters.AddWithValue("@imageurl", article.ImageUrl ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@isread", article.IsRead);
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
     }

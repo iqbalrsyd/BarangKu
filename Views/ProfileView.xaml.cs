@@ -36,5 +36,12 @@ namespace BarangKu.Views
             var navigationService = mainWindow.DataContext as NavigationServices;
             navigationService?.NavigateToEditProfileView();
         }
+
+        private void NavigateToCartView_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Window.GetWindow(this) as MainWindow;
+            var navigationService = mainWindow.DataContext as NavigationServices;
+            navigationService?.NavigateToCartView();
+        }
     }
 }

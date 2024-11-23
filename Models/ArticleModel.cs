@@ -1,25 +1,27 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BarangKu.Models
 {
+    [Table("articles")] // Menentukan nama tabel di database
     public class Article
     {
-        // Atribut atau Properti
+        [Key] // Menandai ArticleId sebagai primary key
+        public int ArticleId { get; set; }
+
+        [Required] // Menentukan UserId tidak boleh null
+        public int UserId { get; set; }
+
+        [Required] // Menentukan Title tidak boleh null
+        [MaxLength(255)] // Membatasi panjang title seperti pada definisi tabel
         public string Title { get; set; }
-        public string Author { get; set; }
-        public DateTime Date { get; set; }
+
+        [Required] // Menentukan Content tidak boleh null
         public string Content { get; set; }
 
-        // Constructor
-        public Article(string title, string author, DateTime date, string content)
-        {
-            Title = title;
-            Author = author;
-            Date = date;
-            Content = content;
-        }
+        public string ImageUrl { get; set; }
 
-        // Default constructor
-        public Article() { }
+        public bool IsRead { get; set; } = false; // Default value
     }
 }

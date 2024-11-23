@@ -16,13 +16,13 @@
             <RowDefinition Height="100*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Grid VerticalAlignment="Top" Height="80" Background="Transparent">
-            <!-- Back Button -->
-            <Button Content="Kembali" Width="80" Height="30" Background="White" Foreground="#2E4AA4" 
-                        FontWeight="Bold" BorderBrush="Transparent" Margin="0,10,692,40" Click="BackButton_Click" />
-        </Grid>
+        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" Margin="20 0">
+            <Button Background="Transparent" BorderBrush="Transparent" Width="30" Height="30" Click="NavigateToArticleView_Click">
+                <Image Source="/Assets/back.png"></Image>
+            </Button>
+        </StackPanel>
 
-        <DockPanel>
+        <DockPanel Margin="0,0,0,27" Grid.RowSpan="2">
 
             <!-- Kontainer utama untuk search bar dan tombol -->
             <Grid DockPanel.Dock="Top" Margin="30,45,30,25">

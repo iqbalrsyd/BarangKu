@@ -248,6 +248,18 @@ namespace BarangKu.Services
             OnPropertyChanged(nameof(SelectedViewModel));
         }
 
+        public void NavigateToCartView()
+        {
+            SelectedViewModel = new CartView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
+        public void NavigateToHomeView()
+        {
+            SelectedViewModel = new HomeView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
         private string _activeButton;
         public string ActiveButton
         {

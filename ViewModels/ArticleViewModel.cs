@@ -1,59 +1,40 @@
 using BarangKu.Models;
 using BarangKu.Services;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
+using System.ComponentModel;
 
 namespace BarangKu.ViewModels
 {
-	public class ArticleViewModel
-	{
-		public ObservableCollection<Article> Articles { get; set; }
-		private readonly ArticleService _articleService;
+    public class ArticleViewModel : INotifyPropertyChanged
+    {
+        private readonly ArticleService _articleService;
+        public ObservableCollection<Article> Articles { get; set; }
 
-		public ICommand AddArticleCommand { get; }
-		public ICommand DeleteArticleCommand { get; }
-		public ICommand LoadArticlesCommand { get; }
+        public ArticleViewModel()
+        {
+            _articleService = new ArticleService();
+            LoadArticles();
+        }
 
-		public ArticleViewModel()
-		{
-			_articleService = new ArticleService();
-			Articles = new ObservableCollection<Article>();
-			AddArticleCommand = new RelayCommand(AddArticle);
-			DeleteArticleCommand = new RelayCommand(DeleteArticle);
-			LoadArticlesCommand = new RelayCommand(LoadArticles);
-		}
+        public void LoadArticles()
+        {
+            var articlesFromDb = _articleService.GetAllArticles();
+            Articles = new ObservableCollection<Article>(articlesFromDb);
+            OnPropertyChanged(nameof(Articles));
+        }
 
-		private void AddArticle()
-		{
-			// Example article addition
-			var newArticle = new Article
-			{
-				Title = "New Article Title",
-				Author = "Author Name",
-				Date = DateTime.Now,
-				Content = "Content of the article."
-			};
-			_articleService.AddArticle(newArticle);
-			LoadArticles(); // Refresh list
-		}
+        public void AddArticle(Article newArticle)
+        {
+            _articleService.AddArticle(newArticle);
+            Articles.Add(newArticle);
+            OnPropertyChanged(nameof(Articles));
+        }
 
-		private void DeleteArticle()
-		{
-			// Example deletion
-			_articleService.DeleteArticle("New Article Title");
-			LoadArticles(); // Refresh list
-		}
+        public event PropertyChangedEventHandler PropertyChanged;
 
-		private void LoadArticles()
-		{
-			Articles.Clear();
-			var articles = _articleService.GetAllArticles();
-			foreach (var article in articles)
-			{
-				Articles.Add(article);
-			}
-		}
-	}
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
 }

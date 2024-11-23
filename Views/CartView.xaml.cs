@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarangKu.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace BarangKu.Views
         public CartView()
         {
             InitializeComponent();
+        }
+
+        private void NavigateToHomeView_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Window.GetWindow(this) as MainWindow;
+            var navigationService = mainWindow.DataContext as NavigationServices;
+            navigationService?.NavigateToHomeView();
         }
     }
 }
