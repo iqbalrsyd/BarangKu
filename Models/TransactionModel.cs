@@ -1,11 +1,13 @@
 using BarangKu.Models;
 using System;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace BarangKu.Models
 {
     public class Transaction
     {
-        public int TransactionID { get; private set; }
+        public int TransactionID { get; set; }
         public int BuyerID { get; set; }
         public int SellerID { get; set; }
         public int ProductID { get; set; }
@@ -13,6 +15,14 @@ namespace BarangKu.Models
         public string Status { get; set; }
         public decimal TotalAmount { get; set; }
 
+        public int Quantity { get; set; }
+        public string PaymentStatus { get; set; }
+        public string BuyerName { get; set; }
+        public string BuyerAddress { get; set; }
+        public string BuyerTelephone { get; set; }
+        public string ShippingMethod { get; set; }
+        public string ProductName { get; set; }
+        public BitmapImage ImageURL { get; set; }
         public Transaction()
         {
             TransactionDate = DateTime.Now;

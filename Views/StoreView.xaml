@@ -12,7 +12,7 @@
             <ColumnDefinition Width="200*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="180"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Border Grid.Column="1" Grid.Row="0" Height="50" Width="140" VerticalAlignment="Top" Margin="0 20">
@@ -23,10 +23,15 @@
                 <TextBlock x:Name="StoreNameTextBox" Foreground="Black" FontWeight="SemiBold" FontSize="18" Text="{Binding StoreViewModel.StoreName, StringFormat='Nama Toko: {0}'}"></TextBlock>
                 <TextBlock x:Name="DescriptionStoreTextBox" Foreground="Black" FontWeight="SemiBold" FontSize="18" Text="{Binding StoreViewModel.StoreDescription, StringFormat='Deskripsi Toko: {0}'}" Margin="0 5" Width="500" HorizontalAlignment="Left" TextWrapping="Wrap"></TextBlock>
                 <TextBlock x:Name="RatingStoreTextBox" Foreground="Black" FontWeight="SemiBold" FontSize="18" Text="{Binding StoreViewModel.Rating, StringFormat='Rating Toko: {0:F1}'}" Margin="0 5"></TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Anda memiliki 3 pesanan baru" FontWeight="SemiBold" FontSize="15" Foreground="{StaticResource MainBlueBrush}" VerticalAlignment="Center"></TextBlock>
+                    <Button Content="Lihat Pesanan" Margin="30 0" Style="{StaticResource AddButton}" Width="120" Height="40" Click="Button_Click"></Button>
+                </StackPanel>
                 <TextBlock Text="Produk Saya" FontWeight="Bold" FontSize="25" Margin="20 15"></TextBlock>
             </StackPanel>
         </ScrollViewer>
         <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="20,30" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
+            <Viewbox Stretch="Uniform">
             <ItemsControl ItemsSource="{Binding StoreViewModel.Products}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -39,7 +44,7 @@
                             <ScrollViewer VerticalScrollBarVisibility="Hidden">
                                 <StackPanel Margin="15">
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold" FontSize="30" Width="150" TextWrapping="Wrap"/>
+                                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold" FontSize="27" Width="150" TextWrapping="Wrap"/>
                                         <Border Background="{StaticResource MainBlueBrush}" Width="120" Height="35" Margin="175,0" CornerRadius="10">
                                             <TextBlock Text="{Binding Status}" FontWeight="SemiBold" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" />
                                         </Border>
@@ -89,6 +94,7 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
+            </Viewbox>
         </ScrollViewer>
     </Grid>
 </UserControl>

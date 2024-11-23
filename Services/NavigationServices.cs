@@ -200,6 +200,12 @@ namespace BarangKu.Services
             OnPropertyChanged(nameof(SelectedViewModel));
         }
 
+        public void NavigateToMyOrderView()
+        {
+            SelectedViewModel = new MyOrderView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
         public void NavigateToEditProfileView()
         {
             SelectedViewModel = new EditProfileView();

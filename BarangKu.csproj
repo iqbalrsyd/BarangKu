@@ -17,6 +17,7 @@
     <None Remove="Assets\BsPerson.png" />
     <None Remove="Assets\cart.png" />
     <None Remove="Assets\category.png" />
+    <None Remove="Assets\centang.png" />
     <None Remove="Assets\chat.png" />
     <None Remove="Assets\delete.png" />
     <None Remove="Assets\durasi.png" />
@@ -53,6 +54,7 @@
     <Resource Include="Assets\BsPerson.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\centang.png" />
     <Resource Include="Assets\kamera.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

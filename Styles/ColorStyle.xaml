@@ -3,8 +3,10 @@
 
     <Color x:Key="MainBlue">#4158A6</Color>
     <Color x:Key="MainOrange">#FF8343</Color>
+    <Color x:Key="MainGreen">#307015</Color>
 
     <SolidColorBrush x:Key="MainBlueBrush" Color="{StaticResource MainBlue}"></SolidColorBrush>
     <SolidColorBrush x:Key="MainOrangeBrush" Color="{StaticResource MainOrange}"></SolidColorBrush>
+    <SolidColorBrush x:Key="MainGreenBrush" Color="{StaticResource MainGreen}"></SolidColorBrush>
 
 </ResourceDictionary>
