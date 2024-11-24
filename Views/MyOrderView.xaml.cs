@@ -47,7 +47,7 @@ namespace BarangKu.Views
             if (parameter is int transactionid)
             {
                 
-                var result = MessageBox.Show("Apakah Anda yakin ingin menyetujui transaksi ini?", "Konfirmasi Penghapusan", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                var result = MessageBox.Show("Apakah Anda yakin ingin mengirim transaksi ini?", "Konfirmasi Penghapusan", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                 if (result == MessageBoxResult.Yes)
                 {
@@ -57,7 +57,7 @@ namespace BarangKu.Views
 
                     if (isUpdated)
                     {
-                        MessageBox.Show("Transaksi berhasil disetujui.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Transaksi berhasil dikirim.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
                         // Assuming you have a method to navigate back to StoreView
                         var mainWindow = Window.GetWindow(this) as MainWindow;
@@ -66,13 +66,13 @@ namespace BarangKu.Views
                     }
                     else
                     {
-                        MessageBox.Show("Gagal menyetujui transaksi.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Gagal mengirim transaksi.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
                 else
                 {
                     // If user chooses "No", do nothing (i.e., cancel the deletion)
-                    MessageBox.Show("Penyetujuan transaksi dibatalkan.", "Batal", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Pengiriman transaksi dibatalkan.", "Batal", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             else

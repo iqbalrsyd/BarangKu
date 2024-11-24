@@ -52,7 +52,8 @@ namespace BarangKu.ViewModels
                                 u.telephone,
                                 p.name,
                                 p.imageurl,
-                                t.ShippingMethod
+                                t.shippingmethod,
+                                t.orderdate
                             FROM 
                                 order_transaction t
                             JOIN 
@@ -60,7 +61,7 @@ namespace BarangKu.ViewModels
                             JOIN 
                                 users u ON t.buyerid = u.userid
                             WHERE 
-                                t.sellerid = @sellerid AND t.status = 'Diproses'";
+                                t.sellerid = @sellerid AND t.status = 'Dipesan'";
 
 
                     using (var cmd = new NpgsqlCommand(getOrder, conn))
@@ -81,11 +82,12 @@ namespace BarangKu.ViewModels
                                     TotalAmount = reader.GetDecimal(6),
                                     PaymentStatus = reader.GetString(7),
                                     BuyerName = reader.GetString(8),
-                                    BuyerAddress = reader.GetString(9),
+                                    BuyerAddress = reader.IsDBNull(9) ? "Belum diisi" : reader.GetString(9),
                                     BuyerTelephone = reader.GetString(10),
                                     ProductName = reader.GetString(11),
                                     ImageURL = reader.IsDBNull(12) ? null : ByteArrayToImage((byte[])reader[12]),
                                     ShippingMethod = reader.GetString(13),
+                                    TransactionDate = reader.GetDateTime(14),
                                 };
 
                                 orders.Add(order);
@@ -132,7 +134,8 @@ namespace BarangKu.ViewModels
                                 u.telephone,
                                 p.name,
                                 p.imageurl,
-                                t.ShippingMethod
+                                t.ShippingMethod,
+                                t.orderdate
                             FROM 
                                 order_transaction t
                             JOIN 
@@ -140,7 +143,7 @@ namespace BarangKu.ViewModels
                             JOIN 
                                 users u ON t.buyerid = u.userid
                             WHERE 
-                                t.sellerid = @sellerid AND t.status = 'Selesai'";
+                                t.sellerid = @sellerid AND t.status IN ('Selesai', 'Dikirim')";
 
 
                     using (var cmd = new NpgsqlCommand(getOrder, conn))
@@ -161,11 +164,12 @@ namespace BarangKu.ViewModels
                                     TotalAmount = reader.GetDecimal(6),
                                     PaymentStatus = reader.GetString(7),
                                     BuyerName = reader.GetString(8),
-                                    BuyerAddress = reader.GetString(9),
+                                    BuyerAddress = reader.IsDBNull(9) ? "Belum diisi" : reader.GetString(9),
                                     BuyerTelephone = reader.GetString(10),
                                     ProductName = reader.GetString(11),
                                     ImageURL = reader.IsDBNull(12) ? null : ByteArrayToImage((byte[])reader[12]),
                                     ShippingMethod = reader.GetString(13),
+                                    TransactionDate = reader.GetDateTime(14),
                                 };
 
                                 orders.Add(order);
@@ -216,7 +220,7 @@ namespace BarangKu.ViewModels
             {
                 string updateStatusQuery = @"
             UPDATE order_transaction 
-            SET status = 'Selesai' 
+            SET status = 'Dikirim' 
             WHERE ordertransactionid = @ordertransactionid";
 
                 using (var cmd = new NpgsqlCommand(updateStatusQuery, conn))
