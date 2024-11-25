@@ -13,6 +13,7 @@ namespace BarangKu.ViewModels
         public ArticleViewModel()
         {
             _articleService = new ArticleService();
+            Articles = new ObservableCollection<Article>(_articleService.GetAllArticles());
             LoadArticles();
         }
 

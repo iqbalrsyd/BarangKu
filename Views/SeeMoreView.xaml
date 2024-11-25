@@ -5,28 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BarangKu.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-    <Grid.RowDefinitions>
+             d:DesignHeight="768" d:DesignWidth="1080">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
 
-            <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition Height="100"></RowDefinition>
-        
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="100*"></RowDefinition>
+            <RowDefinition Height="100"/>
+            <!-- Navbar -->
+            <RowDefinition Height="*" />
+            <!-- Konten Utama -->
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" Margin="20 0">
-            <Button Background="Transparent" BorderBrush="Transparent" Width="30" Height="30" Click="NavigateToArticleView_Click">
-                <Image Source="/Assets/back.png"></Image>
-            </Button>
-        </StackPanel>
-
-        <DockPanel Margin="0,0,0,27" Grid.RowSpan="2">
-
+        <DockPanel>
             <!-- Kontainer utama untuk search bar dan tombol -->
-            <Grid DockPanel.Dock="Top" Margin="30,45,30,25">
-
+            <Grid DockPanel.Dock="Top" Margin="30,25,30,25">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <!-- Untuk Search Bar -->
@@ -38,69 +29,56 @@
                     <!-- Untuk Tombol Keranjang -->
                 </Grid.ColumnDefinitions>
 
-                <!-- Search bar dengan Grid di dalamnya -->
-                <Border Grid.Column="0" CornerRadius="10" BorderBrush="{StaticResource MainBlueBrush}" Height="30" BorderThickness="2" Background="White">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <!-- Kolom untuk TextBox -->
-                            <ColumnDefinition Width="Auto" />
-                            <!-- Kolom untuk ikon pencarian -->
-                        </Grid.ColumnDefinitions>
-
-                        <!-- TextBox untuk input pencarian -->
-                        <TextBox Grid.Column="0" Text="Cari produk di sini" FontWeight="Light" Foreground="{StaticResource MainBlueBrush}"
-         Margin="10,0" VerticalContentAlignment="Center" BorderBrush="Transparent" Background="Transparent"/>
-
-                        <!-- Ikon pencarian -->
-                        <Image Grid.Column="1" Source="/Assets/search.png" Width="20" Height="20" Margin="5,0,10,0" VerticalAlignment="Center"/>
-                    </Grid>
-
-                </Border>
+              
 
                 <!-- Tombol Chat -->
-                <Button Grid.Column="1" Width="30" Height="30" Background="Transparent" BorderBrush="Transparent" Margin="10,0,0,0">
+                <Button Grid.Column="1" Width="30" Height="30" Background="Transparent" BorderBrush="Transparent" Margin="10,20,0,0">
                     <Image Source="/Assets/chat.png" Width="20" Height="20"/>
                 </Button>
 
                 <!-- Tombol Notifikasi -->
-                <Button Grid.Column="2" Width="30" Height="30" Background="Transparent" BorderBrush="Transparent" Margin="10,0,0,0">
+                <Button Grid.Column="2" Width="30" Height="30" Background="Transparent" BorderBrush="Transparent" Margin="10,20,0,0">
                     <Image Source="/Assets/notifikasi.png" Width="20" Height="20"/>
                 </Button>
 
                 <!-- Tombol Keranjang -->
-                <Button Grid.Column="3" Width="30" Height="30" Background="Transparent" BorderBrush="Transparent" Margin="10,0,0,0">
+                <Button Grid.Column="3" Width="30" Height="30" Background="Transparent" BorderBrush="Transparent" Click="NavigateToCartView_Click" Margin="20,20,0,0">
                     <Image Source="/Assets/Cart.png" Width="20" Height="20"/>
                 </Button>
-
-                <!-- Content -->
-                <ScrollViewer Margin="20,100,20,20">
-                    <StackPanel>
-                        <!-- Article Title -->
-                        <TextBlock x:Name="ArticleTitle" Text="House of Elegance Menampilkan Koleksi Berani di Paris Fashion Week" 
-                           FontSize="24" FontWeight="Bold" Foreground="Black" TextWrapping="Wrap" Margin="0,10" />
-
-                        <!-- Article Subtitle -->
-                        <TextBlock x:Name="ArticleSubtitle" Text="Dalam sebuah peragaan busana kontemporer yang mendebarkan, House of Elegance menetapkan standar baru dalam dunia mode, memukau para penonton dengan presentasi runway yang visioner di Paris Fashion Week." 
-                           FontSize="16" Foreground="Black" TextWrapping="Wrap" Margin="0,10,0,20" />
-
-                        <!-- Article Source and Date -->
-                        <TextBlock x:Name="ArticleSourceDate" Text="Okezon.com | 4 Agustus 2024" FontSize="14" Foreground="Gray" Margin="0,0,0,10" />
-
-                        <!-- Article Image -->
-                        <Image x:Name="ArticleImage" Source="/Assets/FashionShow.png" Width="800" Height="400" Stretch="UniformToFill" Margin="0,20,0,20" />
-
-                        <!-- Article Content -->
-                        <TextBlock x:Name="ArticleContent" Text="House of Elegance memukau dunia dengan koleksi terbarunya di Paris Fashion Week, memadukan desain avant-garde dengan sentuhan keanggunan yang tak lekang oleh waktu. Pertunjukan yang digelar di Grand Palais yang ikonik menampilkan deretan busana yang memadukan pola geometris berani dengan kain yang nyaman dan estetika modern, menciptakan pernyataan mode yang menakjubkan musim ini.
-
-Direktur kreatif sang desainer, Annabelle Duval, menggambarkan inspirasi di balik koleksi ini sebagai 'perpaduan kontras', menyoroti keseimbangan halus antara struktur dan keleluasaan. 'Kami ingin mengeksplorasi bagaimana mode dapat menjadi cara untuk merayakan karya seni, memberdayakan dan menginspirasi,' ungkap Duval." 
-                           FontSize="16" Foreground="Black" TextWrapping="Wrap" Margin="0,10,0,10" />
-                    </StackPanel>
-                </ScrollViewer>
             </Grid>
         </DockPanel>
 
+        <ContentControl Grid.Row="0">
+            <!-- Konten Navbar di-include sesuai file -->
+            <Button Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="30,0,0,20" Click="NavigateToArticleView_Click">
+                <Image Source="/Assets/back.png" Width="25" Height="25"/>
+            </Button>
+        </ContentControl>
+
+        <!-- Konten Artikel -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="20">
+            <StackPanel>
+                
+
+                <!-- Judul Artikel -->
+                <TextBlock Text="House of Elegance Menampilkan Koleksi Berani di Paris Fashion Week" 
+                           FontSize="28" FontWeight="Bold" TextAlignment="Center" TextWrapping="Wrap" Margin="0,10"/>
+                <TextBlock Text="Dalam sebuah peragaan busana kontemporer yang mendebarkan, House of Elegance menetapkan standar baru dalam dunia mode, memukau para penonton dengan presentasi runway yang visioner di Paris Fashion Week." 
+                           FontSize="16" TextAlignment="Center" TextWrapping="Wrap" Margin="0,10"/>
+                <TextBlock Text="Okezon.com | 4 Agustus 2024" 
+                           FontSize="14" Foreground="Gray" TextAlignment="Center" Margin="0,10"/>
+
+                <!-- Gambar Artikel -->
+                <Image Source="/Assets/artikel1.jpg" Height="300" Stretch="Uniform" HorizontalAlignment="Center" Margin="0,20"/>
+
+                <!-- Konten Artikel -->
+                <TextBlock FontSize="16" TextWrapping="Wrap" TextAlignment="Justify" Margin="0,20">
+                    House of Elegance memukau dunia dengan koleksi terbaru di Paris Fashion Week, memadukan desain avant-garde dengan sentuhan keanggunan yang tak lekang oleh waktu. Pertunjukan yang digelar di Grand Palais yang ikonik menampilkan deretan busana yang memadukan pola geometris berani dengan kain yang mengalir dan ethereal, menciptakan pernyataan mode yang melampaui musim.
+                </TextBlock>
+                <TextBlock FontSize="16" TextWrapping="Wrap" TextAlignment="Justify" Margin="0,10">
+                    Direktur kreatif sang desainer, Annabelle Duval, menggambarkan inspirasi di balik koleksi ini sebagai "perayaan kontras", menampilkan keseimbangan halus antara struktur dan keluwesan. "Kami ingin mengekspresikan bagaimana mode dapat menjadi perisai sekaligus karya seni, memberdayakan dan menginspirasi," ungkap Duval.
+                </TextBlock>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>
-
-

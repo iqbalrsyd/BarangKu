@@ -2,6 +2,7 @@
 using BarangKu.Models;
 using Npgsql;
 using System.Collections.Generic;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace BarangKu.Services
 {
@@ -54,9 +55,12 @@ namespace BarangKu.Services
                     cmd.Parameters.AddWithValue("@content", article.Content);
                     cmd.Parameters.AddWithValue("@imageurl", article.ImageUrl ?? (object)DBNull.Value);
                     cmd.Parameters.AddWithValue("@isread", article.IsRead);
+                    cmd.Parameters.AddWithValue("@ImageBinary", article.ImageBinary ?? (object)DBNull.Value);
                     cmd.ExecuteNonQuery();
                 }
             }
         }
+
+
     }
 }

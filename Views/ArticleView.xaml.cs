@@ -37,13 +37,18 @@ namespace BarangKu.Views
 
         private void NavigateToSeeMore_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = Window.GetWindow(this) as MainWindow;
-            if (mainWindow != null)
+            var button = sender as Button;
+            var articleId = button?.CommandParameter as int?; 
+
+            if (articleId.HasValue)
             {
-                var navigationService = mainWindow.DataContext as NavigationServices;
-                navigationService?.NavigateToSeeMoreView();
+                var mainWindow = Window.GetWindow(this) as MainWindow;
+                var navigationService = mainWindow?.DataContext as NavigationServices;
+
+                navigationService?.NavigateToSeeMoreView(articleId.Value); 
             }
         }
+
 
         private void NavigateToCartView_Click(object sender, RoutedEventArgs e)
         {

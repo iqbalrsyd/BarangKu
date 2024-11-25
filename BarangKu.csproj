@@ -15,6 +15,7 @@
     <None Remove="Assets\artikel3.jpg" />
     <None Remove="Assets\artikel4.jpg" />
     <None Remove="Assets\artikel5.jpg" />
+    <None Remove="Assets\artikel6.jpg" />
     <None Remove="Assets\back.png" />
     <None Remove="Assets\BsPerson.png" />
     <None Remove="Assets\cart.png" />
@@ -54,6 +55,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\artikel4.jpg" />
+    <Resource Include="Assets\artikel6.jpg" />
     <Resource Include="Assets\artikel5.jpg" />
     <Resource Include="Assets\BsPerson.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

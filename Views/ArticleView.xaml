@@ -108,7 +108,8 @@
                                         BorderBrush="Transparent"
                                         Cursor="Hand"
                                         HorizontalAlignment="Left"
-                                        CommandParameter="{Binding}" Click="NavigateToSeeMore_Click" />
+                                        CommandParameter="{Binding ArticleId}" 
+                                        Click="NavigateToSeeMore_Click" />
                             </StackPanel>
                         </Border>
                     </DataTemplate>

@@ -242,7 +242,7 @@ namespace BarangKu.ViewModels
             }
         }
 
-        public UserModel EditInfoUser(int userid, string username, string firstname, string lastname, string email, string telephone, string address, string language)
+        public UserModel EditInfoUser(int userid, string username, string firstname, string lastname, string email, string telephone, string address, string language, byte[] profilePicture)
         {
             var conn = _dbService.GetConnection();
             UserModel updateUser = UserSessionService.Instance.User;
@@ -250,7 +250,7 @@ namespace BarangKu.ViewModels
             try
             {
                 string update = @"UPDATE users SET username = @username, firstname = @firstname, lastname = @lastname, email = @email, 
-                        telephone = @telephone, address = @address, language = @language WHERE userid = @userid";
+                        telephone = @telephone, address = @address, language = @language, profile_picture = @profilePicture WHERE userid = @userid";
 
                 using (var cmd = new NpgsqlCommand(update, conn))
                 {
@@ -262,9 +262,12 @@ namespace BarangKu.ViewModels
                     cmd.Parameters.AddWithValue("telephone", telephone);
                     cmd.Parameters.AddWithValue("address", address);
                     cmd.Parameters.AddWithValue("language", language);
+                    cmd.Parameters.AddWithValue("profilePicture", profilePicture ?? (object)DBNull.Value);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
 
+                    if (rowsAffected > 0)
+                    {
                         updateUser = new UserModel
                         {
                             UserId = userid,
@@ -274,9 +277,11 @@ namespace BarangKu.ViewModels
                             Email = email,
                             Telephone = telephone,
                             Address = address,
-                            Language = language
+                            Language = language,
+                            ProfilePicture = profilePicture
                         };
-                    UserSessionService.Instance.User = updateUser;
+                        UserSessionService.Instance.User = updateUser;
+                    }
                 }
             }
             catch (Exception ex)
@@ -290,6 +295,8 @@ namespace BarangKu.ViewModels
 
             return updateUser;
         }
+
+
 
     }
 }
