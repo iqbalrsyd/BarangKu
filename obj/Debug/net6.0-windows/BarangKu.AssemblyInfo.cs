@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BarangKu")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+adec659d6dd89f038e6b9dd551f3451108bb5134")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("BarangKu")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BarangKu")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
