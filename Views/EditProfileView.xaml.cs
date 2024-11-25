@@ -101,7 +101,7 @@ namespace BarangKu.Views
             userService.UpdateUser(user);
 
             EditProfileViewModel editProfile = new EditProfileViewModel();
-            UserModel userModel = editProfile.EditInfoUser(userid, username, firstname, lastname, email, telephone, address, language);
+            UserModel userModel = editProfile.EditInfoUser(userid, username, firstname, lastname, email, telephone, address, language, _profileImageData);
             if (userModel != null)
             {
                

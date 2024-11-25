@@ -29,6 +29,20 @@ namespace BarangKu.Converters
         {
             throw new NotImplementedException();
         }
+
+        public static byte[] ConvertToByteArray(string imagePath)
+        {
+            BitmapImage bitmap = new BitmapImage(new Uri(imagePath, UriKind.RelativeOrAbsolute));
+            byte[] data;
+            BitmapEncoder encoder = new PngBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(bitmap));
+            using (var stream = new MemoryStream())
+            {
+                encoder.Save(stream);
+                data = stream.ToArray();
+            }
+            return data;
+        }
     }
 }
 

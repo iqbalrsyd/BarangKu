@@ -239,11 +239,12 @@ namespace BarangKu.Services
             OnPropertyChanged(nameof(SelectedViewModel));
         }
 
-        public void NavigateToSeeMoreView()
+        public void NavigateToSeeMoreView(int articleId)
         {
-            SelectedViewModel = new SeeMoreView();
+            SelectedViewModel = new SeeMoreView(articleId); 
             OnPropertyChanged(nameof(SelectedViewModel));
         }
+
 
         public void NavigateToArticleView()
         {
