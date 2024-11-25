@@ -2,6 +2,8 @@
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using BarangKu.ViewModels;
+using BarangKu.Services;
 
 namespace BarangKu.Views
 {
@@ -21,7 +23,7 @@ namespace BarangKu.Views
             DataContext = _cartViewModel;
 
             // Muat data keranjang
-            Loaded += CartView_Loaded;
+            //Loaded += CartView_Loaded;
         }
 
         private void NavigateToHomeView_Click(object sender, RoutedEventArgs e)
