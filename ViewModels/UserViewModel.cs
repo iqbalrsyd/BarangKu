@@ -10,14 +10,46 @@ namespace BarangKu.ViewModels
         private UserModel _user;
         private readonly Authenticator _authenticator;
         private readonly DatabaseService _dbService;
-        public UserModel User { get; set; }
+        private readonly UserService _userService;
+        
+
+        public UserModel User
+        {
+            get => _user;
+            set
+            {
+                _user = value;
+                OnPropertyChanged(nameof(User));
+            }
+        }
+
+       
 
         public UserViewModel()
         {
             _user = new UserModel();
             _authenticator = new Authenticator();
            _dbService = new DatabaseService();
+            _userService = new UserService();
+          
+
         }
+
+        private void LoadUser(int userId)
+        {
+            User = _userService.GetUserById(userId);
+        }
+
+        public void SaveUserChanges()
+        {
+            _userService.UpdateUser(User);
+        }
+
+        public void UpdateUserProfile(UserModel user)
+        {
+            _userService.UpdateUser(user);
+            User = user;
+        } 
 
         //public UserModel User
         //{

@@ -22,12 +22,45 @@ namespace BarangKu.Views
     /// </summary>
     public partial class ProfileView : UserControl
     {
+        private readonly DatabaseService _databaseService = new DatabaseService();
+        private byte[] _profileImageData;
+        private readonly int _userId = UserSessionService.Instance.User.UserId;
+        private readonly UserService _userService = new UserService();
+
         public ProfileView()
         {
             InitializeComponent();
             EditProfileViewModel viewModel = new EditProfileViewModel();
             DataContext = viewModel;
-            
+            LoadUserProfile();
+        }
+
+        private void LoadUserProfile()
+        {
+            var user = _userService.GetUserById(_userId);
+            if (user != null)
+            {
+                UsernameTextBox.Text = user.Username;
+                FirstNameTextBox.Text = user.FirstName;
+                LastNameTextBox.Text = user.LastName;
+                TelephoneTextBox.Text = user.Telephone;
+                EmailTextBox.Text = user.Email;
+                AddressTextBox.Text = user.Address;
+                LanguageComboBox.SelectedValue = user.Language;
+
+                if (user.ProfilePicture != null)
+                {
+                    var bitmap = new BitmapImage();
+                    using (var stream = new System.IO.MemoryStream(user.ProfilePicture))
+                    {
+                        bitmap.BeginInit();
+                        bitmap.StreamSource = stream;
+                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                        bitmap.EndInit();
+                    }
+                    ProfilePictureImage.ImageSource = bitmap;
+                }
+            }
         }
 
         private void NavigateToEditProfileView_Click(object sender, RoutedEventArgs e)

@@ -18,8 +18,9 @@ namespace BarangKu.ViewModels
     {
         private readonly UserService _userService;
         private byte[] _profilePicture;
-
+        private UserModel _user;
         public int UserId { get; set; } = 1; // ID pengguna aktif
+
 
         //public string Username { get; set; }
         //public string FirstName { get; set; }
@@ -30,7 +31,14 @@ namespace BarangKu.ViewModels
         //public string Language { get; set; }
         private readonly DatabaseService _dbService;
 
+        public EditProfileViewModel(int userId)
+        {
+            // Initialize services and fields
+            _userService = new UserService();
+            _user = _userService.GetUserById(userId);
+        }
 
+       
 
         public byte[] ProfilePicture
         {
