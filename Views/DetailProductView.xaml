@@ -59,9 +59,19 @@
             <TextBlock Text="Deskripsi Produk" FontWeight="SemiBold" FontSize="22"></TextBlock>
             <TextBlock Text="{Binding Description}" FontSize="18" Width="550" HorizontalAlignment="Left" TextWrapping="Wrap"></TextBlock>
         </StackPanel>
-        <StackPanel Grid.Column="2" Grid.Row="1">
+        <StackPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Top">
+            <TextBlock Text="Jumlah" FontWeight="SemiBold" FontSize="20"></TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="left" Margin="0 20">
+                <Button Background="Transparent" BorderBrush="Transparent" Click="MinusButton_Click">
+                    <Image Source="/Assets/minus_icon.png" Width="40" Height="40"></Image>
+                </Button>
+                <TextBox x:Name="StockTextBox" FontWeight="DemiBold" Margin="10 " FontSize="20" Text="1" ></TextBox>
+                <Button Background="Transparent" BorderBrush="Transparent" Click="PlusButton_Click">
+                    <Image Source="/Assets/plus_icon.png" Width="40" Height="40"></Image>
+                </Button>
+            </StackPanel>
             <Button Content="Beli Sekarang" Background="{StaticResource MainBlueBrush}" Foreground="White" Height="30"></Button>
-            <Button Content="Tambah ke Keranjang" Background="White" BorderBrush="{StaticResource MainBlueBrush}" BorderThickness="2" Height="30" Foreground="{StaticResource MainBlueBrush}" Margin="0 20"></Button>
+            <Button Content="Tambah ke Keranjang" Click="BtnTambahKeranjang_Click" Background="White" BorderBrush="{StaticResource MainBlueBrush}" BorderThickness="2" Height="30" Foreground="{StaticResource MainBlueBrush}" Margin="0 20"></Button>
         </StackPanel>
     </Grid>
 </UserControl>

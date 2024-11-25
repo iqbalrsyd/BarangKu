@@ -68,8 +68,18 @@ namespace BarangKu.Services
 
         public List<Cart> GetCartItems(int userID)
         {
-            // Return cart items for a specific user
-            return _carts.Where(c => c.UserID == userID).ToList();
+            // Filter the cart items for the given user
+            var userCartItems = _carts.Where(c => c.UserID == userID).ToList();
+
+            if (!userCartItems.Any())
+            {
+                Console.WriteLine($"No items found in the cart for user {userID}.");
+                return new List<Cart>(); // Return an empty list if no items are found
+            }
+
+            Console.WriteLine($"Retrieved {userCartItems.Count} items from cart for user {userID}.");
+            return userCartItems;
         }
+
     }
 }

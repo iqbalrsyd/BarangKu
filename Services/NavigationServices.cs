@@ -137,6 +137,9 @@ namespace BarangKu.Services
                 case "Keluar":
                     Logout();  // Logout dan navigasi ke login
                     break;
+                case "Cart":
+                    SelectedViewModel = new CartView();
+                    break;
                 default:
                     SelectedViewModel = new HomeView();
                     break;
@@ -239,6 +242,12 @@ namespace BarangKu.Services
         public void NavigateToArticleView()
         {
             SelectedViewModel = new ArticleView();
+            OnPropertyChanged(nameof(SelectedViewModel));
+        }
+
+        public void NavigateToCartView()
+        {
+            SelectedViewModel = new CartView();
             OnPropertyChanged(nameof(SelectedViewModel));
         }
 
