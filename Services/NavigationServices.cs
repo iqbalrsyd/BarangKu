@@ -137,6 +137,9 @@ namespace BarangKu.Services
                 case "Keluar":
                     Logout();  // Logout dan navigasi ke login
                     break;
+                case "Cart":
+                    SelectedViewModel = new CartView();
+                    break;
                 default:
                     SelectedViewModel = new HomeView();
                     break;

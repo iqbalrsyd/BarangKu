@@ -1,18 +1,9 @@
-﻿using BarangKu.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using BarangKu.ViewModels;
+using BarangKu.Services;
 
 namespace BarangKu.Views
 {
@@ -21,9 +12,18 @@ namespace BarangKu.Views
     /// </summary>
     public partial class CartView : UserControl
     {
+        private readonly CartViewModel _cartViewModel;
+
         public CartView()
         {
             InitializeComponent();
+
+            // Inisialisasi ViewModel
+            _cartViewModel = new CartViewModel();
+            DataContext = _cartViewModel;
+
+            // Muat data keranjang
+            //Loaded += CartView_Loaded;
         }
 
         private void NavigateToHomeView_Click(object sender, RoutedEventArgs e)

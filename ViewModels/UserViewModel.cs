@@ -68,7 +68,7 @@ namespace BarangKu.ViewModels
 
             try
             {
-                string login = "SELECT userid, username, hashedpassword, firstname, lastname, email, telephone, created, modified FROM users WHERE username = @username";
+                string login = "SELECT userid, username, hashedpassword, firstname, lastname, email, telephone, created, modified, address, language FROM users WHERE username = @username";
                 using (var cmd = new NpgsqlCommand(login, conn))
                 {
                     cmd.Parameters.AddWithValue("username", username);
@@ -88,6 +88,8 @@ namespace BarangKu.ViewModels
                                 var telephone = reader.GetString(6);
                                 var created = reader.GetDateTime(7);
                                 var modified = reader.GetDateTime(8);
+                                var address = reader.IsDBNull(9) ? "Belum diisi" : reader.GetString(9);
+                                var language = reader.IsDBNull(10) ? "Belum diisi" : reader.GetString(10);
 
                                 UserSessionService.Instance.User = new UserModel
                                 {
@@ -98,7 +100,9 @@ namespace BarangKu.ViewModels
                                     Email = email,
                                     Telephone = telephone,
                                     Created = created,
-                                    Modified = modified
+                                    Modified = modified,
+                                    Address = address,
+                                    Language = language,
                                 };
                             }
                         }

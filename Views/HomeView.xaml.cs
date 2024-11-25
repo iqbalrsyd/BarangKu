@@ -17,7 +17,7 @@ namespace BarangKu.Views
         public HomeView()
         {
             InitializeComponent();
-            
+
 
             _productViewModel = new ProductViewModel();
             DataContext = _productViewModel;
