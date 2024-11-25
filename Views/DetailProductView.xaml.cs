@@ -1,7 +1,9 @@
 ﻿using BarangKu.Models;
 using BarangKu.Services;
+using BarangKu.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace BarangKu.Views
 {
@@ -71,13 +73,90 @@ namespace BarangKu.Views
             }
         }
 
-        private void BtnTambahKeranjang_Click (object sender, RoutedEventArgs e)
+        private ICommand _addProductCommand;
+        public ICommand AddProductCommand
         {
-            var mainWindow = Window.GetWindow(this) as MainWindow;
-            var navigationService = mainWindow?.DataContext as NavigationServices;
-            navigationService?.NavigateToCartView();
+            get
+            {
+                if (_addProductCommand == null)
+                {
+                    _addProductCommand = new RelayCommand<object>(param => AddToCart(param));
+                }
+                return _addProductCommand;
+            }
         }
 
+        private ICommand _buyNowCommand;
+        public ICommand BuyNowCommand
+        {
+            get
+            {
+                if (_buyNowCommand == null)
+                {
+                    _buyNowCommand = new RelayCommand<object>(param => BuyNow(param));
+                }
+                return _buyNowCommand;
+            }
+        }
 
+        private void AddToCart(object parameter)
+        {
+            int userid = UserSessionService.Instance.User.UserId;
+            int quantity = int.Parse(StockTextBox.Text);
+            if (parameter is int productId)
+            {
+                   
+                    CartViewModel cartViewModel = new CartViewModel();
+
+                    var isAdded = cartViewModel.AddCart(userid, productId, quantity);
+
+                    if (isAdded != null)
+                    {
+                        MessageBox.Show("Produk berhasil ditambahkan ke keranjang.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Gagal menambahkan ke keranjang, coba lagi.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                
+            }
+            else
+            {
+                MessageBox.Show("Invalid Product ID", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        
+        
+
+        private void BuyNow(object parameter)
+        {
+            int userid = UserSessionService.Instance.User.UserId;
+            int quantity = int.Parse(StockTextBox.Text);
+            if (parameter is int productId)
+            {
+
+                CartViewModel cartViewModel = new CartViewModel();
+
+                var isAdded = cartViewModel.AddCart(userid, productId, quantity);
+
+                if (isAdded != null)
+                {
+
+                    // Assuming you have a method to navigate back to StoreView
+                    var mainWindow = Window.GetWindow(this) as MainWindow;
+                    var navigationService = mainWindow?.DataContext as NavigationServices;
+                    navigationService?.NavigateToCartView();
+                }
+                else
+                {
+                    MessageBox.Show("Gagal. silakan coba lagi.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Invalid Product ID", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }

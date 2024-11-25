@@ -27,6 +27,8 @@ namespace BarangKu.ViewModels
             _cartService = new CartService();
             _dbService = new DatabaseService();
             Cart = new ObservableCollection<Cart>();
+            int userid = UserSessionService.Instance.User.UserId;
+            LoadCartItems(userid);
         }
 
 
@@ -45,7 +47,7 @@ namespace BarangKu.ViewModels
             try
             {
                 userId = UserSessionService.Instance.User.UserId;
-                var items = _cartService.GetCartItems(userId);
+                var items = GetCartItems(userId);
                 Cart = new ObservableCollection<Cart>(items);
             }
             catch (Exception ex)
