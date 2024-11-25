@@ -23,71 +23,50 @@
             </Button>
             <TextBlock Text="Keranjangku" FontWeight="Bold" FontSize="30" Margin="10 0" VerticalAlignment="Center"></TextBlock>
         </StackPanel>
-        <ScrollViewer Grid.Column="0" Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="20 30">
-            <StackPanel>
-                <Border BorderBrush="{StaticResource MainBlueBrush}" BorderThickness="2" Background="Transparent" Height="120" CornerRadius="15">
-                    <StackPanel Orientation="Horizontal">
-                        <CheckBox BorderBrush="{StaticResource MainBlueBrush}" Background="Transparent" VerticalAlignment="Center" Margin="5"></CheckBox>
-                        <Border Width="60" Height="60" CornerRadius="5" Margin="10" BorderBrush="Transparent">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Assets/sepatu.png"></ImageBrush>
-                            </Border.Background>
-                        </Border>
-                        <StackPanel>
-                            <TextBlock Text="Sepatu" Margin="5" FontSize="20" FontWeight="SemiBold"></TextBlock>
-                            <TextBlock Text="Durasi pemakaian: 2 bulan" FontSize="15" FontWeight="Light"></TextBlock>
-                        </StackPanel>
-                        <StackPanel Margin="30 0">
-                            <TextBlock Text="Qty" FontWeight="Bold" FontSize="18" Margin="30 5" ></TextBlock>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Button Background="Transparent" BorderBrush="Transparent">
-                                    <Image Source="/Assets/minus_icon.png" Width="20" Height="20"></Image>
-                                </Button>
-                                <TextBlock Text="1" FontWeight="DemiBold" Margin="10 "></TextBlock>
-                                <Button Background="Transparent" BorderBrush="Transparent">
-                                    <Image Source="/Assets/plus_icon.png" Width="20" Height="20"></Image>
-                                </Button>
-                            </StackPanel>
-                        </StackPanel>
-                        <StackPanel Margin="40 5">
-                            <TextBlock Text="Harga" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"></TextBlock>
-                            <TextBlock Text="Rp100.000" FontWeight="Light" FontSize="15"></TextBlock>
-                        </StackPanel>
-                    </StackPanel>
-                </Border>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="0" Grid.Row="1">
+            <ItemsControl ItemsSource="{Binding Cart}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <!-- Checkbox -->
+                            <CheckBox BorderBrush="{StaticResource MainBlueBrush}" Background="Transparent" VerticalAlignment="Center" Margin="5"/>
 
-                <!-- produk tas -->
-                <Border BorderBrush="{StaticResource MainBlueBrush}" BorderThickness="2" Background="Transparent" Height="120" CornerRadius="15" Margin="0 50">
-                    <StackPanel Orientation="Horizontal">
-                        <CheckBox BorderBrush="{StaticResource MainBlueBrush}" Background="Transparent" VerticalAlignment="Center" Margin="5"></CheckBox>
-                        <Border Width="60" Height="60" CornerRadius="5" Margin="10" BorderBrush="Transparent">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Assets/tas.jpg"></ImageBrush>
-                            </Border.Background>
-                        </Border>
-                        <StackPanel>
-                            <TextBlock Text="Tas" Margin="5" FontSize="20" FontWeight="SemiBold"></TextBlock>
-                            <TextBlock Text="Durasi pemakaian: 1 bulan" FontSize="15" FontWeight="Light"></TextBlock>
-                        </StackPanel>
-                        <StackPanel Margin="30 0">
-                            <TextBlock Text="Qty" FontWeight="Bold" FontSize="18" Margin="30 5" ></TextBlock>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Button Background="Transparent" BorderBrush="Transparent">
-                                    <Image Source="/Assets/minus_icon.png" Width="20" Height="20"></Image>
-                                </Button>
-                                <TextBlock Text="1" FontWeight="DemiBold" Margin="10 "></TextBlock>
-                                <Button Background="Transparent" BorderBrush="Transparent">
-                                    <Image Source="/Assets/plus_icon.png" Width="20" Height="20"></Image>
-                                </Button>
+                            <!-- Image -->
+                            <Border Width="60" Height="60" CornerRadius="5" Margin="10" BorderBrush="Transparent">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="{Binding ImageURL}"/>
+                                </Border.Background>
+                            </Border>
+
+                            <!-- Product Details -->
+                            <StackPanel>
+                                <TextBlock Text="{Binding Name}" Margin="5" FontSize="20" FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding Duration}" FontSize="15" FontWeight="Light"/>
+                            </StackPanel>
+
+                            <!-- Quantity Controls -->
+                            <StackPanel Margin="30 0">
+                                <TextBlock Text="Qty" FontWeight="Bold" FontSize="18" Margin="30 5"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Background="Transparent" BorderBrush="Transparent">
+                                        <Image Source="/Assets/minus_icon.png" Width="20" Height="20"/>
+                                    </Button>
+                                    <TextBlock Text="{Binding Quantity}" FontWeight="DemiBold" Margin="10 "/>
+                                    <Button Background="Transparent" BorderBrush="Transparent">
+                                        <Image Source="/Assets/plus_icon.png" Width="20" Height="20"/>
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <!-- Price -->
+                            <StackPanel Margin="40 5">
+                                <TextBlock Text="Harga" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding Price, StringFormat='Rp{0:N0}'}" FontWeight="Light" FontSize="15"/>
                             </StackPanel>
                         </StackPanel>
-                        <StackPanel Margin="40 5">
-                            <TextBlock Text="Harga" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"></TextBlock>
-                            <TextBlock Text="Rp15.000" FontWeight="Light" FontSize="15"></TextBlock>
-                        </StackPanel>
-                    </StackPanel>
-                </Border>
-            </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </ScrollViewer>
         <StackPanel Grid.Column="1" Grid.Row="1" Margin="100 0">
             <TextBlock Text="Total" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center"></TextBlock>
