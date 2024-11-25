@@ -18,7 +18,7 @@ namespace BarangKu.ViewModels
         private readonly DatabaseService _dbService;
         private readonly CartService _cartService;
         private ObservableCollection<Cart> _cart;
-
+        public ICommand CheckoutCommand { get; private set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -201,6 +201,97 @@ namespace BarangKu.ViewModels
             }
             return image;
         }
+
+        //public void CheckoutSelectedItems()
+        //{
+        //    // Filter produk yang dipilih
+        //    var selectedProducts = Cart.Where(c => c.IsSelected).ToList();
+
+
+
+        //    foreach (var product in selectedProducts)
+        //    {
+        //        Checkout(product); // Panggil fungsi Checkout untuk setiap produk
+        //    }
+
+        //    MessageBox.Show("Produk berhasil diproses checkout.", "Sukses", MessageBoxButton.OK, MessageBoxImage.Information);
+
+        //    // Hapus item yang sudah diproses dari keranjang
+        //    foreach (var product in selectedProducts)
+        //    {
+        //        Cart.Remove(product);
+        //    }
+        //}
+
+        public virtual bool AddOrderTransaction(int userId, int productId, int quantity)
+        {
+            var conn = _dbService.GetConnection();
+            try
+            {
+                int orderTransactionId;
+                bool isUnique = false;
+
+                // Generate unique OrderTransactionID
+                do
+                {
+                    Random random = new Random();
+                    orderTransactionId = random.Next(10000, 99999); // Menghasilkan ID unik dengan 6 digit
+
+                    // Cek apakah orderTransactionId sudah ada di database
+                    string checkOrderTransactionIdQuery = "SELECT COUNT(1) FROM order_transaction WHERE ordertransactionid = @orderTransactionId";
+                    using (var checkCmd = new NpgsqlCommand(checkOrderTransactionIdQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("orderTransactionId", orderTransactionId);
+                        int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+                        isUnique = (count == 0); // Jika count == 0, berarti ID unik
+                    }
+                } while (!isUnique); // Lanjutkan mencari ID yang unik sampai ditemukan
+
+                // Masukkan data ke tabel order_transaction
+                string addOrderTransactionQuery = @"
+            INSERT INTO order_transaction (
+                ordertransactionid, buyerid, sellerid, productid, quantity, totalamount, orderdate, status, paymentstatus, shippingmethod
+            )
+            SELECT
+                @orderTransactionId,
+                @userId,
+                p.sellerid,
+                @productId,
+                @quantity,
+                p.price * @quantity,
+                NOW(),
+                'Dipesan',
+                'Dibayar',
+                'COD'
+            FROM product p
+            WHERE p.productid = @productId";
+
+                using (var cmd = new NpgsqlCommand(addOrderTransactionQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("orderTransactionId", orderTransactionId);
+                    cmd.Parameters.AddWithValue("userId", userId);
+                    cmd.Parameters.AddWithValue("productId", productId);
+                    cmd.Parameters.AddWithValue("quantity", quantity);
+                    cmd.ExecuteNonQuery();
+                }
+
+                // Jika sampai sini, berarti transaksi berhasil
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saat membuat order transaction: {ex.Message}", "Kesalahan", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false; // Transaksi gagal
+            }
+            finally
+            {
+                _dbService.CloseConnection(conn);
+            }
+        }
+
+
+
+
 
     }
 }

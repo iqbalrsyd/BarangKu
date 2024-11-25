@@ -125,38 +125,41 @@ namespace BarangKu.Views
                 MessageBox.Show("Invalid Product ID", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        
-        
+
+
 
         private void BuyNow(object parameter)
         {
             int userid = UserSessionService.Instance.User.UserId;
-            int quantity = int.Parse(StockTextBox.Text);
+            int quantity = int.Parse(StockTextBox.Text); // Pastikan StockTextBox berisi jumlah yang valid
             if (parameter is int productId)
             {
-
                 CartViewModel cartViewModel = new CartViewModel();
 
-                var isAdded = cartViewModel.AddCart(userid, productId, quantity);
+                // Memanggil AddOrderTransaction dan memeriksa apakah berhasil
+                bool isAdded = cartViewModel.AddOrderTransaction(userid, productId, quantity);
 
-                if (isAdded != null)
+                if (isAdded)
                 {
-
-                    // Assuming you have a method to navigate back to StoreView
-                    var mainWindow = Window.GetWindow(this) as MainWindow;
-                    var navigationService = mainWindow?.DataContext as NavigationServices;
-                    navigationService?.NavigateToCartView();
+                    MessageBox.Show("Produk berhasil dibeli.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Gagal. silakan coba lagi.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    // Jika gagal, tampilkan pesan error
+                    MessageBox.Show("Gagal. Silakan coba lagi.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-
             }
             else
             {
                 MessageBox.Show("Invalid Product ID", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

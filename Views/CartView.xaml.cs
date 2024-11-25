@@ -4,6 +4,8 @@ using System.Windows;
 using System.Windows.Controls;
 using BarangKu.ViewModels;
 using BarangKu.Services;
+using System.Windows.Input;
+using BarangKu.Models;
 
 namespace BarangKu.Views
 {
@@ -13,6 +15,7 @@ namespace BarangKu.Views
     public partial class CartView : UserControl
     {
         private readonly CartViewModel _cartViewModel;
+        
 
         public CartView()
         {
@@ -21,6 +24,8 @@ namespace BarangKu.Views
             // Inisialisasi ViewModel
             _cartViewModel = new CartViewModel();
             DataContext = _cartViewModel;
+            
+
 
             // Muat data keranjang
             //Loaded += CartView_Loaded;
@@ -32,5 +37,12 @@ namespace BarangKu.Views
             var navigationService = mainWindow.DataContext as NavigationServices;
             navigationService?.NavigateToHomeView();
         }
+
+        
+
+        
+        
+
+
     }
 }

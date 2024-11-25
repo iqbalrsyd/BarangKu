@@ -70,7 +70,7 @@
                     <Image Source="/Assets/plus_icon.png" Width="40" Height="40"></Image>
                 </Button>
             </StackPanel>
-            <Button Content="Beli Sekarang" Background="{StaticResource MainBlueBrush}" Foreground="White" Height="30" Command="{Binding BuyNowCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding ProductID}"></Button>
+            <Button Content="Beli Sekarang" Background="{StaticResource MainBlueBrush}" Foreground="White" Height="30" Command="{Binding BuyNowCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding ProductID}" Click="Button_Click"></Button>
             <Button Content="Tambah ke Keranjang" Background="White" BorderBrush="{StaticResource MainBlueBrush}" BorderThickness="2" Height="30" Foreground="{StaticResource MainBlueBrush}" Margin="0 20" Command="{Binding AddProductCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding ProductID}"></Button>
         </StackPanel>
     </Grid>

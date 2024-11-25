@@ -2,6 +2,7 @@ using BarangKu.Models;
 using BarangKu.Services;
 using Npgsql;
 using System.ComponentModel;
+using System.Windows;
 
 namespace BarangKu.ViewModels
 {
@@ -127,6 +128,19 @@ namespace BarangKu.ViewModels
 
             try
             {
+                // Cek jika username sudah ada
+                string checkUsername = "SELECT COUNT(1) FROM users WHERE username = @username";
+                using (var checkCmd = new NpgsqlCommand(checkUsername, conn))
+                {
+                    checkCmd.Parameters.AddWithValue("username", username);
+                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Username sudah digunakan, silakan pilih username lain.", "Validasi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return null; // Kembalikan null jika username sudah ada
+                    }
+                }
                 int userid;
                 bool isUnique = false;
 
