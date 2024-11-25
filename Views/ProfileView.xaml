@@ -67,18 +67,12 @@
                 <!-- Profile Picture with Edit Button -->
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0">
                     <Grid>
-                        <!-- Circular Profile Picture -->
-                        <Ellipse Width="120" Height="120" Margin="20">
+                        <!-- Circular Profile Picture with Stroke -->
+                        <Ellipse Width="180" Height="180" Margin="2, 0, 0,0" Stroke="#1450A3" StrokeThickness="4">
                             <Ellipse.Fill>
-                                <ImageBrush ImageSource="{Binding ProfileImage}" />
+                                <ImageBrush x:Name="ProfilePictureImage"  />
                             </Ellipse.Fill>
                         </Ellipse>
-                        <!-- Overlay Button for Editing Photo -->
-                        <Button Width="120" Height="120" Background="Transparent" BorderBrush="Transparent"
-                                HorizontalAlignment="Center" VerticalAlignment="Center"
-                                Content="Edit Foto" Foreground="White" FontWeight="Bold"
-                                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                                Command="{Binding EditPhotoCommand}"/>
                     </Grid>
                 </StackPanel>
 
@@ -100,26 +94,26 @@
 
                         <!-- Username Field -->
                         <TextBlock Text="Username" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                        <TextBox Background="#FFC436"  Text="{Binding Username}" Grid.Row="0" Grid.Column="1" Height="30" Padding="5" />
+                        <TextBox x:Name="UsernameTextBox" Background="#FFC436"  Text="{Binding Username}" Grid.Row="0" Grid.Column="1" Height="30" Padding="5" />
 
                         <!-- Full Name Fields -->
                         <TextBlock Text="Nama Akun" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
                         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-                            <TextBox Text="{Binding FirstName}" Background="#FFC436" Width="100" Height="30" Padding="5" Margin="0,0,5,0" />
-                            <TextBox Text="{Binding LastName}"  Background="#FFC436" Width="150" Height="30" Padding="5" />
+                            <TextBox Text="{Binding FirstName}" Background="#FFC436" Width="100" Height="30" Padding="5" Margin="0,0,5,0" x:Name="FirstNameTextBox" />
+                            <TextBox Text="{Binding LastName}"  Background="#FFC436" Width="150" Height="30" Padding="5"  x:Name="LastNameTextBox"/>
                         </StackPanel>
 
                         <!-- Phone Number Field -->
                         <TextBlock Text="No. Hp" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                        <TextBox Text="{Binding Telephone}" Background="#FFC436"  Grid.Row="2" Grid.Column="1" Height="30" Padding="5" />
+                        <TextBox x:Name="TelephoneTextBox" Text="{Binding Telephone}"   Grid.Row="2" Grid.Column="1" Height="30" Padding="5" />
 
                         <!-- Email Field -->
                         <TextBlock Text="Email" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                        <TextBox Text="{Binding Email}" Background="#FFC436" Grid.Row="3" Grid.Column="1" Height="30" Padding="5" />
+                        <TextBox x:Name="EmailTextBox" Text="{Binding Email}"  Background="#FFC436" Grid.Row="3" Grid.Column="1" Height="30" Padding="5" />
 
                         <!-- Address Field -->
                         <TextBlock Text="Alamat" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                        <TextBox Text="{Binding Address}" Background="#FFC436" Grid.Row="4" Grid.Column="1" Height="30" Padding="5" />
+                        <TextBox x:Name="AddressTextBox" Text="{Binding Address}"  Background="#FFC436" Grid.Row="4" Grid.Column="1" Height="30" Padding="5" />
 
                         <!-- Language Field -->
                         <TextBlock Text="Bahasa" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
