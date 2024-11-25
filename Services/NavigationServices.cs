@@ -27,7 +27,7 @@ namespace BarangKu.Services
             {
                 new MenuItemsModel { MenuName = "Beranda", MenuIcon = "/Assets/home.png", IsSelected=true},
                 new MenuItemsModel { MenuName = "Artikel", MenuIcon = "/Assets/artikel.png"},
-                new MenuItemsModel { MenuName = "Transaksi", MenuIcon = "/Assets/pengiriman.png"},
+                new MenuItemsModel { MenuName = "Riwayat Transaksi", MenuIcon = "/Assets/pengiriman.png"},
                 new MenuItemsModel { MenuName = "Toko", MenuIcon = "/Assets/store.png"},
                 new MenuItemsModel { MenuName = "Profil", MenuIcon = "/Assets/BsPerson.png"},
                 new MenuItemsModel { MenuName = "Keluar", MenuIcon = "/Assets/keluar.png" }
@@ -116,7 +116,7 @@ namespace BarangKu.Services
                 case "Artikel":
                     SelectedViewModel = new ArticleView();
                     break;
-                case "Transaksi":
+                case "Riwayat Transaksi":
                     SelectedViewModel = new TransactionView();
                     break;
                 case "Toko":

@@ -1,4 +1,5 @@
 ﻿using BarangKu.Services;
+using BarangKu.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,8 @@ namespace BarangKu.Views
         public FinishedView()
         {
             InitializeComponent();
+            HistoryTransactionViewModel viewModel = new HistoryTransactionViewModel();
+            DataContext = viewModel;
         }
 
         private void NavigateToTransactionView_Click(object sender, RoutedEventArgs e)

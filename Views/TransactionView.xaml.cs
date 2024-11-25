@@ -14,13 +14,8 @@ namespace BarangKu.Views
         {
             InitializeComponent();
 
-            // Pastikan DataContext tidak null dan casting dilakukan dengan aman
-            viewModel = this.DataContext as TransactionViewModel;
-
-            if (viewModel == null)
-            {
-                MessageBox.Show("Error: DataContext tidak valid!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            HistoryTransactionViewModel viewModel = new HistoryTransactionViewModel();
+            DataContext = viewModel;
         }
 
 

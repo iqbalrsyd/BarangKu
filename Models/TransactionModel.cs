@@ -11,13 +11,14 @@ namespace BarangKu.Models
         public int BuyerID { get; set; }
         public int SellerID { get; set; }
         public int ProductID { get; set; }
-        public DateTime TransactionDate { get; private set; }
+        public DateTime TransactionDate { get; set; }
         public string Status { get; set; }
         public decimal TotalAmount { get; set; }
 
         public int Quantity { get; set; }
         public string PaymentStatus { get; set; }
         public string BuyerName { get; set; }
+        public string StoreName { get; set; }
         public string BuyerAddress { get; set; }
         public string BuyerTelephone { get; set; }
         public string ShippingMethod { get; set; }

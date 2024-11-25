@@ -17,8 +17,8 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0" Text="Pesanan Saya" FontSize="30" FontWeight="Bold" Margin="20 10"></TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="1" Text="Belum Diproses" FontSize="22" FontWeight="Medium" Margin="20 10"></TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="1" Text="Pesanan Selesai" FontSize="22" FontWeight="Medium" Margin="20 10"></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="Belum Dikirim" FontSize="22" FontWeight="Medium" Margin="20,10,20,0" Height="30" VerticalAlignment="Top"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="Pesanan Telah Dikirim" FontSize="22" FontWeight="Medium" Margin="20 10"></TextBlock>
         <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Column="0" Grid.Row="2">
             <Viewbox Stretch="Uniform">
                 <ItemsControl ItemsSource="{Binding Orders}">
@@ -27,6 +27,7 @@
                             <Border BorderBrush="{StaticResource MainBlueBrush}" BorderThickness="2" Background="White" Height="380" Width="500" CornerRadius="20" Margin="20">
                                 <ScrollViewer VerticalScrollBarVisibility="Hidden">
                                     <StackPanel Margin="15">
+                                        <TextBlock Text="{Binding TransactionID}" FontWeight="Regular" FontSize="20" Foreground="{StaticResource MainBlueBrush}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                                         <TextBlock Text="{Binding ProductName}" FontWeight="SemiBold" FontSize="27" Width="400"  TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                                         <StackPanel Orientation="Horizontal" Margin="0,10">
                                             <Image Source="{Binding ImageURL}" Width="120" Height="70" />
@@ -62,9 +63,13 @@
                                                 <TextBlock Text="Status Pembayaran: " FontSize="20" FontWeight="Medium"></TextBlock>
                                                 <TextBlock Text="{Binding PaymentStatus}" FontSize="20" FontWeight="Regular"></TextBlock>
                                             </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Tanggal pesanan: " FontSize="20" FontWeight="Medium"></TextBlock>
+                                                <TextBlock Text="{Binding TransactionDate}" FontSize="20" FontWeight="Regular"></TextBlock>
+                                            </StackPanel>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Right">
-                                            <TextBlock Text="Klik tombol centang untuk menyetujui pesanan" FontSize="15" FontStyle="Italic" VerticalAlignment="Center"></TextBlock>
+                                            <TextBlock Text="Klik tombol centang untuk mengirim pesanan" FontSize="15" FontStyle="Italic" VerticalAlignment="Center"></TextBlock>
                                             <Border Width="50" Height="50" CornerRadius="5" Background="{StaticResource MainGreenBrush}" Margin="10,0">
                                                 <Button Background="Transparent" BorderBrush="Transparent" Command="{Binding EditStatusTransactionCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding TransactionID}">
                                                     <Image Source="/Assets/centang.png" Width="35" Height="35" />
@@ -87,6 +92,7 @@
                             <Border BorderBrush="{StaticResource MainBlueBrush}" BorderThickness="2" Background="White" Height="380" Width="500" CornerRadius="20" Margin="20">
                                 <ScrollViewer VerticalScrollBarVisibility="Hidden">
                                     <StackPanel Margin="15">
+                                        <TextBlock Text="{Binding TransactionID}" FontWeight="Regular" FontSize="20" Foreground="{StaticResource MainBlueBrush}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                                         <TextBlock Text="{Binding ProductName}" FontWeight="SemiBold" FontSize="27" Width="400"  TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                                         <StackPanel Orientation="Horizontal" Margin="0,10">
                                             <Image Source="{Binding ImageURL}" Width="120" Height="70" />
@@ -121,6 +127,10 @@
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text="Status Pembayaran: " FontSize="20" FontWeight="Medium"></TextBlock>
                                                 <TextBlock Text="{Binding PaymentStatus}" FontSize="20" FontWeight="Regular"></TextBlock>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Tanggal pesanan: " FontSize="20" FontWeight="Medium"></TextBlock>
+                                                <TextBlock Text="{Binding TransactionDate}" FontSize="20" FontWeight="Regular"></TextBlock>
                                             </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
